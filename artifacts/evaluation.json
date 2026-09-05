@@ -1,0 +1,552 @@
+{
+  "generated_at": "2026-09-05T21:47:44.435347+00:00",
+  "model_version": "rf-calibrated-longitudinal-ng-7.0",
+  "model_artifact_sha256": "ec9eef33a16cf415c6f57969f2b97e5afee2900efaaf3ed0b86013a3d64a5156",
+  "training_data_sha256": "321ef953e3360c809305249d4bd90975ed64de5c790590c5b098a4c0ffd57d15",
+  "test_samples": 5400,
+  "takeover_samples": 44,
+  "synthetic_prevalence": 0.008148148148148147,
+  "fused_roc_auc": 0.961089,
+  "fused_pr_auc": 0.921623,
+  "model_only_roc_auc": 0.972855,
+  "model_only_pr_auc": 0.923085,
+  "model_calibration": {
+    "brier_score": 0.001041,
+    "expected_calibration_error": 0.000487
+  },
+  "score_separation": {
+    "model_only": {
+      "normal_max": 0.915966,
+      "takeover_min": 0.000429,
+      "perfect_ranking_gap": false
+    },
+    "fused": {
+      "normal_max": 0.907143,
+      "takeover_min": 0.038895,
+      "perfect_ranking_gap": false
+    }
+  },
+  "uncertainty": {
+    "method": "stratified percentile bootstrap",
+    "resamples": 2000,
+    "seed": 2026,
+    "confidence": 0.95,
+    "operating_points": {
+      "Monitor or stronger": {
+        "threshold": 0.3,
+        "method": "stratified percentile bootstrap",
+        "resamples": 2000,
+        "confidence": 0.95,
+        "seed": 2026,
+        "metrics": {
+          "recall": {
+            "point": 0.931818,
+            "ci_lower": 0.840909,
+            "ci_upper": 1.0,
+            "wilson": [
+              0.817747,
+              0.976541
+            ]
+          },
+          "precision": {
+            "point": 0.854167,
+            "ci_lower": 0.759981,
+            "ci_upper": 0.952381
+          },
+          "false_positive_rate": {
+            "point": 0.001307,
+            "ci_lower": 0.000373,
+            "ci_upper": 0.002427,
+            "wilson": [
+              0.000633,
+              0.002696
+            ]
+          },
+          "roc_auc": {
+            "point": 0.961089,
+            "ci_lower": 0.913516,
+            "ci_upper": 0.999919
+          }
+        }
+      },
+      "Customer confirmation or stronger": {
+        "threshold": 0.48,
+        "method": "stratified percentile bootstrap",
+        "resamples": 2000,
+        "confidence": 0.95,
+        "seed": 2026,
+        "metrics": {
+          "recall": {
+            "point": 0.909091,
+            "ci_lower": 0.818182,
+            "ci_upper": 0.977273,
+            "wilson": [
+              0.788405,
+              0.964078
+            ]
+          },
+          "precision": {
+            "point": 0.952381,
+            "ci_lower": 0.888889,
+            "ci_upper": 1.0
+          },
+          "false_positive_rate": {
+            "point": 0.000373,
+            "ci_lower": 0.0,
+            "ci_upper": 0.000934,
+            "wilson": [
+              0.000102,
+              0.001361
+            ]
+          },
+          "roc_auc": {
+            "point": 0.961089,
+            "ci_lower": 0.913516,
+            "ci_upper": 0.999919
+          }
+        }
+      },
+      "Settlement delay or hold": {
+        "threshold": 0.66,
+        "method": "stratified percentile bootstrap",
+        "resamples": 2000,
+        "confidence": 0.95,
+        "seed": 2026,
+        "metrics": {
+          "recall": {
+            "point": 0.909091,
+            "ci_lower": 0.818182,
+            "ci_upper": 0.977273,
+            "wilson": [
+              0.788405,
+              0.964078
+            ]
+          },
+          "precision": {
+            "point": 0.952381,
+            "ci_lower": 0.888889,
+            "ci_upper": 1.0
+          },
+          "false_positive_rate": {
+            "point": 0.000373,
+            "ci_lower": 0.0,
+            "ci_upper": 0.000934,
+            "wilson": [
+              0.000102,
+              0.001361
+            ]
+          },
+          "roc_auc": {
+            "point": 0.961089,
+            "ci_lower": 0.913516,
+            "ci_upper": 0.999919
+          }
+        }
+      },
+      "Two-hour hold and review": {
+        "threshold": 0.84,
+        "method": "stratified percentile bootstrap",
+        "resamples": 2000,
+        "confidence": 0.95,
+        "seed": 2026,
+        "metrics": {
+          "recall": {
+            "point": 0.795455,
+            "ci_lower": 0.659091,
+            "ci_upper": 0.909091,
+            "wilson": [
+              0.654991,
+              0.888469
+            ]
+          },
+          "precision": {
+            "point": 0.972222,
+            "ci_lower": 0.911765,
+            "ci_upper": 1.0
+          },
+          "false_positive_rate": {
+            "point": 0.000187,
+            "ci_lower": 0.0,
+            "ci_upper": 0.00056,
+            "wilson": [
+              3.3e-05,
+              0.001057
+            ]
+          },
+          "roc_auc": {
+            "point": 0.961089,
+            "ci_lower": 0.913516,
+            "ci_upper": 0.999919
+          }
+        }
+      }
+    },
+    "fused_roc_auc": {
+      "point": 0.961089,
+      "ci_lower": 0.913516,
+      "ci_upper": 0.999919
+    },
+    "model_only_roc_auc": {
+      "point": 0.972855,
+      "ci_lower": 0.928673,
+      "ci_upper": 0.999894
+    }
+  },
+  "component_ablation": {
+    "model_only": {
+      "recall": 0.909091,
+      "precision": 0.952381,
+      "false_positive_rate": 0.000373,
+      "true_positives": 40,
+      "false_positives": 2,
+      "roc_auc": 0.972855
+    },
+    "anomaly_only": {
+      "recall": 0.931818,
+      "precision": 0.267974,
+      "false_positive_rate": 0.020911,
+      "true_positives": 41,
+      "false_positives": 112,
+      "roc_auc": 0.960681
+    },
+    "blend_without_floors": {
+      "recall": 0.909091,
+      "precision": 0.952381,
+      "false_positive_rate": 0.000373,
+      "true_positives": 40,
+      "false_positives": 2,
+      "roc_auc": 0.961089
+    },
+    "floors_only": {
+      "recall": 0.727273,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "true_positives": 32,
+      "false_positives": 0,
+      "roc_auc": 0.897727
+    },
+    "fused_live": {
+      "recall": 0.909091,
+      "precision": 0.952381,
+      "false_positive_rate": 0.000373,
+      "true_positives": 40,
+      "false_positives": 2,
+      "roc_auc": 0.961089
+    }
+  },
+  "detection_attribution": {
+    "true_positives": {
+      "blend_alone": 8,
+      "floor_required": 0,
+      "both": 32,
+      "total": 40,
+      "floor_required_share": 0.0,
+      "blend_alone_share": 0.2
+    },
+    "false_positives": {
+      "blend_alone": 2,
+      "floor_required": 0,
+      "both": 0,
+      "total": 2
+    },
+    "floor_codes_among_true_positives": {
+      "RECIPIENT_SINGLE_REPORT": 23,
+      "RECIPIENT_MULTI_ACCOUNT": 20,
+      "DEVICE_SIM_COCHANGE": 15,
+      "MULE_FAN_IN_CASHOUT": 10,
+      "ATTESTED_SIM_IDENTITY_CHANGE": 7,
+      "OTP_AFTER_SIM_CHANGE": 7,
+      "RECOVERY_THEN_NEW_RECIPIENT": 7,
+      "FAILED_AUTH_NEW_DEVICE": 6,
+      "CROSS_CHANNEL_SEQUENCE": 5,
+      "COERCION_DURING_CALL": 2
+    },
+    "floor_codes_among_false_positives": {}
+  },
+  "transfer_only": {
+    "samples": 1276,
+    "takeover_samples": 44,
+    "model_only_roc_auc": 0.968169,
+    "fused_roc_auc": 0.957257,
+    "customer_confirmation": {
+      "threshold": 0.48,
+      "recall": 0.909091,
+      "precision": 0.952381,
+      "false_positive_rate": 0.001623,
+      "true_positives": 40,
+      "false_positives": 2,
+      "false_negatives": 4,
+      "normal_events": 1232,
+      "takeover_events": 44
+    }
+  },
+  "chronological_split": {
+    "development_events": 24600,
+    "test_events": 5400,
+    "development_accounts": 750,
+    "test_accounts": 750,
+    "overlapping_accounts": 750,
+    "purpose": "within-customer future-event evaluation for personalised behavioural twins"
+  },
+  "operating_points": {
+    "Monitor or stronger": {
+      "threshold": 0.3,
+      "recall": 0.931818,
+      "precision": 0.854167,
+      "false_positive_rate": 0.001307,
+      "true_positives": 41,
+      "false_positives": 7,
+      "false_negatives": 3,
+      "normal_events": 5356,
+      "takeover_events": 44
+    },
+    "Customer confirmation or stronger": {
+      "threshold": 0.48,
+      "recall": 0.909091,
+      "precision": 0.952381,
+      "false_positive_rate": 0.000373,
+      "true_positives": 40,
+      "false_positives": 2,
+      "false_negatives": 4,
+      "normal_events": 5356,
+      "takeover_events": 44
+    },
+    "Settlement delay or hold": {
+      "threshold": 0.66,
+      "recall": 0.909091,
+      "precision": 0.952381,
+      "false_positive_rate": 0.000373,
+      "true_positives": 40,
+      "false_positives": 2,
+      "false_negatives": 4,
+      "normal_events": 5356,
+      "takeover_events": 44
+    },
+    "Two-hour hold and review": {
+      "threshold": 0.84,
+      "recall": 0.795455,
+      "precision": 0.972222,
+      "false_positive_rate": 0.000187,
+      "true_positives": 35,
+      "false_positives": 1,
+      "false_negatives": 9,
+      "normal_events": 5356,
+      "takeover_events": 44
+    }
+  },
+  "prevalence_stress": {
+    "0.100%": {
+      "projected_precision": 0.709275,
+      "projected_alerts_per_10000": 12.82,
+      "projected_false_alerts_per_10000": 3.73
+    },
+    "0.500%": {
+      "projected_precision": 0.924514,
+      "projected_alerts_per_10000": 49.17,
+      "projected_false_alerts_per_10000": 3.71
+    },
+    "1.000%": {
+      "projected_precision": 0.960966,
+      "projected_alerts_per_10000": 94.6,
+      "projected_false_alerts_per_10000": 3.69
+    }
+  },
+  "channel_cohorts": {
+    "agent": {
+      "samples": 734,
+      "takeovers": 8,
+      "recall": 0.875,
+      "false_positive_rate": 0.002755
+    },
+    "app": {
+      "samples": 2346,
+      "takeovers": 15,
+      "recall": 0.866667,
+      "false_positive_rate": 0.0
+    },
+    "ussd": {
+      "samples": 2320,
+      "takeovers": 21,
+      "recall": 0.952381,
+      "false_positive_rate": 0.0
+    }
+  },
+  "scenario_cohorts": {
+    "agent_social_engineering": {
+      "samples": 7,
+      "takeovers": 7,
+      "recall": 1.0,
+      "false_positive_rate": null
+    },
+    "busy_agent_merchant_payment": {
+      "samples": 60,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "coercion_assisted_transfer": {
+      "samples": 4,
+      "takeovers": 4,
+      "recall": 1.0,
+      "false_positive_rate": null
+    },
+    "community_collection_payment": {
+      "samples": 56,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "credential_stuffing": {
+      "samples": 6,
+      "takeovers": 6,
+      "recall": 1.0,
+      "false_positive_rate": null
+    },
+    "cross_channel_takeover": {
+      "samples": 5,
+      "takeovers": 5,
+      "recall": 1.0,
+      "false_positive_rate": null
+    },
+    "emergency_transfer": {
+      "samples": 62,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.032258
+    },
+    "legitimate": {
+      "samples": 4697,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "legitimate_failed_login_retry": {
+      "samples": 46,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "legitimate_new_phone": {
+      "samples": 53,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "legitimate_post_recovery": {
+      "samples": 54,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "legitimate_travel": {
+      "samples": 49,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "low_and_slow": {
+      "samples": 3,
+      "takeovers": 3,
+      "recall": 0.0,
+      "false_positive_rate": null
+    },
+    "payday_spending": {
+      "samples": 60,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "popular_merchant_payment": {
+      "samples": 57,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "recovery_abuse": {
+      "samples": 8,
+      "takeovers": 8,
+      "recall": 1.0,
+      "false_positive_rate": null
+    },
+    "recurring_monthly_payment": {
+      "samples": 51,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "remote_control_ussd": {
+      "samples": 4,
+      "takeovers": 4,
+      "recall": 0.75,
+      "false_positive_rate": null
+    },
+    "shared_family_phone": {
+      "samples": 67,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    },
+    "sim_swap_drain": {
+      "samples": 7,
+      "takeovers": 7,
+      "recall": 1.0,
+      "false_positive_rate": null
+    },
+    "verified_sim_replacement": {
+      "samples": 44,
+      "takeovers": 0,
+      "recall": null,
+      "false_positive_rate": 0.0
+    }
+  },
+  "hard_negative_intervention": {
+    "busy_agent_merchant_payment": {
+      "events": 60,
+      "intervention_rate": 0.0
+    },
+    "community_collection_payment": {
+      "events": 56,
+      "intervention_rate": 0.0
+    },
+    "emergency_transfer": {
+      "events": 62,
+      "intervention_rate": 0.032258
+    },
+    "legitimate_failed_login_retry": {
+      "events": 46,
+      "intervention_rate": 0.0
+    },
+    "legitimate_new_phone": {
+      "events": 53,
+      "intervention_rate": 0.0
+    },
+    "legitimate_post_recovery": {
+      "events": 54,
+      "intervention_rate": 0.0
+    },
+    "legitimate_travel": {
+      "events": 49,
+      "intervention_rate": 0.0
+    },
+    "payday_spending": {
+      "events": 60,
+      "intervention_rate": 0.0
+    },
+    "popular_merchant_payment": {
+      "events": 57,
+      "intervention_rate": 0.0
+    },
+    "recurring_monthly_payment": {
+      "events": 51,
+      "intervention_rate": 0.0
+    },
+    "shared_family_phone": {
+      "events": 67,
+      "intervention_rate": 0.0
+    },
+    "verified_sim_replacement": {
+      "events": 44,
+      "intervention_rate": 0.0
+    }
+  }
+}

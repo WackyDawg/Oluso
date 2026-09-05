@@ -1,0 +1,11 @@
+{
+  "scope": "warm sequential FastAPI request including feature retrieval, model, policy, persistence, and audit",
+  "requests": 100,
+  "history_events_at_start": 30,
+  "p50_ms": 32.516,
+  "p95_ms": 45.804,
+  "p99_ms": 183.453,
+  "max_ms": 204.111,
+  "under_one_second": true,
+  "production_caveat": "Run a distributed load test against the production feature store before launch."
+}

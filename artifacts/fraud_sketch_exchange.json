@@ -1,0 +1,67 @@
+{
+  "version": "1.4.0",
+  "generated_at": "2026-08-30T05:58:45.908499+00:00",
+  "source": "actual local service run with synthetic institutions and customers",
+  "chronology": "Reports arrive only after the baseline event; every later match uses prior intelligence.",
+  "baseline": {
+    "risk_score": 0.083772,
+    "action": "allow_with_monitoring"
+  },
+  "one_institution": {
+    "exchange_score": 0.3728,
+    "independent_institutions": 1,
+    "other_account_score": 0.3728,
+    "action": "allow_with_monitoring",
+    "action_ceiling": "monitor"
+  },
+  "two_institutions_without_local_corroboration": {
+    "exchange_score": 0.7256,
+    "risk_score": 0.42,
+    "action": "allow_with_monitoring",
+    "action_ceiling": "monitor"
+  },
+  "two_institutions_with_local_corroboration": {
+    "risk_score": 0.725599,
+    "action": "reversible_settlement_delay",
+    "action_ceiling": "delay",
+    "matched_indicators": [
+      "recipient"
+    ]
+  },
+  "outage_cache": {
+    "source_mode": "signed_cache",
+    "risk_score": 0.42,
+    "decision_confidence": 0.469653,
+    "capsule_valid": true
+  },
+  "legitimate_biller_hard_negative": {
+    "exchange_score": 0.0,
+    "risk_score": 0.083772,
+    "action": "allow_with_monitoring"
+  },
+  "revocation": {
+    "report_id": "fsr-002-bravo",
+    "status": "revoked",
+    "idempotent_replay": false,
+    "remaining_score": 0.3728,
+    "remaining_independent_institutions": 1,
+    "privacy_notice": "The private indicator remains undisclosed."
+  },
+  "adversarial_controls": {
+    "tampered_signature_rejected": true,
+    "raw_indicator_absent_from_shared_rows": true,
+    "stored_shared_rows": 2
+  },
+  "latency_ms": {
+    "first_signed_report": 3.195,
+    "second_signed_report_and_capsule_refresh": 3.786
+  },
+  "audit": {
+    "valid": true,
+    "entries_checked": 64,
+    "first_invalid_sequence": null,
+    "head_hash": "35589ef3d79779143a8f545a83af9a3b8d2b28fcbf0db453cf95a4c6544c0dcf"
+  },
+  "privacy_boundary": "Shared tables contain rotating tokens, coarse evidence classes, confidence, expiry and state; local banking events remain inside the bank database.",
+  "production_roadmap": "Replace the prototype consortium token service with VOPRF/PSI or secure aggregation, HSM-backed keys and formal multi-bank governance."
+}

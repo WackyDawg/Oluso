@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-08-30T05:51:16.564155+00:00",
+  "model_version": "rf-calibrated-longitudinal-ng-7.0",
+  "confidence_envelope": {
+    "risk_score": 0.026299,
+    "decision_confidence": {
+      "score": 0.346518,
+      "level": "low",
+      "profile_maturity": 0.0,
+      "data_coverage": 0.333333,
+      "scorer_agreement": 0.919407,
+      "reasons": [
+        "The behavioural baseline is still immature.",
+        "Only part of the expected channel evidence was available."
+      ]
+    },
+    "action": "allow"
+  },
+  "cross_channel_sequence": {
+    "risk_score": 0.72,
+    "action": "reversible_hold_and_review",
+    "reason_codes": [
+      "CROSS_CHANNEL_TAKEOVER_SEQUENCE",
+      "AMOUNT_DEVIATION",
+      "NEW_CHANNEL_ENROLLMENT_24H",
+      "NEW_RECIPIENT",
+      "CROSS_CHANNEL_DEVICE_MISMATCH",
+      "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+      "NAVIGATION_NOVELTY",
+      "CHANNEL_TRANSITION_NOVELTY"
+    ],
+    "features": {
+      "channel_transition_novelty": 1.0,
+      "new_channel_enrollment_24h": 1.0,
+      "app_to_ussd_handoff": 1.0
+    }
+  },
+  "recipient_reputation_loop": {
+    "source_score": 0.098491,
+    "feedback_update": {
+      "status": "monitor",
+      "score": 0.35,
+      "confirmed_reports": 1,
+      "distinct_accounts": 1,
+      "expires_at": "2026-11-28T05:51:15.712781+00:00",
+      "watchlist_evidence_available": 1.0
+    },
+    "other_account_score": 0.42,
+    "other_account_action": "allow_with_monitoring",
+    "reason_codes": [
+      "NEW_RECIPIENT",
+      "RECIPIENT_CONFIRMED_FRAUD_SCORE",
+      "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+      "CONFIRMED_RECIPIENT_REPUTATION",
+      "RECIPIENT_RARITY",
+      "RECIPIENT_CONFIRMED_ACCOUNTS"
+    ]
+  },
+  "calendar_twin": {
+    "risk_score": 0.073732,
+    "action": "allow_with_monitoring",
+    "recurring_payment_match": 1.0,
+    "calendar_confidence": 1.0
+  },
+  "friction_optimizer": {
+    "selected_action": "reversible_hold_and_review",
+    "selected_expected_cost": 1298.6,
+    "action_costs": {
+      "allow": 15523.2,
+      "allow_with_monitoring": 12360.45,
+      "trusted_channel_confirmation": 5152.8,
+      "reversible_settlement_delay": 2152.8,
+      "reversible_hold_and_review": 1298.6
+    },
+    "personalization_reasons": [
+      "USSD confirmation has higher customer effort."
+    ]
+  },
+  "audit_chain_valid": true
+}

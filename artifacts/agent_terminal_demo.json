@@ -1,0 +1,111 @@
+{
+  "audit_chain": {
+    "entries_checked": 54,
+    "first_invalid_sequence": null,
+    "head_hash": "75cc934c97497de03f81becaa3f98d38175ccd8cc0b67da2c00e683b88cf2590",
+    "valid": true
+  },
+  "busy_legitimate_terminal": {
+    "action": "allow_with_monitoring",
+    "agent_evidence_coverage": 1.0,
+    "customer_diversity_1h": 0.666667,
+    "customer_explanation": "We approved this transaction but are monitoring it because the recipient recently received funds from many unrelated senders; You can review it in transaction history or contact the bank through its official channel.",
+    "decision_confidence": 0.4937,
+    "failed_auth_ratio_1h": 0.0,
+    "reasons": [
+      "RECIPIENT_SENDER_DIVERSITY_24H",
+      "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+      "AGENT_RECIPIENT_CONCENTRATION_24H",
+      "AGENT_CUSTOMER_DIVERSITY_1H"
+    ],
+    "recipient_concentration_24h": 1.0,
+    "risk_score": 0.08365,
+    "terminal_quarantined": false,
+    "terminal_status": "clear"
+  },
+  "compromised_terminal": {
+    "action": "reversible_settlement_delay",
+    "agent_evidence_coverage": 1.0,
+    "customer_diversity_1h": 0.833333,
+    "customer_explanation": "We temporarily delayed this transaction because the agency terminal connected several customers to a concentrated suspicious pattern and the recipient recently received funds from many unrelated senders; Confirm from a previously registered device or wait for the short safety delay to expire.",
+    "decision_confidence": 0.430808,
+    "detection_ms": 31.142,
+    "failed_auth_ratio_1h": 0.4,
+    "reasons": [
+      "AGENT_TERMINAL_CAMPAIGN",
+      "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+      "AGENT_RECIPIENT_CONCENTRATION_24H",
+      "RECIPIENT_SENDER_DIVERSITY_24H",
+      "AGENT_FAILED_AUTH_RATIO_1H",
+      "AGENT_CUSTOMER_DIVERSITY_1H"
+    ],
+    "recipient_concentration_24h": 1.0,
+    "risk_score": 0.74,
+    "terminal_quarantined": false,
+    "terminal_status": "clear"
+  },
+  "confirmed_reputation_progression": [
+    {
+      "confirmed_reports": 1,
+      "distinct_accounts": 1,
+      "quarantined": false,
+      "score": 0.35,
+      "status": "monitor"
+    },
+    {
+      "confirmed_reports": 2,
+      "distinct_accounts": 2,
+      "quarantined": false,
+      "score": 0.75,
+      "status": "elevated"
+    },
+    {
+      "confirmed_reports": 3,
+      "distinct_accounts": 3,
+      "quarantined": true,
+      "score": 1.0,
+      "status": "quarantined"
+    }
+  ],
+  "forged_unattested_claim": {
+    "action": "allow",
+    "agent_evidence_coverage": 0.0,
+    "customer_diversity_1h": 0.0,
+    "customer_explanation": "We approved this transaction because it matched the account's usual activity.",
+    "decision_confidence": 0.486419,
+    "failed_auth_ratio_1h": 0.0,
+    "reasons": [
+      "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H"
+    ],
+    "recipient_concentration_24h": 0.0,
+    "risk_score": 0.036104,
+    "terminal_quarantined": false,
+    "terminal_status": "not_applicable"
+  },
+  "generated_at": "2026-08-30T05:58:50.324195+00:00",
+  "quarantine_proof": {
+    "action": "reversible_settlement_delay",
+    "agent_evidence_coverage": 1.0,
+    "customer_diversity_1h": 0.333333,
+    "customer_explanation": "We temporarily delayed this transaction because independent confirmed fraud reports involve this agency terminal; Confirm from a previously registered device or wait for the short safety delay to expire.",
+    "decision_confidence": 0.421005,
+    "failed_auth_ratio_1h": 0.0,
+    "reasons": [
+      "AGENT_CONFIRMED_FRAUD_SCORE",
+      "AGENT_CONFIRMED_ACCOUNTS",
+      "CONFIRMED_AGENT_TERMINAL",
+      "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H"
+    ],
+    "recipient_concentration_24h": 0.25,
+    "risk_score": 0.76,
+    "terminal_quarantined": true,
+    "terminal_status": "quarantined"
+  },
+  "safeguards": {
+    "busy_volume_alone_not_campaign": true,
+    "compromised_campaign_detected": true,
+    "three_victims_required_for_quarantine": true,
+    "unattested_claim_ignored": true
+  },
+  "version": "1.2.0"
+}

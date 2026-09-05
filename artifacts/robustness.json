@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-09-05T21:43:31.463046+00:00",
+  "purpose": "detect perfect synthetic separation and measure unseen-account behaviour",
+  "excluded_population_model_features": [
+    "is_transfer",
+    "is_withdrawal",
+    "recipient_confirmed_accounts",
+    "recipient_confirmed_fraud_score",
+    "recipient_watchlist_coverage"
+  ],
+  "coverage_leakage_audit": {
+    "max_allowed_separation_auc": 0.75,
+    "worst_separation_auc": 0.59594,
+    "passed": true,
+    "features": [
+      {
+        "feature": "calendar_confidence",
+        "mean_normal": 0.697011,
+        "mean_takeover": 0.814549,
+        "present_rate_normal": 0.974795,
+        "present_rate_takeover": 1.0,
+        "separation_auc": 0.59594
+      },
+      {
+        "feature": "history_confidence",
+        "mean_normal": 0.703017,
+        "mean_takeover": 0.787528,
+        "present_rate_normal": 0.974795,
+        "present_rate_takeover": 1.0,
+        "separation_auc": 0.582682
+      },
+      {
+        "feature": "telco_assurance_coverage",
+        "mean_normal": 0.325044,
+        "mean_takeover": 0.409836,
+        "present_rate_normal": 0.430938,
+        "present_rate_takeover": 0.504098,
+        "separation_auc": 0.5621
+      },
+      {
+        "feature": "coercion_evidence_coverage",
+        "mean_normal": 0.052258,
+        "mean_takeover": 0.168033,
+        "present_rate_normal": 0.052258,
+        "present_rate_takeover": 0.168033,
+        "separation_auc": 0.557887
+      },
+      {
+        "feature": "evidence_coverage",
+        "mean_normal": 0.8022,
+        "mean_takeover": 0.816485,
+        "present_rate_normal": 1.0,
+        "present_rate_takeover": 1.0,
+        "separation_auc": 0.527443
+      },
+      {
+        "feature": "is_ussd",
+        "mean_normal": 0.427914,
+        "mean_takeover": 0.463115,
+        "present_rate_normal": 0.427914,
+        "present_rate_takeover": 0.463115,
+        "separation_auc": 0.517601
+      },
+      {
+        "feature": "shared_device_allowed",
+        "mean_normal": 0.255646,
+        "mean_takeover": 0.233607,
+        "present_rate_normal": 0.255646,
+        "present_rate_takeover": 0.233607,
+        "separation_auc": 0.51102
+      },
+      {
+        "feature": "recipient_network_coverage",
+        "mean_normal": 1.0,
+        "mean_takeover": 1.0,
+        "present_rate_normal": 1.0,
+        "present_rate_takeover": 1.0,
+        "separation_auc": 0.5
+      },
+      {
+        "feature": "recipient_watchlist_coverage",
+        "mean_normal": 1.0,
+        "mean_takeover": 1.0,
+        "present_rate_normal": 1.0,
+        "present_rate_takeover": 1.0,
+        "separation_auc": 0.5
+      }
+    ]
+  },
+  "chronological_separability": {
+    "model_only_roc_auc": 0.972855,
+    "perfect_model_ranking": false,
+    "top_univariate_features": [
+      {
+        "feature": "balance_drain_ratio",
+        "auc": 0.938506,
+        "separation_auc": 0.938506
+      },
+      {
+        "feature": "amount_to_median",
+        "auc": 0.935156,
+        "separation_auc": 0.935156
+      },
+      {
+        "feature": "amount_deviation",
+        "auc": 0.915324,
+        "separation_auc": 0.915324
+      },
+      {
+        "feature": "recipient_inflow_velocity_1h",
+        "auc": 0.883883,
+        "separation_auc": 0.883883
+      },
+      {
+        "feature": "device_rarity",
+        "auc": 0.872325,
+        "separation_auc": 0.872325
+      },
+      {
+        "feature": "navigation_novelty",
+        "auc": 0.86132,
+        "separation_auc": 0.86132
+      },
+      {
+        "feature": "recipient_first_time_sender_ratio_24h",
+        "auc": 0.831586,
+        "separation_auc": 0.831586
+      },
+      {
+        "feature": "recipient_rarity",
+        "auc": 0.828451,
+        "separation_auc": 0.828451
+      },
+      {
+        "feature": "new_recipient",
+        "auc": 0.825599,
+        "separation_auc": 0.825599
+      },
+      {
+        "feature": "new_device",
+        "auc": 0.801938,
+        "separation_auc": 0.801938
+      }
+    ]
+  },
+  "account_disjoint": {
+    "train_accounts": 450,
+    "test_accounts": 150,
+    "account_overlap": 0,
+    "train_events": 18000,
+    "test_events": 6000,
+    "takeover_events": 42,
+    "model_only_roc_auc": 0.972074,
+    "model_only_pr_auc": 0.849283,
+    "fused_roc_auc": 0.955318,
+    "fused_pr_auc": 0.839527,
+    "customer_confirmation": {
+      "threshold": 0.48,
+      "recall": 0.833333,
+      "precision": 0.853659,
+      "false_positive_rate": 0.001007,
+      "true_positives": 35,
+      "false_positives": 6,
+      "false_negatives": 7
+    }
+  }
+}

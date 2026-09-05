@@ -1,0 +1,53 @@
+services:
+  api:
+    build: .
+    environment:
+      ATO_ENVIRONMENT: docker
+      ATO_DATABASE_PATH: /app/data/aegistwin.db
+      ATO_MODEL_PATH: /app/models/ato_model.joblib
+      ATO_API_KEY: ${ATO_API_KEY:-dev-only-change-me}
+      ATO_ANALYST_API_KEY: ${ATO_ANALYST_API_KEY:-analyst-dev-only-change-me}
+      ATO_AUDITOR_API_KEY: ${ATO_AUDITOR_API_KEY:-auditor-dev-only-change-me}
+      ATO_ADMIN_API_KEY: ${ATO_ADMIN_API_KEY:-admin-dev-only-change-me}
+      ATO_RECIPIENT_HMAC_KEY: ${ATO_RECIPIENT_HMAC_KEY:-recipient-token-dev-only-change-me}
+      ATO_AUDIT_ANCHOR_KEY: ${ATO_AUDIT_ANCHOR_KEY:-audit-anchor-dev-only-change-me}
+      ATO_ALLOWED_TENANTS: '["default","demo-bank","partner-bank"]'
+      ATO_CORS_ORIGINS: '["http://localhost:8501"]'
+    ports:
+      - "8000:8000"
+    volumes:
+      - ato-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dashboard:
+    build: .
+    command: ["streamlit", "run", "dashboard/app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    environment:
+      ATO_DASHBOARD_API_URL: http://api:8000
+      ATO_API_KEY: ${ATO_API_KEY:-dev-only-change-me}
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  ato-data:

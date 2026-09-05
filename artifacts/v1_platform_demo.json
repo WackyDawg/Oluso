@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-08-30T05:58:42.154837+00:00",
+  "safe_learning": {
+    "initial_state": "pending",
+    "profile_transactions_before_maturation": 0,
+    "after_maturation": 1,
+    "after_retroactive_delearning": 0
+  },
+  "campaign": {
+    "signature": "c4c95c8f286394fb5fd7",
+    "score": 0.92,
+    "distinct_accounts": 4,
+    "stages": [
+      "cashout",
+      "identity_cochange",
+      "new_channel",
+      "recipient_change",
+      "sim_change"
+    ],
+    "eligible": true
+  },
+  "campaign_action": "reversible_hold_and_review",
+  "consortium": {
+    "one_institution": {
+      "independent_institutions": 1,
+      "score": 0.0
+    },
+    "two_institutions": {
+      "independent_institutions": 2,
+      "score": 0.87
+    },
+    "risk": 0.91,
+    "action": "reversible_hold_and_review"
+  },
+  "exact_replay": {
+    "decision_id": "dec_32b19840f7b54aeb8fdd17af593a37d9",
+    "exact_match": true,
+    "stored_digest": "b6f864d6970e449d69f5bd0885956771ad36c60ec6994dea7a1a24ca1086d366",
+    "replay_digest": "b6f864d6970e449d69f5bd0885956771ad36c60ec6994dea7a1a24ca1086d366",
+    "model_version": "rf-calibrated-longitudinal-ng-7.0",
+    "policy_version": "policy-1.4.0",
+    "cutoff_at": "2026-08-30T05:58:42.154837+00:00"
+  },
+  "transaction_lifecycle": {
+    "event_id": "consortium-event",
+    "state": "cancelled",
+    "version": 3,
+    "updated_at": "2026-08-30T05:58:42.479592+00:00",
+    "idempotent_replay": false
+  },
+  "governance": {
+    "policy_simulation": {
+      "policy_version": "simulation-only",
+      "events": 10,
+      "projected_actions": {
+        "allow": 5,
+        "monitor": 0,
+        "confirm": 0,
+        "delay": 1,
+        "hold": 4
+      },
+      "thresholds": {
+        "allow": 0.3,
+        "monitor": 0.48,
+        "confirm": 0.66,
+        "delay": 0.84
+      },
+      "mutated_live_policy": false
+    },
+    "drift": {
+      "events": 10,
+      "population_stability_index": 0.0,
+      "status": "stable",
+      "minimum_sample_met": false
+    },
+    "equity": {
+      "scope": "channel-and-friction operational equity; no protected attributes inferred",
+      "events": 10,
+      "action_distribution": {
+        "allow": 5,
+        "reversible_hold_and_review": 5
+      },
+      "warning": "Outcome parity requires representative labels and approved protected-attribute governance."
+    }
+  },
+  "audit": {
+    "valid": true,
+    "entries_checked": 20,
+    "first_invalid_sequence": null,
+    "head_hash": "dc6107533b4ec142a4f8fcee2931b1140de00a3f764d7c57dd28a02649db3af6"
+  },
+  "telemetry": {
+    "counters": {
+      "action_allow": 5,
+      "action_reversible_hold_and_review": 5
+    },
+    "latency_ms": {
+      "count": 10,
+      "p50": 28.669,
+      "p95": 42.457,
+      "p99": 42.457
+    }
+  },
+  "metrics": {
+    "accounts": 6,
+    "events": 10,
+    "decisions": 10,
+    "decisions_by_level": {
+      "critical": 4,
+      "high": 1,
+      "low": 5
+    },
+    "decisions_by_action": {
+      "allow": 5,
+      "reversible_hold_and_review": 5
+    },
+    "feedback_by_label": {
+      "account_takeover": 1
+    },
+    "pending_learning_events": 0,
+    "open_cases": 5,
+    "outbox_pending": 11,
+    "offline_journal_pending": 0,
+    "resilience_modes": {},
+    "active_fraud_sketch_reports": 0,
+    "active_fraud_sketch_capsules": 0
+  }
+}

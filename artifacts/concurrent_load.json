@@ -1,0 +1,17 @@
+{
+  "requests": 100,
+  "workers": 8,
+  "warmup_requests": 8,
+  "successes": 100,
+  "failures": 0,
+  "failure_types": [],
+  "throughput_requests_per_second": 22.611,
+  "latency_ms": {
+    "mean": 345.292,
+    "p50": 332.758,
+    "p95": 469.282,
+    "p99": 477.927,
+    "max": 529.102
+  },
+  "audit_valid": true
+}

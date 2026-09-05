@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-08-30T05:58:47.935572+00:00",
+  "scope": "single-laptop deterministic outage drill using synthetic identities and real service code",
+  "states": {
+    "degraded": "degraded",
+    "isolated": "isolated",
+    "recovery_gate": "reconciling",
+    "final": "online"
+  },
+  "signed_edge_capsule": {
+    "valid": true,
+    "capsule_id": "cap_de351cbce6037e189024",
+    "expires_at": "2026-08-30T13:58:47.515248+00:00"
+  },
+  "degraded_known_recipient": {
+    "risk_score": 0.079694,
+    "decision_confidence": 0.427944,
+    "action": "allow_with_monitoring",
+    "learning_state": "excluded"
+  },
+  "degraded_unusual_recipient": {
+    "risk_score": 0.449007,
+    "decision_confidence": 0.448943,
+    "action": "trusted_channel_confirmation",
+    "safety_envelope_applied": true
+  },
+  "isolated_payment": {
+    "action": "reversible_settlement_delay",
+    "offline_reference": "OFF-E5BA263F6FE2",
+    "customer_explanation": "We could not settle this transaction because the payment network is unavailable; no money has been moved, keep reference OFF-E5BA263F6FE2 and confirm after service returns.",
+    "transaction_state": "held"
+  },
+  "journal": {
+    "entries_before_recovery": 3,
+    "valid_before_tamper": true,
+    "tamper_detected": true,
+    "valid_after_exact_restore": true
+  },
+  "reconciliation": {
+    "status": "completed",
+    "processed": 3,
+    "failed": 0,
+    "remaining": 0,
+    "duplicate_actions": 0,
+    "automatic_settlements": 0,
+    "repeat_status": "already_reconciled",
+    "priority_order": "risk_descending_then_original_sequence",
+    "batch_limit": 100,
+    "circuit_breaker_open": false
+  },
+  "objectives": {
+    "outage_detection_ms": 2.823,
+    "recovery_and_reconciliation_ms": 74.499,
+    "recovery_point_unjournalled_events": 0,
+    "duplicate_lifecycle_actions": 0
+  },
+  "audit_verification": {
+    "valid": true,
+    "entries_checked": 16,
+    "first_invalid_sequence": null,
+    "head_hash": "178f2648d265a075119dc20d507e02e366c71431e4a53718404a251e5e631d11"
+  }
+}

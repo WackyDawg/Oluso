@@ -1,0 +1,23 @@
+name: secure-ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e '.[dev]'
+      - run: ruff check .
+      - run: pytest --cov=aegistwin --cov-fail-under=85
+      - run: python scripts/release_smoke_test.py .
+      - run: python scripts/evaluate_robustness.py
+      - run: bandit -q -r src
+      - run: pip-audit
+      - run: python scripts/generate_sbom.py

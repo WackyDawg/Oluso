@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-09-05T22:27:45.702590+00:00",
+  "source": "v1_platform_demo.db",
+  "backup": "v1_platform_demo_backup.db",
+  "sha256": "9276f6dbc01b036d06126ffc499c561ef9579e9ddc94166f42d7828018faab14",
+  "integrity_check": "ok",
+  "restore_test": true
+}

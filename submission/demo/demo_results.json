@@ -1,0 +1,2269 @@
+{
+  "generated_at": "2026-09-05T22:27:27.498147+00:00",
+  "source": "actual local AtoService scoring run; all identities and events are synthetic",
+  "verified_replacement": {
+    "decision_id": "dec_9180fdbb5cb9471c85501dd5a3f64648",
+    "event_id": "demo_verified_sim_replacement",
+    "account_id": "aegistwin_demo_customer",
+    "risk_level": "low",
+    "score": {
+      "model_score": 0.000462,
+      "anomaly_score": 0.137506,
+      "fused_score": 0.05802,
+      "profile_confidence": 0.918382,
+      "model_version": "rf-calibrated-longitudinal-ng-7.0"
+    },
+    "policy": {
+      "action": "allow_with_monitoring",
+      "hold_seconds": 0,
+      "requires_trusted_confirmation": false,
+      "requires_analyst_review": false,
+      "regret_budget_used": 0,
+      "regret_budget_limit": 3,
+      "budget_consumed_by_decision": false,
+      "budget_override_reason": null,
+      "selected_expected_cost": 114.96,
+      "action_costs": {
+        "allow": 122.25,
+        "allow_with_monitoring": 114.96,
+        "trusted_channel_confirmation": 322.51,
+        "reversible_settlement_delay": 862.75,
+        "reversible_hold_and_review": 2242.19
+      },
+      "personalization_reasons": [
+        "USSD confirmation has higher customer effort."
+      ]
+    },
+    "reasons": [
+      {
+        "code": "CHANNEL_TRANSITION_NOVELTY",
+        "message": "The sequence between banking channels is unusual for this account.",
+        "contribution": 0.036735
+      },
+      {
+        "code": "RECIPIENT_RARITY",
+        "message": "The recipient is rare in the account's historical activity.",
+        "contribution": 0.018368
+      }
+    ],
+    "customer_explanation": "We approved this transaction but are monitoring it because the activity differed from the account's usual pattern; You can review it in transaction history or contact the bank through its official channel.",
+    "evidence": {
+      "mode": "ussd_telco_assured",
+      "coverage": 0.666667,
+      "available_signals": [
+        "balance context",
+        "recipient history",
+        "SIM identity",
+        "interaction rhythm",
+        "navigation path",
+        "attested telco SIM lifecycle",
+        "recipient network history"
+      ],
+      "missing_optional_signals": [
+        "coarse location",
+        "network prefix"
+      ]
+    },
+    "risk_window": {
+      "state": "clear",
+      "score": 0.0,
+      "hours_remaining": 0.0,
+      "active_precursors": []
+    },
+    "decision_confidence": {
+      "score": 0.845592,
+      "level": "high",
+      "profile_maturity": 0.918382,
+      "data_coverage": 0.75,
+      "scorer_agreement": 0.862956,
+      "reasons": [
+        "The profile, evidence coverage and independent scorers are consistent."
+      ]
+    },
+    "recipient_reputation": {
+      "status": "clear",
+      "score": 0.0,
+      "confirmed_reports": 0,
+      "distinct_accounts": 0,
+      "expires_at": null
+    },
+    "agent_terminal": {
+      "status": "not_applicable",
+      "score": 0.0,
+      "confirmed_reports": 0,
+      "distinct_accounts": 0,
+      "quarantined": false,
+      "expires_at": null
+    },
+    "fraud_sketch_exchange": {
+      "status": "clear",
+      "score": 0.0,
+      "confidence": 0.0,
+      "independent_institutions": 0,
+      "active_reports": 0,
+      "matched_indicators": [],
+      "source_mode": "live",
+      "local_corroboration": false,
+      "action_ceiling": "monitor",
+      "expires_at": null
+    },
+    "recourse_options": [
+      {
+        "action": "review_activity",
+        "description": "Review the recipient and amount in transaction history.",
+        "estimated_clearance": "No interruption",
+        "safe_channel": "bank app or statement"
+      }
+    ],
+    "uncertainty_note": null,
+    "feature_snapshot": {
+      "amount_deviation": 0.056208,
+      "amount_to_median": 0.120787,
+      "balance_drain_ratio": 0.076786,
+      "unusual_hour": 0.0,
+      "new_recipient": 0.0,
+      "recipient_rarity": 0.666667,
+      "recipient_sender_diversity_24h": 0.083333,
+      "recipient_first_time_sender_ratio_24h": 0.0,
+      "recipient_inflow_velocity_1h": 0.0043,
+      "recipient_rapid_cashout_ratio_1h": 0.0,
+      "recipient_network_coverage": 1.0,
+      "recipient_confirmed_fraud_score": 0.0,
+      "recipient_confirmed_accounts": 0.0,
+      "recipient_watchlist_coverage": 1.0,
+      "new_device": 0.0,
+      "device_rarity": 0.0,
+      "new_sim": 1.0,
+      "new_ip_prefix": 0.0,
+      "new_channel": 0.0,
+      "channel_transition_novelty": 1.0,
+      "cross_channel_events_15m": 0.0,
+      "new_channel_enrollment_24h": 0.0,
+      "app_to_ussd_handoff": 0.0,
+      "cross_channel_device_mismatch": 0.0,
+      "velocity_5m": 0.0,
+      "velocity_1h": 0.0,
+      "failed_auth_24h": 0.0,
+      "recovery_signal_72h": 0.0,
+      "account_hazard_score": 0.0,
+      "risk_window_hours_remaining": 0.0,
+      "impossible_travel": 0.0,
+      "interaction_speed_deviation": 0.016502,
+      "typing_cadence_deviation": 0.0,
+      "paste_anomaly": 0.0,
+      "device_handling_deviation": 0.0,
+      "navigation_novelty": 0.0,
+      "day_of_month_deviation": 0.0,
+      "recurring_payment_match": 0.0,
+      "calendar_confidence": 0.5,
+      "call_transfer_overlap": 0.0,
+      "screen_sharing_signal": 0.0,
+      "recipient_edit_anomaly": 0.0,
+      "confirmation_friction": 0.0,
+      "coercion_on_device_score": 0.0,
+      "coercion_evidence_coverage": 0.0,
+      "verified_sim_change": 1.0,
+      "recent_sim_activation": 0.988095,
+      "repeat_sim_change": 0.333333,
+      "imsi_change": 1.0,
+      "iccid_change": 1.0,
+      "sim_type_change": 0.0,
+      "otp_sim_change_proximity": 0.959189,
+      "otp_sim_geo_mismatch": 0.008,
+      "short_previous_sim_tenure": 0.0,
+      "telco_assurance_coverage": 1.0,
+      "evidence_coverage": 0.666667,
+      "history_confidence": 0.918382,
+      "shared_device_allowed": 0.0,
+      "is_ussd": 1.0,
+      "is_transfer": 0.0,
+      "is_withdrawal": 0.0,
+      "is_agent": 0.0,
+      "agent_customer_diversity_1h": 0.0,
+      "agent_recipient_concentration_24h": 0.0,
+      "agent_first_time_recipient_ratio_24h": 0.0,
+      "agent_failed_auth_ratio_1h": 0.0,
+      "agent_value_velocity_1h": 0.0,
+      "agent_location_mismatch": 0.0,
+      "agent_after_hours": 0.0,
+      "agent_terminal_novelty": 0.0,
+      "agent_confirmed_fraud_score": 0.0,
+      "agent_confirmed_accounts": 0.0,
+      "agent_evidence_coverage": 0.0,
+      "fusion_blended_score": 0.05802,
+      "fusion_security_floor": 0.0,
+      "fusion_model_weight": 0.58,
+      "fusion_floor_driven": 0.0,
+      "campaign_risk": 0.0,
+      "fraud_sketch_risk": 0.0,
+      "fraud_sketch_independent_institutions": 0.0,
+      "fraud_sketch_local_corroboration": 0.0,
+      "fraud_sketch_cached": 0.0,
+      "fraud_sketch_pre_exchange_score": 0.05802
+    },
+    "audit_hash": "71130624b7c8f76da07bd10c8b435c12d2475b34de861a4856f186295c77ac7e",
+    "created_at": "2026-09-05T22:27:27.444889Z",
+    "campaign": {
+      "signature": "20f2077f1bff16bce125",
+      "score": 0.0,
+      "distinct_accounts": 1,
+      "stages": [
+        "new_channel",
+        "sim_change"
+      ],
+      "eligible": false
+    },
+    "learning": {
+      "trust_state": "trusted",
+      "eligible_after": null,
+      "profile_epoch": 37
+    },
+    "provenance": {
+      "event_digest": "2fb79708a3a16c8d32baf58b575b07240fe555d715a11d44a2242298fef395db",
+      "feature_digest": "b21ffce7551439f1798bab3482dd1c92143090e85c6d10a3bc2b5e211e8970ec",
+      "model_version": "rf-calibrated-longitudinal-ng-7.0",
+      "policy_version": "policy-1.4.0",
+      "cutoff_at": "2026-08-24T11:20:00+00:00",
+      "replay_digest": "6cf08e3b4b9e9151e9602aaea0fe91ed4fd1da922f10ab4dfa146b7e2fbc2d62"
+    },
+    "transaction_state": "authorized",
+    "resilience": {
+      "mode": "online",
+      "confidence_multiplier": 1.0,
+      "unavailable_sources": [],
+      "evidence_freshness": {
+        "core_banking": "fresh",
+        "telco_gateway": "fresh",
+        "consortium": "fresh",
+        "recipient_graph": "fresh",
+        "agent_integrity": "fresh",
+        "model_runtime": "fresh"
+      },
+      "capsule_id": "cap_9910a2e24c0dca48cc3c",
+      "capsule_valid": true,
+      "capsule_expires_at": "2026-09-06T06:27:26.591918Z",
+      "safety_envelope_applied": false,
+      "offline_reference": null
+    }
+  },
+  "attested_sim_swap": {
+    "decision_id": "dec_e206ceb3ec3a452090301db473b7fb18",
+    "event_id": "demo_attested_sim_swap_attack",
+    "account_id": "aegistwin_demo_customer",
+    "risk_level": "critical",
+    "score": {
+      "model_score": 0.979456,
+      "anomaly_score": 1.0,
+      "fused_score": 0.988084,
+      "profile_confidence": 0.925165,
+      "model_version": "rf-calibrated-longitudinal-ng-7.0"
+    },
+    "policy": {
+      "action": "reversible_hold_and_review",
+      "hold_seconds": 7200,
+      "requires_trusted_confirmation": true,
+      "requires_analyst_review": true,
+      "regret_budget_used": 0,
+      "regret_budget_limit": 3,
+      "budget_consumed_by_decision": true,
+      "budget_override_reason": null,
+      "selected_expected_cost": 1925.42,
+      "action_costs": {
+        "allow": 46479.47,
+        "allow_with_monitoring": 36994.09,
+        "trusted_channel_confirmation": 15180.55,
+        "reversible_settlement_delay": 5702.09,
+        "reversible_hold_and_review": 1925.42
+      },
+      "personalization_reasons": [
+        "USSD confirmation has higher customer effort."
+      ]
+    },
+    "reasons": [
+      {
+        "code": "POPULATION_MODEL_MATCH",
+        "message": "The combination of signals resembles account-takeover patterns.",
+        "contribution": 0.293837
+      },
+      {
+        "code": "CROSS_ACCOUNT_CAMPAIGN_DNA",
+        "message": "The attack sequence matches a recent pattern across distinct accounts.",
+        "contribution": 0.2905
+      },
+      {
+        "code": "TELCO_SIM_SWAP_SIGNATURE",
+        "message": "Attested telco evidence shows a recent identity-changing SIM replacement.",
+        "contribution": 0.14
+      },
+      {
+        "code": "OTP_SIM_GEO_CONFLICT",
+        "message": "An OTP followed the SIM change from a distant location.",
+        "contribution": 0.12
+      },
+      {
+        "code": "DEVICE_SIM_COCHANGE",
+        "message": "A new device and new SIM appeared together.",
+        "contribution": 0.11102
+      },
+      {
+        "code": "AMOUNT_DEVIATION",
+        "message": "Amount differs sharply from this account's normal transaction range.",
+        "contribution": 0.11
+      },
+      {
+        "code": "NEW_SIM",
+        "message": "The SIM identity is new for this account.",
+        "contribution": 0.101768
+      },
+      {
+        "code": "UNUSUAL_BALANCE_DRAIN",
+        "message": "An unusually large transaction would drain most of the balance.",
+        "contribution": 0.09
+      }
+    ],
+    "customer_explanation": "We temporarily paused this transaction because several signals matched account-takeover patterns, a trusted network check found a very recent identity-changing SIM replacement and an OTP followed the SIM change from a distant location; Contact the bank through its official channel or wait for analyst review.",
+    "evidence": {
+      "mode": "ussd_telco_assured",
+      "coverage": 0.888889,
+      "available_signals": [
+        "balance context",
+        "recipient history",
+        "SIM identity",
+        "network prefix",
+        "coarse location",
+        "interaction rhythm",
+        "navigation path",
+        "attested telco SIM lifecycle",
+        "recipient network history"
+      ],
+      "missing_optional_signals": []
+    },
+    "risk_window": {
+      "state": "clear",
+      "score": 0.0,
+      "hours_remaining": 0.0,
+      "active_precursors": []
+    },
+    "decision_confidence": {
+      "score": 0.935763,
+      "level": "high",
+      "profile_maturity": 0.925165,
+      "data_coverage": 0.916667,
+      "scorer_agreement": 0.979456,
+      "reasons": [
+        "The profile, evidence coverage and independent scorers are consistent."
+      ]
+    },
+    "recipient_reputation": {
+      "status": "clear",
+      "score": 0.0,
+      "confirmed_reports": 0,
+      "distinct_accounts": 0,
+      "expires_at": null
+    },
+    "agent_terminal": {
+      "status": "not_applicable",
+      "score": 0.0,
+      "confirmed_reports": 0,
+      "distinct_accounts": 0,
+      "quarantined": false,
+      "expires_at": null
+    },
+    "fraud_sketch_exchange": {
+      "status": "clear",
+      "score": 0.0,
+      "confidence": 0.0,
+      "independent_institutions": 0,
+      "active_reports": 0,
+      "matched_indicators": [],
+      "source_mode": "live",
+      "local_corroboration": true,
+      "action_ceiling": "monitor",
+      "expires_at": null
+    },
+    "recourse_options": [
+      {
+        "action": "review_activity",
+        "description": "Review the recipient and amount in transaction history.",
+        "estimated_clearance": "No interruption",
+        "safe_channel": "bank app or statement"
+      },
+      {
+        "action": "trusted_device_confirmation",
+        "description": "Confirm from a previously registered device after ending any call or screen share.",
+        "estimated_clearance": "Immediate after successful confirmation",
+        "safe_channel": "registered device"
+      },
+      {
+        "action": "official_bank_callback",
+        "description": "Request a callback using the number in the bank's app, website or card.",
+        "estimated_clearance": "After identity verification",
+        "safe_channel": "bank-initiated callback"
+      },
+      {
+        "action": "automatic_review_or_expiry",
+        "description": "Take no action while the reversible safety period completes.",
+        "estimated_clearance": "Within 120 minutes",
+        "safe_channel": "automatic"
+      }
+    ],
+    "uncertainty_note": null,
+    "feature_snapshot": {
+      "amount_deviation": 1.0,
+      "amount_to_median": 1.0,
+      "balance_drain_ratio": 0.923077,
+      "unusual_hour": 0.0,
+      "new_recipient": 1.0,
+      "recipient_rarity": 1.0,
+      "recipient_sender_diversity_24h": 0.083333,
+      "recipient_first_time_sender_ratio_24h": 1.0,
+      "recipient_inflow_velocity_1h": 0.096,
+      "recipient_rapid_cashout_ratio_1h": 0.0,
+      "recipient_network_coverage": 1.0,
+      "recipient_confirmed_fraud_score": 0.0,
+      "recipient_confirmed_accounts": 0.0,
+      "recipient_watchlist_coverage": 1.0,
+      "new_device": 1.0,
+      "device_rarity": 1.0,
+      "new_sim": 1.0,
+      "new_ip_prefix": 1.0,
+      "new_channel": 0.0,
+      "channel_transition_novelty": 0.972222,
+      "cross_channel_events_15m": 0.0,
+      "new_channel_enrollment_24h": 0.0,
+      "app_to_ussd_handoff": 0.0,
+      "cross_channel_device_mismatch": 0.0,
+      "velocity_5m": 0.0,
+      "velocity_1h": 0.066667,
+      "failed_auth_24h": 0.0,
+      "recovery_signal_72h": 0.0,
+      "account_hazard_score": 0.0,
+      "risk_window_hours_remaining": 0.0,
+      "impossible_travel": 0.0,
+      "interaction_speed_deviation": 1.0,
+      "typing_cadence_deviation": 0.0,
+      "paste_anomaly": 0.0,
+      "device_handling_deviation": 0.0,
+      "navigation_novelty": 0.925165,
+      "day_of_month_deviation": 0.0,
+      "recurring_payment_match": 0.0,
+      "calendar_confidence": 0.5,
+      "call_transfer_overlap": 0.0,
+      "screen_sharing_signal": 0.0,
+      "recipient_edit_anomaly": 0.0,
+      "confirmation_friction": 0.0,
+      "coercion_on_device_score": 0.0,
+      "coercion_evidence_coverage": 0.0,
+      "verified_sim_change": 0.0,
+      "recent_sim_activation": 0.991071,
+      "repeat_sim_change": 0.666667,
+      "imsi_change": 1.0,
+      "iccid_change": 1.0,
+      "sim_type_change": 1.0,
+      "otp_sim_change_proximity": 0.967216,
+      "otp_sim_geo_mismatch": 1.0,
+      "short_previous_sim_tenure": 0.0,
+      "telco_assurance_coverage": 1.0,
+      "evidence_coverage": 0.888889,
+      "history_confidence": 0.925165,
+      "shared_device_allowed": 0.0,
+      "is_ussd": 1.0,
+      "is_transfer": 1.0,
+      "is_withdrawal": 0.0,
+      "is_agent": 0.0,
+      "agent_customer_diversity_1h": 0.0,
+      "agent_recipient_concentration_24h": 0.0,
+      "agent_first_time_recipient_ratio_24h": 0.0,
+      "agent_failed_auth_ratio_1h": 0.0,
+      "agent_value_velocity_1h": 0.0,
+      "agent_location_mismatch": 0.0,
+      "agent_after_hours": 0.0,
+      "agent_terminal_novelty": 0.0,
+      "agent_confirmed_fraud_score": 0.0,
+      "agent_confirmed_accounts": 0.0,
+      "agent_evidence_coverage": 0.0,
+      "fusion_blended_score": 0.988084,
+      "fusion_security_floor": 0.84,
+      "fusion_model_weight": 0.58,
+      "fusion_floor_driven": 0.0,
+      "campaign_risk": 0.83,
+      "fraud_sketch_risk": 0.0,
+      "fraud_sketch_independent_institutions": 0.0,
+      "fraud_sketch_local_corroboration": 1.0,
+      "fraud_sketch_cached": 0.0,
+      "fraud_sketch_pre_exchange_score": 0.988084
+    },
+    "audit_hash": "5a586157e75410e894bfb964ef7315cc476b30116452c450a56b90c0c6109d73",
+    "created_at": "2026-09-05T22:27:27.468708Z",
+    "campaign": {
+      "signature": "3c22e1b4c34adbcd177e",
+      "score": 0.83,
+      "distinct_accounts": 1,
+      "stages": [
+        "cashout",
+        "fast_interaction",
+        "identity_cochange",
+        "new_channel",
+        "recipient_change",
+        "sim_change"
+      ],
+      "eligible": true
+    },
+    "learning": {
+      "trust_state": "excluded",
+      "eligible_after": null,
+      "profile_epoch": 38
+    },
+    "provenance": {
+      "event_digest": "aa1dd356ecace8a2f2e7a23f09452d934ea857d5136db7bae17a13e9eac2c199",
+      "feature_digest": "717113ed0ef4470ad8102e7d0f05166e4e77d4ed2706db894500a3bfd39dee02",
+      "model_version": "rf-calibrated-longitudinal-ng-7.0",
+      "policy_version": "policy-1.4.0",
+      "cutoff_at": "2026-08-24T11:30:00+00:00",
+      "replay_digest": "2aab84da766dd9f80de98e85207f55e5a240b403da2d3fa0840418fa3b789180"
+    },
+    "transaction_state": "held",
+    "resilience": {
+      "mode": "online",
+      "confidence_multiplier": 1.0,
+      "unavailable_sources": [],
+      "evidence_freshness": {
+        "core_banking": "fresh",
+        "telco_gateway": "fresh",
+        "consortium": "fresh",
+        "recipient_graph": "fresh",
+        "agent_integrity": "fresh",
+        "model_runtime": "fresh"
+      },
+      "capsule_id": "cap_9910a2e24c0dca48cc3c",
+      "capsule_valid": true,
+      "capsule_expires_at": "2026-09-06T06:27:26.591918Z",
+      "safety_envelope_applied": false,
+      "offline_reference": null
+    }
+  },
+  "coercion_assisted_transfer": {
+    "decision_id": "dec_e10d23f39bea421fbcd09f927e95f322",
+    "event_id": "demo_coercion_assisted_transfer",
+    "account_id": "aegistwin_demo_customer",
+    "risk_level": "high",
+    "score": {
+      "model_score": 0.173915,
+      "anomaly_score": 1.0,
+      "fused_score": 0.7,
+      "profile_confidence": 0.918382,
+      "model_version": "rf-calibrated-longitudinal-ng-7.0"
+    },
+    "policy": {
+      "action": "private_safety_pause",
+      "hold_seconds": 900,
+      "requires_trusted_confirmation": true,
+      "requires_analyst_review": false,
+      "regret_budget_used": 1,
+      "regret_budget_limit": 3,
+      "budget_consumed_by_decision": true,
+      "budget_override_reason": null,
+      "selected_expected_cost": 1468.0,
+      "action_costs": {
+        "allow": 12348.0,
+        "allow_with_monitoring": 9834.0,
+        "trusted_channel_confirmation": 4128.0,
+        "reversible_settlement_delay": 1800.0,
+        "reversible_hold_and_review": 1264.0,
+        "private_safety_pause": 1468.0
+      },
+      "personalization_reasons": [
+        "Standard risk, exposure and friction costs were applied."
+      ]
+    },
+    "reasons": [
+      {
+        "code": "SECURITY_FLOOR_APPLIED",
+        "message": "A named security rule set the minimum risk: COERCION_DURING_CALL.",
+        "contribution": 0.179129
+      },
+      {
+        "code": "CROSS_ACCOUNT_CAMPAIGN_DNA",
+        "message": "The attack sequence matches a recent pattern across distinct accounts.",
+        "contribution": 0.217
+      },
+      {
+        "code": "COERCION_SESSION_SIGNATURE",
+        "message": "Attested session signals suggest the customer may be acting under direction.",
+        "contribution": 0.14
+      },
+      {
+        "code": "AMOUNT_DEVIATION",
+        "message": "Amount differs sharply from this account's normal transaction range.",
+        "contribution": 0.11
+      },
+      {
+        "code": "SCREEN_SHARING_SIGNAL",
+        "message": "A consented trusted device detected screen sharing during the transfer.",
+        "contribution": 0.09
+      },
+      {
+        "code": "NEW_RECIPIENT",
+        "message": "The recipient has not previously been used by this account.",
+        "contribution": 0.073471
+      },
+      {
+        "code": "COERCION_ON_DEVICE_SCORE",
+        "message": "A privacy-preserving on-device safety model detected possible coercion.",
+        "contribution": 0.0728
+      },
+      {
+        "code": "AMOUNT_TO_MEDIAN",
+        "message": "Amount is many times larger than the account's typical transaction.",
+        "contribution": 0.05
+      }
+    ],
+    "customer_explanation": "We privately paused this transaction because the session showed signs that someone may be directing the customer, the amount differed from the account's usual range and the recipient had not been used before; End any call or screen-sharing session and confirm privately through the bank's official channel.",
+    "evidence": {
+      "mode": "app_rich_behaviour",
+      "coverage": 0.916667,
+      "available_signals": [
+        "balance context",
+        "recipient history",
+        "device identity",
+        "SIM identity",
+        "network prefix",
+        "coarse location",
+        "interaction rhythm",
+        "typing cadence",
+        "typed-or-pasted signal",
+        "device handling",
+        "navigation path",
+        "recipient network history",
+        "consented coercion-safety telemetry"
+      ],
+      "missing_optional_signals": [
+        "attested agent-terminal integrity",
+        "attested telco SIM lifecycle"
+      ]
+    },
+    "risk_window": {
+      "state": "clear",
+      "score": 0.0,
+      "hours_remaining": 0.0,
+      "active_precursors": []
+    },
+    "decision_confidence": {
+      "score": 0.738957,
+      "level": "medium",
+      "profile_maturity": 0.918382,
+      "data_coverage": 0.9375,
+      "scorer_agreement": 0.173915,
+      "reasons": [
+        "The population model and transparent scorer disagree."
+      ]
+    },
+    "recipient_reputation": {
+      "status": "clear",
+      "score": 0.0,
+      "confirmed_reports": 0,
+      "distinct_accounts": 0,
+      "expires_at": null
+    },
+    "agent_terminal": {
+      "status": "not_applicable",
+      "score": 0.0,
+      "confirmed_reports": 0,
+      "distinct_accounts": 0,
+      "quarantined": false,
+      "expires_at": null
+    },
+    "fraud_sketch_exchange": {
+      "status": "clear",
+      "score": 0.0,
+      "confidence": 0.0,
+      "independent_institutions": 0,
+      "active_reports": 0,
+      "matched_indicators": [],
+      "source_mode": "live",
+      "local_corroboration": true,
+      "action_ceiling": "monitor",
+      "expires_at": null
+    },
+    "recourse_options": [
+      {
+        "action": "review_activity",
+        "description": "Review the recipient and amount in transaction history.",
+        "estimated_clearance": "No interruption",
+        "safe_channel": "bank app or statement"
+      },
+      {
+        "action": "trusted_device_confirmation",
+        "description": "Confirm from a previously registered device after ending any call or screen share.",
+        "estimated_clearance": "Immediate after successful confirmation",
+        "safe_channel": "registered device"
+      },
+      {
+        "action": "official_bank_callback",
+        "description": "Request a callback using the number in the bank's app, website or card.",
+        "estimated_clearance": "After identity verification",
+        "safe_channel": "bank-initiated callback"
+      },
+      {
+        "action": "automatic_review_or_expiry",
+        "description": "Take no action while the reversible safety period completes.",
+        "estimated_clearance": "Within 15 minutes",
+        "safe_channel": "automatic"
+      }
+    ],
+    "uncertainty_note": null,
+    "feature_snapshot": {
+      "amount_deviation": 1.0,
+      "amount_to_median": 1.0,
+      "balance_drain_ratio": 0.346154,
+      "unusual_hour": 0.0,
+      "new_recipient": 1.0,
+      "recipient_rarity": 1.0,
+      "recipient_sender_diversity_24h": 0.083333,
+      "recipient_first_time_sender_ratio_24h": 1.0,
+      "recipient_inflow_velocity_1h": 0.036,
+      "recipient_rapid_cashout_ratio_1h": 0.0,
+      "recipient_network_coverage": 1.0,
+      "recipient_confirmed_fraud_score": 0.0,
+      "recipient_confirmed_accounts": 0.0,
+      "recipient_watchlist_coverage": 1.0,
+      "new_device": 0.0,
+      "device_rarity": 0.0,
+      "new_sim": 0.0,
+      "new_ip_prefix": 0.0,
+      "new_channel": 0.0,
+      "channel_transition_novelty": 0.514286,
+      "cross_channel_events_15m": 0.0,
+      "new_channel_enrollment_24h": 0.0,
+      "app_to_ussd_handoff": 0.0,
+      "cross_channel_device_mismatch": 0.0,
+      "velocity_5m": 0.0,
+      "velocity_1h": 0.0,
+      "failed_auth_24h": 0.0,
+      "recovery_signal_72h": 0.0,
+      "account_hazard_score": 0.0,
+      "risk_window_hours_remaining": 0.0,
+      "impossible_travel": 0.0,
+      "interaction_speed_deviation": 1.0,
+      "typing_cadence_deviation": 0.0,
+      "paste_anomaly": 0.0,
+      "device_handling_deviation": 0.0,
+      "navigation_novelty": 0.0,
+      "day_of_month_deviation": 0.0,
+      "recurring_payment_match": 0.0,
+      "calendar_confidence": 0.5,
+      "call_transfer_overlap": 1.0,
+      "screen_sharing_signal": 1.0,
+      "recipient_edit_anomaly": 1.0,
+      "confirmation_friction": 1.0,
+      "coercion_on_device_score": 0.91,
+      "coercion_evidence_coverage": 1.0,
+      "verified_sim_change": 0.0,
+      "recent_sim_activation": 0.0,
+      "repeat_sim_change": 0.0,
+      "imsi_change": 0.0,
+      "iccid_change": 0.0,
+      "sim_type_change": 0.0,
+      "otp_sim_change_proximity": 0.0,
+      "otp_sim_geo_mismatch": 0.0,
+      "short_previous_sim_tenure": 0.0,
+      "telco_assurance_coverage": 0.0,
+      "evidence_coverage": 0.916667,
+      "history_confidence": 0.918382,
+      "shared_device_allowed": 0.0,
+      "is_ussd": 0.0,
+      "is_transfer": 1.0,
+      "is_withdrawal": 0.0,
+      "is_agent": 0.0,
+      "agent_customer_diversity_1h": 0.0,
+      "agent_recipient_concentration_24h": 0.0,
+      "agent_first_time_recipient_ratio_24h": 0.0,
+      "agent_failed_auth_ratio_1h": 0.0,
+      "agent_value_velocity_1h": 0.0,
+      "agent_location_mismatch": 0.0,
+      "agent_after_hours": 0.0,
+      "agent_terminal_novelty": 0.0,
+      "agent_confirmed_fraud_score": 0.0,
+      "agent_confirmed_accounts": 0.0,
+      "agent_evidence_coverage": 0.0,
+      "fusion_blended_score": 0.520871,
+      "fusion_security_floor": 0.7,
+      "fusion_model_weight": 0.58,
+      "fusion_floor_driven": 1.0,
+      "campaign_risk": 0.62,
+      "fraud_sketch_risk": 0.0,
+      "fraud_sketch_independent_institutions": 0.0,
+      "fraud_sketch_local_corroboration": 1.0,
+      "fraud_sketch_cached": 0.0,
+      "fraud_sketch_pre_exchange_score": 0.7
+    },
+    "audit_hash": "38cd8fd6e6c7e04a7bc5aa44227c5f96c178b4966f5b6568e18700860b920f47",
+    "created_at": "2026-09-05T22:27:27.485596Z",
+    "campaign": {
+      "signature": "8165e43f9c1e53141857",
+      "score": 0.62,
+      "distinct_accounts": 1,
+      "stages": [
+        "fast_interaction",
+        "new_channel",
+        "recipient_change"
+      ],
+      "eligible": true
+    },
+    "learning": {
+      "trust_state": "excluded",
+      "eligible_after": null,
+      "profile_epoch": 37
+    },
+    "provenance": {
+      "event_digest": "53e7f694b290be39d2ee71fa4af81a4ed4fc85a95aab27944c2a2b507948ba92",
+      "feature_digest": "9101354f2e1b96cd0060fa1cf142547ba3147e2ccc25e977cdc3f7023a3eb9d7",
+      "model_version": "rf-calibrated-longitudinal-ng-7.0",
+      "policy_version": "policy-1.4.0",
+      "cutoff_at": "2026-08-24T11:10:00+00:00",
+      "replay_digest": "9b95c5ee4484394db9c2f96d6185109c6da42eb5647604ac8f8d60dc5b1f7f2c"
+    },
+    "transaction_state": "held",
+    "resilience": {
+      "mode": "online",
+      "confidence_multiplier": 1.0,
+      "unavailable_sources": [],
+      "evidence_freshness": {
+        "core_banking": "fresh",
+        "telco_gateway": "fresh",
+        "consortium": "fresh",
+        "recipient_graph": "fresh",
+        "agent_integrity": "fresh",
+        "model_runtime": "fresh"
+      },
+      "capsule_id": "cap_9910a2e24c0dca48cc3c",
+      "capsule_valid": true,
+      "capsule_expires_at": "2026-09-06T06:27:26.591918Z",
+      "safety_envelope_applied": false,
+      "offline_reference": null
+    }
+  },
+  "audit_verification": {
+    "valid": true,
+    "entries_checked": 40,
+    "first_invalid_sequence": null,
+    "head_hash": "38cd8fd6e6c7e04a7bc5aa44227c5f96c178b4966f5b6568e18700860b920f47"
+  },
+  "evaluation": {
+    "generated_at": "2026-09-05T21:47:44.435347+00:00",
+    "model_version": "rf-calibrated-longitudinal-ng-7.0",
+    "model_artifact_sha256": "ec9eef33a16cf415c6f57969f2b97e5afee2900efaaf3ed0b86013a3d64a5156",
+    "training_data_sha256": "321ef953e3360c809305249d4bd90975ed64de5c790590c5b098a4c0ffd57d15",
+    "test_samples": 5400,
+    "takeover_samples": 44,
+    "synthetic_prevalence": 0.008148148148148147,
+    "fused_roc_auc": 0.961089,
+    "fused_pr_auc": 0.921623,
+    "model_only_roc_auc": 0.972855,
+    "model_only_pr_auc": 0.923085,
+    "model_calibration": {
+      "brier_score": 0.001041,
+      "expected_calibration_error": 0.000487
+    },
+    "score_separation": {
+      "model_only": {
+        "normal_max": 0.915966,
+        "takeover_min": 0.000429,
+        "perfect_ranking_gap": false
+      },
+      "fused": {
+        "normal_max": 0.907143,
+        "takeover_min": 0.038895,
+        "perfect_ranking_gap": false
+      }
+    },
+    "uncertainty": {
+      "method": "stratified percentile bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "confidence": 0.95,
+      "operating_points": {
+        "Monitor or stronger": {
+          "threshold": 0.3,
+          "method": "stratified percentile bootstrap",
+          "resamples": 2000,
+          "confidence": 0.95,
+          "seed": 2026,
+          "metrics": {
+            "recall": {
+              "point": 0.931818,
+              "ci_lower": 0.840909,
+              "ci_upper": 1.0,
+              "wilson": [
+                0.817747,
+                0.976541
+              ]
+            },
+            "precision": {
+              "point": 0.854167,
+              "ci_lower": 0.759981,
+              "ci_upper": 0.952381
+            },
+            "false_positive_rate": {
+              "point": 0.001307,
+              "ci_lower": 0.000373,
+              "ci_upper": 0.002427,
+              "wilson": [
+                0.000633,
+                0.002696
+              ]
+            },
+            "roc_auc": {
+              "point": 0.961089,
+              "ci_lower": 0.913516,
+              "ci_upper": 0.999919
+            }
+          }
+        },
+        "Customer confirmation or stronger": {
+          "threshold": 0.48,
+          "method": "stratified percentile bootstrap",
+          "resamples": 2000,
+          "confidence": 0.95,
+          "seed": 2026,
+          "metrics": {
+            "recall": {
+              "point": 0.909091,
+              "ci_lower": 0.818182,
+              "ci_upper": 0.977273,
+              "wilson": [
+                0.788405,
+                0.964078
+              ]
+            },
+            "precision": {
+              "point": 0.952381,
+              "ci_lower": 0.888889,
+              "ci_upper": 1.0
+            },
+            "false_positive_rate": {
+              "point": 0.000373,
+              "ci_lower": 0.0,
+              "ci_upper": 0.000934,
+              "wilson": [
+                0.000102,
+                0.001361
+              ]
+            },
+            "roc_auc": {
+              "point": 0.961089,
+              "ci_lower": 0.913516,
+              "ci_upper": 0.999919
+            }
+          }
+        },
+        "Settlement delay or hold": {
+          "threshold": 0.66,
+          "method": "stratified percentile bootstrap",
+          "resamples": 2000,
+          "confidence": 0.95,
+          "seed": 2026,
+          "metrics": {
+            "recall": {
+              "point": 0.909091,
+              "ci_lower": 0.818182,
+              "ci_upper": 0.977273,
+              "wilson": [
+                0.788405,
+                0.964078
+              ]
+            },
+            "precision": {
+              "point": 0.952381,
+              "ci_lower": 0.888889,
+              "ci_upper": 1.0
+            },
+            "false_positive_rate": {
+              "point": 0.000373,
+              "ci_lower": 0.0,
+              "ci_upper": 0.000934,
+              "wilson": [
+                0.000102,
+                0.001361
+              ]
+            },
+            "roc_auc": {
+              "point": 0.961089,
+              "ci_lower": 0.913516,
+              "ci_upper": 0.999919
+            }
+          }
+        },
+        "Two-hour hold and review": {
+          "threshold": 0.84,
+          "method": "stratified percentile bootstrap",
+          "resamples": 2000,
+          "confidence": 0.95,
+          "seed": 2026,
+          "metrics": {
+            "recall": {
+              "point": 0.795455,
+              "ci_lower": 0.659091,
+              "ci_upper": 0.909091,
+              "wilson": [
+                0.654991,
+                0.888469
+              ]
+            },
+            "precision": {
+              "point": 0.972222,
+              "ci_lower": 0.911765,
+              "ci_upper": 1.0
+            },
+            "false_positive_rate": {
+              "point": 0.000187,
+              "ci_lower": 0.0,
+              "ci_upper": 0.00056,
+              "wilson": [
+                3.3e-05,
+                0.001057
+              ]
+            },
+            "roc_auc": {
+              "point": 0.961089,
+              "ci_lower": 0.913516,
+              "ci_upper": 0.999919
+            }
+          }
+        }
+      },
+      "fused_roc_auc": {
+        "point": 0.961089,
+        "ci_lower": 0.913516,
+        "ci_upper": 0.999919
+      },
+      "model_only_roc_auc": {
+        "point": 0.972855,
+        "ci_lower": 0.928673,
+        "ci_upper": 0.999894
+      }
+    },
+    "component_ablation": {
+      "model_only": {
+        "recall": 0.909091,
+        "precision": 0.952381,
+        "false_positive_rate": 0.000373,
+        "true_positives": 40,
+        "false_positives": 2,
+        "roc_auc": 0.972855
+      },
+      "anomaly_only": {
+        "recall": 0.931818,
+        "precision": 0.267974,
+        "false_positive_rate": 0.020911,
+        "true_positives": 41,
+        "false_positives": 112,
+        "roc_auc": 0.960681
+      },
+      "blend_without_floors": {
+        "recall": 0.909091,
+        "precision": 0.952381,
+        "false_positive_rate": 0.000373,
+        "true_positives": 40,
+        "false_positives": 2,
+        "roc_auc": 0.961089
+      },
+      "floors_only": {
+        "recall": 0.727273,
+        "precision": 1.0,
+        "false_positive_rate": 0.0,
+        "true_positives": 32,
+        "false_positives": 0,
+        "roc_auc": 0.897727
+      },
+      "fused_live": {
+        "recall": 0.909091,
+        "precision": 0.952381,
+        "false_positive_rate": 0.000373,
+        "true_positives": 40,
+        "false_positives": 2,
+        "roc_auc": 0.961089
+      }
+    },
+    "detection_attribution": {
+      "true_positives": {
+        "blend_alone": 8,
+        "floor_required": 0,
+        "both": 32,
+        "total": 40,
+        "floor_required_share": 0.0,
+        "blend_alone_share": 0.2
+      },
+      "false_positives": {
+        "blend_alone": 2,
+        "floor_required": 0,
+        "both": 0,
+        "total": 2
+      },
+      "floor_codes_among_true_positives": {
+        "RECIPIENT_SINGLE_REPORT": 23,
+        "RECIPIENT_MULTI_ACCOUNT": 20,
+        "DEVICE_SIM_COCHANGE": 15,
+        "MULE_FAN_IN_CASHOUT": 10,
+        "ATTESTED_SIM_IDENTITY_CHANGE": 7,
+        "OTP_AFTER_SIM_CHANGE": 7,
+        "RECOVERY_THEN_NEW_RECIPIENT": 7,
+        "FAILED_AUTH_NEW_DEVICE": 6,
+        "CROSS_CHANNEL_SEQUENCE": 5,
+        "COERCION_DURING_CALL": 2
+      },
+      "floor_codes_among_false_positives": {}
+    },
+    "transfer_only": {
+      "samples": 1276,
+      "takeover_samples": 44,
+      "model_only_roc_auc": 0.968169,
+      "fused_roc_auc": 0.957257,
+      "customer_confirmation": {
+        "threshold": 0.48,
+        "recall": 0.909091,
+        "precision": 0.952381,
+        "false_positive_rate": 0.001623,
+        "true_positives": 40,
+        "false_positives": 2,
+        "false_negatives": 4,
+        "normal_events": 1232,
+        "takeover_events": 44
+      }
+    },
+    "chronological_split": {
+      "development_events": 24600,
+      "test_events": 5400,
+      "development_accounts": 750,
+      "test_accounts": 750,
+      "overlapping_accounts": 750,
+      "purpose": "within-customer future-event evaluation for personalised behavioural twins"
+    },
+    "operating_points": {
+      "Monitor or stronger": {
+        "threshold": 0.3,
+        "recall": 0.931818,
+        "precision": 0.854167,
+        "false_positive_rate": 0.001307,
+        "true_positives": 41,
+        "false_positives": 7,
+        "false_negatives": 3,
+        "normal_events": 5356,
+        "takeover_events": 44
+      },
+      "Customer confirmation or stronger": {
+        "threshold": 0.48,
+        "recall": 0.909091,
+        "precision": 0.952381,
+        "false_positive_rate": 0.000373,
+        "true_positives": 40,
+        "false_positives": 2,
+        "false_negatives": 4,
+        "normal_events": 5356,
+        "takeover_events": 44
+      },
+      "Settlement delay or hold": {
+        "threshold": 0.66,
+        "recall": 0.909091,
+        "precision": 0.952381,
+        "false_positive_rate": 0.000373,
+        "true_positives": 40,
+        "false_positives": 2,
+        "false_negatives": 4,
+        "normal_events": 5356,
+        "takeover_events": 44
+      },
+      "Two-hour hold and review": {
+        "threshold": 0.84,
+        "recall": 0.795455,
+        "precision": 0.972222,
+        "false_positive_rate": 0.000187,
+        "true_positives": 35,
+        "false_positives": 1,
+        "false_negatives": 9,
+        "normal_events": 5356,
+        "takeover_events": 44
+      }
+    },
+    "prevalence_stress": {
+      "0.100%": {
+        "projected_precision": 0.709275,
+        "projected_alerts_per_10000": 12.82,
+        "projected_false_alerts_per_10000": 3.73
+      },
+      "0.500%": {
+        "projected_precision": 0.924514,
+        "projected_alerts_per_10000": 49.17,
+        "projected_false_alerts_per_10000": 3.71
+      },
+      "1.000%": {
+        "projected_precision": 0.960966,
+        "projected_alerts_per_10000": 94.6,
+        "projected_false_alerts_per_10000": 3.69
+      }
+    },
+    "channel_cohorts": {
+      "agent": {
+        "samples": 734,
+        "takeovers": 8,
+        "recall": 0.875,
+        "false_positive_rate": 0.002755
+      },
+      "app": {
+        "samples": 2346,
+        "takeovers": 15,
+        "recall": 0.866667,
+        "false_positive_rate": 0.0
+      },
+      "ussd": {
+        "samples": 2320,
+        "takeovers": 21,
+        "recall": 0.952381,
+        "false_positive_rate": 0.0
+      }
+    },
+    "scenario_cohorts": {
+      "agent_social_engineering": {
+        "samples": 7,
+        "takeovers": 7,
+        "recall": 1.0,
+        "false_positive_rate": null
+      },
+      "busy_agent_merchant_payment": {
+        "samples": 60,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "coercion_assisted_transfer": {
+        "samples": 4,
+        "takeovers": 4,
+        "recall": 1.0,
+        "false_positive_rate": null
+      },
+      "community_collection_payment": {
+        "samples": 56,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "credential_stuffing": {
+        "samples": 6,
+        "takeovers": 6,
+        "recall": 1.0,
+        "false_positive_rate": null
+      },
+      "cross_channel_takeover": {
+        "samples": 5,
+        "takeovers": 5,
+        "recall": 1.0,
+        "false_positive_rate": null
+      },
+      "emergency_transfer": {
+        "samples": 62,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.032258
+      },
+      "legitimate": {
+        "samples": 4697,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "legitimate_failed_login_retry": {
+        "samples": 46,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "legitimate_new_phone": {
+        "samples": 53,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "legitimate_post_recovery": {
+        "samples": 54,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "legitimate_travel": {
+        "samples": 49,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "low_and_slow": {
+        "samples": 3,
+        "takeovers": 3,
+        "recall": 0.0,
+        "false_positive_rate": null
+      },
+      "payday_spending": {
+        "samples": 60,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "popular_merchant_payment": {
+        "samples": 57,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "recovery_abuse": {
+        "samples": 8,
+        "takeovers": 8,
+        "recall": 1.0,
+        "false_positive_rate": null
+      },
+      "recurring_monthly_payment": {
+        "samples": 51,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "remote_control_ussd": {
+        "samples": 4,
+        "takeovers": 4,
+        "recall": 0.75,
+        "false_positive_rate": null
+      },
+      "shared_family_phone": {
+        "samples": 67,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      },
+      "sim_swap_drain": {
+        "samples": 7,
+        "takeovers": 7,
+        "recall": 1.0,
+        "false_positive_rate": null
+      },
+      "verified_sim_replacement": {
+        "samples": 44,
+        "takeovers": 0,
+        "recall": null,
+        "false_positive_rate": 0.0
+      }
+    },
+    "hard_negative_intervention": {
+      "busy_agent_merchant_payment": {
+        "events": 60,
+        "intervention_rate": 0.0
+      },
+      "community_collection_payment": {
+        "events": 56,
+        "intervention_rate": 0.0
+      },
+      "emergency_transfer": {
+        "events": 62,
+        "intervention_rate": 0.032258
+      },
+      "legitimate_failed_login_retry": {
+        "events": 46,
+        "intervention_rate": 0.0
+      },
+      "legitimate_new_phone": {
+        "events": 53,
+        "intervention_rate": 0.0
+      },
+      "legitimate_post_recovery": {
+        "events": 54,
+        "intervention_rate": 0.0
+      },
+      "legitimate_travel": {
+        "events": 49,
+        "intervention_rate": 0.0
+      },
+      "payday_spending": {
+        "events": 60,
+        "intervention_rate": 0.0
+      },
+      "popular_merchant_payment": {
+        "events": 57,
+        "intervention_rate": 0.0
+      },
+      "recurring_monthly_payment": {
+        "events": 51,
+        "intervention_rate": 0.0
+      },
+      "shared_family_phone": {
+        "events": 67,
+        "intervention_rate": 0.0
+      },
+      "verified_sim_replacement": {
+        "events": 44,
+        "intervention_rate": 0.0
+      }
+    }
+  },
+  "latency": {
+    "scope": "warm sequential FastAPI request including feature retrieval, model, policy, persistence, and audit",
+    "requests": 100,
+    "history_events_at_start": 30,
+    "p50_ms": 32.516,
+    "p95_ms": 45.804,
+    "p99_ms": 183.453,
+    "max_ms": 204.111,
+    "under_one_second": true,
+    "production_caveat": "Run a distributed load test against the production feature store before launch."
+  },
+  "adaptive_redteam": {
+    "generated_at": "2026-08-30T05:51:02.665034+00:00",
+    "model_version": "rf-calibrated-longitudinal-ng-7.0",
+    "search_space": 2688,
+    "objective": "maximize transferable amount below 0.48, then minimize changed behavioural signals",
+    "evasion_found": true,
+    "obvious_attack": {
+      "score": 0.959204,
+      "action": "reversible_hold_and_review",
+      "model_score": 0.929662,
+      "anomaly_score": 1.0,
+      "reasons": [
+        "DEVICE_SIM_COCHANGE",
+        "AMOUNT_DEVIATION",
+        "NEW_SIM",
+        "UNUSUAL_BALANCE_DRAIN",
+        "BALANCE_DRAIN_RATIO",
+        "NEW_RECIPIENT",
+        "NEW_DEVICE",
+        "AMOUNT_TO_MEDIAN"
+      ],
+      "features": {
+        "amount_deviation": 1.0,
+        "amount_to_median": 1.0,
+        "balance_drain_ratio": 0.923077,
+        "unusual_hour": 0.75,
+        "new_recipient": 1.0,
+        "recipient_rarity": 1.0,
+        "recipient_sender_diversity_24h": 0.0,
+        "recipient_first_time_sender_ratio_24h": 0.0,
+        "recipient_inflow_velocity_1h": 0.096,
+        "recipient_rapid_cashout_ratio_1h": 0.0,
+        "recipient_network_coverage": 0.0,
+        "recipient_confirmed_fraud_score": 0.0,
+        "recipient_confirmed_accounts": 0.0,
+        "recipient_watchlist_coverage": 0.0,
+        "new_device": 1.0,
+        "device_rarity": 1.0,
+        "new_sim": 1.0,
+        "new_ip_prefix": 1.0,
+        "new_channel": 1.0,
+        "channel_transition_novelty": 1.0,
+        "cross_channel_events_15m": 0.0,
+        "new_channel_enrollment_24h": 0.0,
+        "app_to_ussd_handoff": 0.0,
+        "cross_channel_device_mismatch": 0.0,
+        "velocity_5m": 0.0,
+        "velocity_1h": 0.0,
+        "failed_auth_24h": 0.0,
+        "recovery_signal_72h": 0.0,
+        "account_hazard_score": 0.0,
+        "risk_window_hours_remaining": 0.0,
+        "impossible_travel": 0.0,
+        "interaction_speed_deviation": 0.0,
+        "typing_cadence_deviation": 0.0,
+        "paste_anomaly": 0.918382,
+        "device_handling_deviation": 0.0,
+        "navigation_novelty": 0.918382,
+        "day_of_month_deviation": 0.0,
+        "recurring_payment_match": 0.0,
+        "calendar_confidence": 0.5,
+        "call_transfer_overlap": 0.0,
+        "screen_sharing_signal": 0.0,
+        "recipient_edit_anomaly": 0.0,
+        "confirmation_friction": 0.0,
+        "coercion_on_device_score": 0.0,
+        "coercion_evidence_coverage": 0.0,
+        "verified_sim_change": 0.0,
+        "recent_sim_activation": 0.0,
+        "repeat_sim_change": 0.0,
+        "imsi_change": 0.0,
+        "iccid_change": 0.0,
+        "sim_type_change": 0.0,
+        "otp_sim_change_proximity": 0.0,
+        "otp_sim_geo_mismatch": 0.0,
+        "short_previous_sim_tenure": 0.0,
+        "telco_assurance_coverage": 0.0,
+        "evidence_coverage": 0.777778,
+        "history_confidence": 0.918382,
+        "shared_device_allowed": 0.0,
+        "is_ussd": 1.0,
+        "is_transfer": 1.0,
+        "is_withdrawal": 0.0,
+        "is_agent": 0.0,
+        "agent_customer_diversity_1h": 0.0,
+        "agent_recipient_concentration_24h": 0.0,
+        "agent_first_time_recipient_ratio_24h": 0.0,
+        "agent_failed_auth_ratio_1h": 0.0,
+        "agent_value_velocity_1h": 0.0,
+        "agent_location_mismatch": 0.0,
+        "agent_after_hours": 0.0,
+        "agent_terminal_novelty": 0.0,
+        "agent_confirmed_fraud_score": 0.0,
+        "agent_confirmed_accounts": 0.0,
+        "agent_evidence_coverage": 0.0
+      },
+      "uncertainty_note": null
+    },
+    "best_evasion": {
+      "config": {
+        "amount": 48000,
+        "reuse_device": true,
+        "reuse_sim": true,
+        "reuse_ip": true,
+        "typed": true,
+        "familiar_path": true,
+        "channel": "app",
+        "interaction_ms": 20000,
+        "hour_shift": 0
+      },
+      "changed_signals": 1,
+      "outcome": {
+        "score": 0.292697,
+        "action": "allow_with_monitoring",
+        "model_score": 0.06226335281827844,
+        "anomaly_score": 0.610915,
+        "reasons": [
+          "AMOUNT_DEVIATION",
+          "UNUSUAL_BALANCE_DRAIN",
+          "BALANCE_DRAIN_RATIO",
+          "NEW_RECIPIENT",
+          "AMOUNT_TO_MEDIAN",
+          "RECIPIENT_RARITY"
+        ],
+        "features": {
+          "amount_deviation": 1.0,
+          "amount_to_median": 1.0,
+          "balance_drain_ratio": 0.923077,
+          "unusual_hour": 0.0,
+          "new_recipient": 1.0,
+          "recipient_rarity": 1.0,
+          "recipient_sender_diversity_24h": 0.0,
+          "recipient_first_time_sender_ratio_24h": 0.0,
+          "recipient_inflow_velocity_1h": 0.096,
+          "recipient_rapid_cashout_ratio_1h": 0.0,
+          "recipient_network_coverage": 0.0,
+          "recipient_confirmed_fraud_score": 0.0,
+          "recipient_confirmed_accounts": 0.0,
+          "recipient_watchlist_coverage": 0.0,
+          "new_device": 0.0,
+          "device_rarity": 0.0,
+          "new_sim": 0.0,
+          "new_ip_prefix": 0.0,
+          "new_channel": 0.0,
+          "channel_transition_novelty": 0.0,
+          "cross_channel_events_15m": 0.0,
+          "new_channel_enrollment_24h": 0.0,
+          "app_to_ussd_handoff": 0.0,
+          "cross_channel_device_mismatch": 0.0,
+          "velocity_5m": 0.0,
+          "velocity_1h": 0.0,
+          "failed_auth_24h": 0.0,
+          "recovery_signal_72h": 0.0,
+          "account_hazard_score": 0.0,
+          "risk_window_hours_remaining": 0.0,
+          "impossible_travel": 0.0,
+          "interaction_speed_deviation": 0.0,
+          "typing_cadence_deviation": 0.0,
+          "paste_anomaly": 0.0,
+          "device_handling_deviation": 0.0,
+          "navigation_novelty": 0.0,
+          "day_of_month_deviation": 0.0,
+          "recurring_payment_match": 0.0,
+          "calendar_confidence": 0.5,
+          "call_transfer_overlap": 0.0,
+          "screen_sharing_signal": 0.0,
+          "recipient_edit_anomaly": 0.0,
+          "confirmation_friction": 0.0,
+          "coercion_on_device_score": 0.0,
+          "coercion_evidence_coverage": 0.0,
+          "verified_sim_change": 0.0,
+          "recent_sim_activation": 0.0,
+          "repeat_sim_change": 0.0,
+          "imsi_change": 0.0,
+          "iccid_change": 0.0,
+          "sim_type_change": 0.0,
+          "otp_sim_change_proximity": 0.0,
+          "otp_sim_geo_mismatch": 0.0,
+          "short_previous_sim_tenure": 0.0,
+          "telco_assurance_coverage": 0.0,
+          "evidence_coverage": 0.833333,
+          "history_confidence": 0.918382,
+          "shared_device_allowed": 0.0,
+          "is_ussd": 0.0,
+          "is_transfer": 1.0,
+          "is_withdrawal": 0.0,
+          "is_agent": 0.0,
+          "agent_customer_diversity_1h": 0.0,
+          "agent_recipient_concentration_24h": 0.0,
+          "agent_first_time_recipient_ratio_24h": 0.0,
+          "agent_failed_auth_ratio_1h": 0.0,
+          "agent_value_velocity_1h": 0.0,
+          "agent_location_mismatch": 0.0,
+          "agent_after_hours": 0.0,
+          "agent_terminal_novelty": 0.0,
+          "agent_confirmed_fraud_score": 0.0,
+          "agent_confirmed_accounts": 0.0,
+          "agent_evidence_coverage": 0.0
+        },
+        "uncertainty_note": null
+      }
+    },
+    "recipient_graph_mitigation": {
+      "score": 0.76,
+      "action": "reversible_settlement_delay",
+      "model_score": 0.153336,
+      "anomaly_score": 1.0,
+      "reasons": [
+        "MULE_COLLECTION_SIGNATURE",
+        "AMOUNT_DEVIATION",
+        "UNUSUAL_BALANCE_DRAIN",
+        "BALANCE_DRAIN_RATIO",
+        "RECIPIENT_RAPID_CASHOUT_RATIO_1H",
+        "NEW_RECIPIENT",
+        "RECIPIENT_SENDER_DIVERSITY_24H",
+        "AMOUNT_TO_MEDIAN"
+      ],
+      "features": {
+        "amount_deviation": 1.0,
+        "amount_to_median": 1.0,
+        "balance_drain_ratio": 0.923077,
+        "unusual_hour": 0.0,
+        "new_recipient": 1.0,
+        "recipient_rarity": 1.0,
+        "recipient_sender_diversity_24h": 0.75,
+        "recipient_first_time_sender_ratio_24h": 0.89,
+        "recipient_inflow_velocity_1h": 0.816,
+        "recipient_rapid_cashout_ratio_1h": 0.875,
+        "recipient_network_coverage": 1.0,
+        "recipient_confirmed_fraud_score": 0.0,
+        "recipient_confirmed_accounts": 0.0,
+        "recipient_watchlist_coverage": 0.0,
+        "new_device": 0.0,
+        "device_rarity": 0.0,
+        "new_sim": 0.0,
+        "new_ip_prefix": 0.0,
+        "new_channel": 0.0,
+        "channel_transition_novelty": 0.0,
+        "cross_channel_events_15m": 0.0,
+        "new_channel_enrollment_24h": 0.0,
+        "app_to_ussd_handoff": 0.0,
+        "cross_channel_device_mismatch": 0.0,
+        "velocity_5m": 0.0,
+        "velocity_1h": 0.0,
+        "failed_auth_24h": 0.0,
+        "recovery_signal_72h": 0.0,
+        "account_hazard_score": 0.0,
+        "risk_window_hours_remaining": 0.0,
+        "impossible_travel": 0.0,
+        "interaction_speed_deviation": 0.0,
+        "typing_cadence_deviation": 0.0,
+        "paste_anomaly": 0.0,
+        "device_handling_deviation": 0.0,
+        "navigation_novelty": 0.0,
+        "day_of_month_deviation": 0.0,
+        "recurring_payment_match": 0.0,
+        "calendar_confidence": 0.5,
+        "call_transfer_overlap": 0.0,
+        "screen_sharing_signal": 0.0,
+        "recipient_edit_anomaly": 0.0,
+        "confirmation_friction": 0.0,
+        "coercion_on_device_score": 0.0,
+        "coercion_evidence_coverage": 0.0,
+        "verified_sim_change": 0.0,
+        "recent_sim_activation": 0.0,
+        "repeat_sim_change": 0.0,
+        "imsi_change": 0.0,
+        "iccid_change": 0.0,
+        "sim_type_change": 0.0,
+        "otp_sim_change_proximity": 0.0,
+        "otp_sim_geo_mismatch": 0.0,
+        "short_previous_sim_tenure": 0.0,
+        "telco_assurance_coverage": 0.0,
+        "evidence_coverage": 0.833333,
+        "history_confidence": 0.918382,
+        "shared_device_allowed": 0.0,
+        "is_ussd": 0.0,
+        "is_transfer": 1.0,
+        "is_withdrawal": 0.0,
+        "is_agent": 0.0,
+        "agent_customer_diversity_1h": 0.0,
+        "agent_recipient_concentration_24h": 0.0,
+        "agent_first_time_recipient_ratio_24h": 0.0,
+        "agent_failed_auth_ratio_1h": 0.0,
+        "agent_value_velocity_1h": 0.0,
+        "agent_location_mismatch": 0.0,
+        "agent_after_hours": 0.0,
+        "agent_terminal_novelty": 0.0,
+        "agent_confirmed_fraud_score": 0.0,
+        "agent_confirmed_accounts": 0.0,
+        "agent_evidence_coverage": 0.0
+      },
+      "uncertainty_note": null
+    },
+    "graph_plus_risk_window_mitigation": {
+      "score": 0.78,
+      "action": "reversible_settlement_delay",
+      "model_score": 0.377287,
+      "anomaly_score": 1.0,
+      "reasons": [
+        "MULE_COLLECTION_SIGNATURE",
+        "RECOVERY_THEN_NEW_RECIPIENT",
+        "AMOUNT_DEVIATION",
+        "RECOVERY_SIGNAL_72H",
+        "ACCOUNT_RISK_WINDOW",
+        "UNUSUAL_BALANCE_DRAIN",
+        "BALANCE_DRAIN_RATIO",
+        "RECIPIENT_RAPID_CASHOUT_RATIO_1H"
+      ],
+      "features": {
+        "amount_deviation": 1.0,
+        "amount_to_median": 1.0,
+        "balance_drain_ratio": 0.923077,
+        "unusual_hour": 0.0,
+        "new_recipient": 1.0,
+        "recipient_rarity": 1.0,
+        "recipient_sender_diversity_24h": 0.75,
+        "recipient_first_time_sender_ratio_24h": 0.89,
+        "recipient_inflow_velocity_1h": 0.816,
+        "recipient_rapid_cashout_ratio_1h": 0.875,
+        "recipient_network_coverage": 1.0,
+        "recipient_confirmed_fraud_score": 0.0,
+        "recipient_confirmed_accounts": 0.0,
+        "recipient_watchlist_coverage": 0.0,
+        "new_device": 0.0,
+        "device_rarity": 0.0,
+        "new_sim": 0.0,
+        "new_ip_prefix": 0.0,
+        "new_channel": 0.0,
+        "channel_transition_novelty": 0.0,
+        "cross_channel_events_15m": 0.0,
+        "new_channel_enrollment_24h": 0.0,
+        "app_to_ussd_handoff": 0.0,
+        "cross_channel_device_mismatch": 0.0,
+        "velocity_5m": 0.0,
+        "velocity_1h": 0.0,
+        "failed_auth_24h": 0.0,
+        "recovery_signal_72h": 1.0,
+        "account_hazard_score": 0.345172,
+        "risk_window_hours_remaining": 0.993056,
+        "impossible_travel": 0.0,
+        "interaction_speed_deviation": 0.0,
+        "typing_cadence_deviation": 0.0,
+        "paste_anomaly": 0.0,
+        "device_handling_deviation": 0.0,
+        "navigation_novelty": 0.0,
+        "day_of_month_deviation": 0.0,
+        "recurring_payment_match": 0.0,
+        "calendar_confidence": 0.5,
+        "call_transfer_overlap": 0.0,
+        "screen_sharing_signal": 0.0,
+        "recipient_edit_anomaly": 0.0,
+        "confirmation_friction": 0.0,
+        "coercion_on_device_score": 0.0,
+        "coercion_evidence_coverage": 0.0,
+        "verified_sim_change": 0.0,
+        "recent_sim_activation": 0.0,
+        "repeat_sim_change": 0.0,
+        "imsi_change": 0.0,
+        "iccid_change": 0.0,
+        "sim_type_change": 0.0,
+        "otp_sim_change_proximity": 0.0,
+        "otp_sim_geo_mismatch": 0.0,
+        "short_previous_sim_tenure": 0.0,
+        "telco_assurance_coverage": 0.0,
+        "evidence_coverage": 0.833333,
+        "history_confidence": 0.918382,
+        "shared_device_allowed": 0.0,
+        "is_ussd": 0.0,
+        "is_transfer": 1.0,
+        "is_withdrawal": 0.0,
+        "is_agent": 0.0,
+        "agent_customer_diversity_1h": 0.0,
+        "agent_recipient_concentration_24h": 0.0,
+        "agent_first_time_recipient_ratio_24h": 0.0,
+        "agent_failed_auth_ratio_1h": 0.0,
+        "agent_value_velocity_1h": 0.0,
+        "agent_location_mismatch": 0.0,
+        "agent_after_hours": 0.0,
+        "agent_terminal_novelty": 0.0,
+        "agent_confirmed_fraud_score": 0.0,
+        "agent_confirmed_accounts": 0.0,
+        "agent_evidence_coverage": 0.0
+      },
+      "uncertainty_note": null
+    },
+    "residual_risk": "A patient attacker using a fresh, previously unobserved recipient can still evade graph evidence; shadow-mode feedback and repeated adaptive search remain necessary."
+  },
+  "v5_live_proof": {
+    "generated_at": "2026-08-30T05:51:16.564155+00:00",
+    "model_version": "rf-calibrated-longitudinal-ng-7.0",
+    "confidence_envelope": {
+      "risk_score": 0.026299,
+      "decision_confidence": {
+        "score": 0.346518,
+        "level": "low",
+        "profile_maturity": 0.0,
+        "data_coverage": 0.333333,
+        "scorer_agreement": 0.919407,
+        "reasons": [
+          "The behavioural baseline is still immature.",
+          "Only part of the expected channel evidence was available."
+        ]
+      },
+      "action": "allow"
+    },
+    "cross_channel_sequence": {
+      "risk_score": 0.72,
+      "action": "reversible_hold_and_review",
+      "reason_codes": [
+        "CROSS_CHANNEL_TAKEOVER_SEQUENCE",
+        "AMOUNT_DEVIATION",
+        "NEW_CHANNEL_ENROLLMENT_24H",
+        "NEW_RECIPIENT",
+        "CROSS_CHANNEL_DEVICE_MISMATCH",
+        "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+        "NAVIGATION_NOVELTY",
+        "CHANNEL_TRANSITION_NOVELTY"
+      ],
+      "features": {
+        "channel_transition_novelty": 1.0,
+        "new_channel_enrollment_24h": 1.0,
+        "app_to_ussd_handoff": 1.0
+      }
+    },
+    "recipient_reputation_loop": {
+      "source_score": 0.098491,
+      "feedback_update": {
+        "status": "monitor",
+        "score": 0.35,
+        "confirmed_reports": 1,
+        "distinct_accounts": 1,
+        "expires_at": "2026-11-28T05:51:15.712781+00:00",
+        "watchlist_evidence_available": 1.0
+      },
+      "other_account_score": 0.42,
+      "other_account_action": "allow_with_monitoring",
+      "reason_codes": [
+        "NEW_RECIPIENT",
+        "RECIPIENT_CONFIRMED_FRAUD_SCORE",
+        "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+        "CONFIRMED_RECIPIENT_REPUTATION",
+        "RECIPIENT_RARITY",
+        "RECIPIENT_CONFIRMED_ACCOUNTS"
+      ]
+    },
+    "calendar_twin": {
+      "risk_score": 0.073732,
+      "action": "allow_with_monitoring",
+      "recurring_payment_match": 1.0,
+      "calendar_confidence": 1.0
+    },
+    "friction_optimizer": {
+      "selected_action": "reversible_hold_and_review",
+      "selected_expected_cost": 1298.6,
+      "action_costs": {
+        "allow": 15523.2,
+        "allow_with_monitoring": 12360.45,
+        "trusted_channel_confirmation": 5152.8,
+        "reversible_settlement_delay": 2152.8,
+        "reversible_hold_and_review": 1298.6
+      },
+      "personalization_reasons": [
+        "USSD confirmation has higher customer effort."
+      ]
+    },
+    "audit_chain_valid": true
+  },
+  "v1_platform_proof": {
+    "generated_at": "2026-08-30T05:58:42.154837+00:00",
+    "safe_learning": {
+      "initial_state": "pending",
+      "profile_transactions_before_maturation": 0,
+      "after_maturation": 1,
+      "after_retroactive_delearning": 0
+    },
+    "campaign": {
+      "signature": "c4c95c8f286394fb5fd7",
+      "score": 0.92,
+      "distinct_accounts": 4,
+      "stages": [
+        "cashout",
+        "identity_cochange",
+        "new_channel",
+        "recipient_change",
+        "sim_change"
+      ],
+      "eligible": true
+    },
+    "campaign_action": "reversible_hold_and_review",
+    "consortium": {
+      "one_institution": {
+        "independent_institutions": 1,
+        "score": 0.0
+      },
+      "two_institutions": {
+        "independent_institutions": 2,
+        "score": 0.87
+      },
+      "risk": 0.91,
+      "action": "reversible_hold_and_review"
+    },
+    "exact_replay": {
+      "decision_id": "dec_32b19840f7b54aeb8fdd17af593a37d9",
+      "exact_match": true,
+      "stored_digest": "b6f864d6970e449d69f5bd0885956771ad36c60ec6994dea7a1a24ca1086d366",
+      "replay_digest": "b6f864d6970e449d69f5bd0885956771ad36c60ec6994dea7a1a24ca1086d366",
+      "model_version": "rf-calibrated-longitudinal-ng-7.0",
+      "policy_version": "policy-1.4.0",
+      "cutoff_at": "2026-08-30T05:58:42.154837+00:00"
+    },
+    "transaction_lifecycle": {
+      "event_id": "consortium-event",
+      "state": "cancelled",
+      "version": 3,
+      "updated_at": "2026-08-30T05:58:42.479592+00:00",
+      "idempotent_replay": false
+    },
+    "governance": {
+      "policy_simulation": {
+        "policy_version": "simulation-only",
+        "events": 10,
+        "projected_actions": {
+          "allow": 5,
+          "monitor": 0,
+          "confirm": 0,
+          "delay": 1,
+          "hold": 4
+        },
+        "thresholds": {
+          "allow": 0.3,
+          "monitor": 0.48,
+          "confirm": 0.66,
+          "delay": 0.84
+        },
+        "mutated_live_policy": false
+      },
+      "drift": {
+        "events": 10,
+        "population_stability_index": 0.0,
+        "status": "stable",
+        "minimum_sample_met": false
+      },
+      "equity": {
+        "scope": "channel-and-friction operational equity; no protected attributes inferred",
+        "events": 10,
+        "action_distribution": {
+          "allow": 5,
+          "reversible_hold_and_review": 5
+        },
+        "warning": "Outcome parity requires representative labels and approved protected-attribute governance."
+      }
+    },
+    "audit": {
+      "valid": true,
+      "entries_checked": 20,
+      "first_invalid_sequence": null,
+      "head_hash": "dc6107533b4ec142a4f8fcee2931b1140de00a3f764d7c57dd28a02649db3af6"
+    },
+    "telemetry": {
+      "counters": {
+        "action_allow": 5,
+        "action_reversible_hold_and_review": 5
+      },
+      "latency_ms": {
+        "count": 10,
+        "p50": 28.669,
+        "p95": 42.457,
+        "p99": 42.457
+      }
+    },
+    "metrics": {
+      "accounts": 6,
+      "events": 10,
+      "decisions": 10,
+      "decisions_by_level": {
+        "critical": 4,
+        "high": 1,
+        "low": 5
+      },
+      "decisions_by_action": {
+        "allow": 5,
+        "reversible_hold_and_review": 5
+      },
+      "feedback_by_label": {
+        "account_takeover": 1
+      },
+      "pending_learning_events": 0,
+      "open_cases": 5,
+      "outbox_pending": 11,
+      "offline_journal_pending": 0,
+      "resilience_modes": {},
+      "active_fraud_sketch_reports": 0,
+      "active_fraud_sketch_capsules": 0
+    }
+  },
+  "load_evidence": {
+    "requests": 100,
+    "workers": 8,
+    "warmup_requests": 8,
+    "successes": 100,
+    "failures": 0,
+    "failure_types": [],
+    "throughput_requests_per_second": 22.611,
+    "latency_ms": {
+      "mean": 345.292,
+      "p50": 332.758,
+      "p95": 469.282,
+      "p99": 477.927,
+      "max": 529.102
+    },
+    "audit_valid": true
+  },
+  "outage_evidence": {
+    "generated_at": "2026-08-30T05:58:47.935572+00:00",
+    "scope": "single-laptop deterministic outage drill using synthetic identities and real service code",
+    "states": {
+      "degraded": "degraded",
+      "isolated": "isolated",
+      "recovery_gate": "reconciling",
+      "final": "online"
+    },
+    "signed_edge_capsule": {
+      "valid": true,
+      "capsule_id": "cap_de351cbce6037e189024",
+      "expires_at": "2026-08-30T13:58:47.515248+00:00"
+    },
+    "degraded_known_recipient": {
+      "risk_score": 0.079694,
+      "decision_confidence": 0.427944,
+      "action": "allow_with_monitoring",
+      "learning_state": "excluded"
+    },
+    "degraded_unusual_recipient": {
+      "risk_score": 0.449007,
+      "decision_confidence": 0.448943,
+      "action": "trusted_channel_confirmation",
+      "safety_envelope_applied": true
+    },
+    "isolated_payment": {
+      "action": "reversible_settlement_delay",
+      "offline_reference": "OFF-E5BA263F6FE2",
+      "customer_explanation": "We could not settle this transaction because the payment network is unavailable; no money has been moved, keep reference OFF-E5BA263F6FE2 and confirm after service returns.",
+      "transaction_state": "held"
+    },
+    "journal": {
+      "entries_before_recovery": 3,
+      "valid_before_tamper": true,
+      "tamper_detected": true,
+      "valid_after_exact_restore": true
+    },
+    "reconciliation": {
+      "status": "completed",
+      "processed": 3,
+      "failed": 0,
+      "remaining": 0,
+      "duplicate_actions": 0,
+      "automatic_settlements": 0,
+      "repeat_status": "already_reconciled",
+      "priority_order": "risk_descending_then_original_sequence",
+      "batch_limit": 100,
+      "circuit_breaker_open": false
+    },
+    "objectives": {
+      "outage_detection_ms": 2.823,
+      "recovery_and_reconciliation_ms": 74.499,
+      "recovery_point_unjournalled_events": 0,
+      "duplicate_lifecycle_actions": 0
+    },
+    "audit_verification": {
+      "valid": true,
+      "entries_checked": 16,
+      "first_invalid_sequence": null,
+      "head_hash": "178f2648d265a075119dc20d507e02e366c71431e4a53718404a251e5e631d11"
+    }
+  },
+  "agent_terminal_evidence": {
+    "audit_chain": {
+      "entries_checked": 54,
+      "first_invalid_sequence": null,
+      "head_hash": "75cc934c97497de03f81becaa3f98d38175ccd8cc0b67da2c00e683b88cf2590",
+      "valid": true
+    },
+    "busy_legitimate_terminal": {
+      "action": "allow_with_monitoring",
+      "agent_evidence_coverage": 1.0,
+      "customer_diversity_1h": 0.666667,
+      "customer_explanation": "We approved this transaction but are monitoring it because the recipient recently received funds from many unrelated senders; You can review it in transaction history or contact the bank through its official channel.",
+      "decision_confidence": 0.4937,
+      "failed_auth_ratio_1h": 0.0,
+      "reasons": [
+        "RECIPIENT_SENDER_DIVERSITY_24H",
+        "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+        "AGENT_RECIPIENT_CONCENTRATION_24H",
+        "AGENT_CUSTOMER_DIVERSITY_1H"
+      ],
+      "recipient_concentration_24h": 1.0,
+      "risk_score": 0.08365,
+      "terminal_quarantined": false,
+      "terminal_status": "clear"
+    },
+    "compromised_terminal": {
+      "action": "reversible_settlement_delay",
+      "agent_evidence_coverage": 1.0,
+      "customer_diversity_1h": 0.833333,
+      "customer_explanation": "We temporarily delayed this transaction because the agency terminal connected several customers to a concentrated suspicious pattern and the recipient recently received funds from many unrelated senders; Confirm from a previously registered device or wait for the short safety delay to expire.",
+      "decision_confidence": 0.430808,
+      "detection_ms": 31.142,
+      "failed_auth_ratio_1h": 0.4,
+      "reasons": [
+        "AGENT_TERMINAL_CAMPAIGN",
+        "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H",
+        "AGENT_RECIPIENT_CONCENTRATION_24H",
+        "RECIPIENT_SENDER_DIVERSITY_24H",
+        "AGENT_FAILED_AUTH_RATIO_1H",
+        "AGENT_CUSTOMER_DIVERSITY_1H"
+      ],
+      "recipient_concentration_24h": 1.0,
+      "risk_score": 0.74,
+      "terminal_quarantined": false,
+      "terminal_status": "clear"
+    },
+    "confirmed_reputation_progression": [
+      {
+        "confirmed_reports": 1,
+        "distinct_accounts": 1,
+        "quarantined": false,
+        "score": 0.35,
+        "status": "monitor"
+      },
+      {
+        "confirmed_reports": 2,
+        "distinct_accounts": 2,
+        "quarantined": false,
+        "score": 0.75,
+        "status": "elevated"
+      },
+      {
+        "confirmed_reports": 3,
+        "distinct_accounts": 3,
+        "quarantined": true,
+        "score": 1.0,
+        "status": "quarantined"
+      }
+    ],
+    "forged_unattested_claim": {
+      "action": "allow",
+      "agent_evidence_coverage": 0.0,
+      "customer_diversity_1h": 0.0,
+      "customer_explanation": "We approved this transaction because it matched the account's usual activity.",
+      "decision_confidence": 0.486419,
+      "failed_auth_ratio_1h": 0.0,
+      "reasons": [
+        "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H"
+      ],
+      "recipient_concentration_24h": 0.0,
+      "risk_score": 0.036104,
+      "terminal_quarantined": false,
+      "terminal_status": "not_applicable"
+    },
+    "generated_at": "2026-08-30T05:58:50.324195+00:00",
+    "quarantine_proof": {
+      "action": "reversible_settlement_delay",
+      "agent_evidence_coverage": 1.0,
+      "customer_diversity_1h": 0.333333,
+      "customer_explanation": "We temporarily delayed this transaction because independent confirmed fraud reports involve this agency terminal; Confirm from a previously registered device or wait for the short safety delay to expire.",
+      "decision_confidence": 0.421005,
+      "failed_auth_ratio_1h": 0.0,
+      "reasons": [
+        "AGENT_CONFIRMED_FRAUD_SCORE",
+        "AGENT_CONFIRMED_ACCOUNTS",
+        "CONFIRMED_AGENT_TERMINAL",
+        "RECIPIENT_FIRST_TIME_SENDER_RATIO_24H"
+      ],
+      "recipient_concentration_24h": 0.25,
+      "risk_score": 0.76,
+      "terminal_quarantined": true,
+      "terminal_status": "quarantined"
+    },
+    "safeguards": {
+      "busy_volume_alone_not_campaign": true,
+      "compromised_campaign_detected": true,
+      "three_victims_required_for_quarantine": true,
+      "unattested_claim_ignored": true
+    },
+    "version": "1.2.0"
+  },
+  "fraud_sketch_evidence": {
+    "version": "1.4.0",
+    "generated_at": "2026-08-30T05:58:45.908499+00:00",
+    "source": "actual local service run with synthetic institutions and customers",
+    "chronology": "Reports arrive only after the baseline event; every later match uses prior intelligence.",
+    "baseline": {
+      "risk_score": 0.083772,
+      "action": "allow_with_monitoring"
+    },
+    "one_institution": {
+      "exchange_score": 0.3728,
+      "independent_institutions": 1,
+      "other_account_score": 0.3728,
+      "action": "allow_with_monitoring",
+      "action_ceiling": "monitor"
+    },
+    "two_institutions_without_local_corroboration": {
+      "exchange_score": 0.7256,
+      "risk_score": 0.42,
+      "action": "allow_with_monitoring",
+      "action_ceiling": "monitor"
+    },
+    "two_institutions_with_local_corroboration": {
+      "risk_score": 0.725599,
+      "action": "reversible_settlement_delay",
+      "action_ceiling": "delay",
+      "matched_indicators": [
+        "recipient"
+      ]
+    },
+    "outage_cache": {
+      "source_mode": "signed_cache",
+      "risk_score": 0.42,
+      "decision_confidence": 0.469653,
+      "capsule_valid": true
+    },
+    "legitimate_biller_hard_negative": {
+      "exchange_score": 0.0,
+      "risk_score": 0.083772,
+      "action": "allow_with_monitoring"
+    },
+    "revocation": {
+      "report_id": "fsr-002-bravo",
+      "status": "revoked",
+      "idempotent_replay": false,
+      "remaining_score": 0.3728,
+      "remaining_independent_institutions": 1,
+      "privacy_notice": "The private indicator remains undisclosed."
+    },
+    "adversarial_controls": {
+      "tampered_signature_rejected": true,
+      "raw_indicator_absent_from_shared_rows": true,
+      "stored_shared_rows": 2
+    },
+    "latency_ms": {
+      "first_signed_report": 3.195,
+      "second_signed_report_and_capsule_refresh": 3.786
+    },
+    "audit": {
+      "valid": true,
+      "entries_checked": 64,
+      "first_invalid_sequence": null,
+      "head_hash": "35589ef3d79779143a8f545a83af9a3b8d2b28fcbf0db453cf95a4c6544c0dcf"
+    },
+    "privacy_boundary": "Shared tables contain rotating tokens, coarse evidence classes, confidence, expiry and state; local banking events remain inside the bank database.",
+    "production_roadmap": "Replace the prototype consortium token service with VOPRF/PSI or secure aggregation, HSM-backed keys and formal multi-bank governance."
+  }
+}

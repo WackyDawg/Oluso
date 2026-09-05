@@ -1,0 +1,22 @@
+# Normalise line endings so Windows and Linux contributors produce identical diffs.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary artefacts: never diff, never normalise.
+*.joblib binary
+*.db     binary
+*.mp4    binary
+*.pdf    binary
+*.docx   binary
+*.png    binary
+*.zip    binary
+
+# Large generated inputs: keep as text (they diff meaningfully) but collapse in PR views.
+data/*.csv linguist-generated=true
+artifacts/*.json linguist-generated=true
+uv.lock linguist-generated=true
+
+# If the repository outgrows GitHub's soft limits, move these to Git LFS:
+#   git lfs install && git lfs track "*.mp4" "*.joblib" "data/*.csv"
+# The current sizes (~29 MB CSV, 3.3 MB model, 0.5 MB MP4) do not require it.
