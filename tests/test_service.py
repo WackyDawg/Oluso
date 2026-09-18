@@ -4,7 +4,7 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from aegistwin.schemas import (
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -14,7 +14,7 @@ from aegistwin.schemas import (
     FeedbackRequest,
     ResponseAction,
 )
-from aegistwin.service import AtoService, ConflictError
+from oluso.service import AtoService, ConflictError
 
 
 def baseline_event(index: int, now: datetime) -> BehaviorEventIn:

@@ -6,7 +6,7 @@ All notable changes to this project are documented here. The format follows
 ## [Unreleased]
 
 ### Added
-- `aegistwin.evaluation`: Wilson and stratified-bootstrap intervals, component ablation,
+- `oluso.evaluation`: Wilson and stratified-bootstrap intervals, component ablation,
   detection attribution and an evidence-coverage leakage audit; wired into
   `scripts/evaluate_system.py` and `scripts/evaluate_robustness.py` (new CI gate at 0.75 separation AUC).
 - Named `SecurityFloorRule` table and `fuse_scores_detailed()`; every decision records which floors

@@ -10,9 +10,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from aegistwin.config import Settings
-from aegistwin.schemas import AccountCreate, BehaviorEventIn, Channel, EventType
-from aegistwin.service import AtoService
+from oluso.config import Settings
+from oluso.schemas import AccountCreate, BehaviorEventIn, Channel, EventType
+from oluso.service import AtoService
 
 
 def main() -> None:

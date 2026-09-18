@@ -13,4 +13,4 @@ The files are versioned (~29 MB) so evaluations are reproducible against a fixed
 model artifact records `training_data_sha256`. Regenerate with `make data`, then `make train` and
 `make evidence` — the hashes will change and every quoted number must be re-checked.
 
-`aegistwin.db` (the API's default runtime database) is created here at run time and is git-ignored.
+`oluso.db` (the API's default runtime database) is created here at run time and is git-ignored.

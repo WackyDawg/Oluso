@@ -5,9 +5,9 @@ from datetime import UTC, datetime, timedelta
 import pytest
 from fastapi.testclient import TestClient
 
-from aegistwin.api import create_app
-from aegistwin.platform import campaign_is_eligible, campaign_score, psi
-from aegistwin.schemas import (
+from oluso.api import create_app
+from oluso.platform import campaign_is_eligible, campaign_score, psi
+from oluso.schemas import (
     AccountCreate,
     AppealRequest,
     BehaviorEventIn,
@@ -23,7 +23,7 @@ from aegistwin.schemas import (
     ProfileSuccessionRequest,
     TelcoAssurance,
 )
-from aegistwin.service import AtoService, ConflictError, NotFoundError
+from oluso.service import AtoService, ConflictError, NotFoundError
 
 
 def event(account: str, event_id: str, at: datetime, *, recipient: str = "merchant") -> BehaviorEventIn:

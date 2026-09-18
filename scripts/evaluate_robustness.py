@@ -13,9 +13,9 @@ from sklearn.calibration import CalibratedClassifierCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import average_precision_score, precision_score, recall_score, roc_auc_score
 
-from aegistwin.evaluation import leakage_audit
-from aegistwin.features import FEATURE_NAMES, MODEL_EXCLUDED_FEATURES, MODEL_FEATURE_NAMES
-from aegistwin.scoring import AnomalyScorer, fuse_scores
+from oluso.evaluation import leakage_audit
+from oluso.features import FEATURE_NAMES, MODEL_EXCLUDED_FEATURES, MODEL_FEATURE_NAMES
+from oluso.scoring import AnomalyScorer, fuse_scores
 
 
 def operating_point(labels: np.ndarray, scores: np.ndarray, threshold: float) -> dict[str, Any]:

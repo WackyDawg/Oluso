@@ -4,8 +4,8 @@ from datetime import UTC, datetime, timedelta
 
 from fastapi.testclient import TestClient
 
-from aegistwin.api import create_app
-from aegistwin.schemas import (
+from oluso.api import create_app
+from oluso.schemas import (
     AccountCreate,
     AgentTerminalAssurance,
     BehaviorEventIn,
@@ -15,7 +15,7 @@ from aegistwin.schemas import (
     FeedbackRequest,
     ResponseAction,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 
 def assurance(

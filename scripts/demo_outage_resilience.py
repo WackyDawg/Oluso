@@ -7,8 +7,8 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from time import perf_counter
 
-from aegistwin.config import Settings
-from aegistwin.schemas import (
+from oluso.config import Settings
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -18,7 +18,7 @@ from aegistwin.schemas import (
     ReconciliationRequest,
     ResilienceMode,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 
 def transaction(

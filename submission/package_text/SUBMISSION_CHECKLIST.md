@@ -1,11 +1,11 @@
 # Submission checklist
 
-- [ ] Confirm the official team name. If it is not AegisTwin, rename the outer archive to `TeamName_TrackA.zip`.
+- [ ] Confirm the official team name. If it is not Oluso, rename the outer archive to `TeamName_TrackA.zip`.
 - [ ] Select Track A through the organizer form by **31 August 2026**.
-- [ ] Publish `AegisTwin_TrackA_Code.zip` or its extracted source to the team's code host.
+- [ ] Publish `Oluso_TrackA_Code.zip` or its extracted source to the team's code host.
 - [ ] Replace the placeholder in `CODE_LINK.md` with the public or judge-accessible repository URL.
 - [ ] Open the four-page PDF and play the MP4 on the computer used for submission.
-- [ ] Verify the outer ZIP with `unzip -t AegisTwin_TrackA_Final.zip`.
+- [ ] Verify the outer ZIP with `unzip -t Oluso_TrackA_Final.zip`.
 - [ ] From the extracted code, run `python scripts/release_smoke_test.py .` before publishing.
 - [ ] Optionally verify integrity with `sha256sum -c SHA256SUMS.txt` from inside the extracted package.
 - [ ] Upload the final package by **21 September 2026 at 11:59 PM**.

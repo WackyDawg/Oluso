@@ -1,12 +1,12 @@
-# AegisTwin Track A — final submission
+# Oluso Track A — final submission
 
 This is the self-contained ICSC Universities Category Track A package for **Spotting Account Takeover From Behaviour**.
 
 Start with:
 
-1. `AegisTwin_TrackA_Technical_Writeup.pdf` — the required four-page technical write-up.
-2. `AegisTwin_TrackA_Demo.mp4` — a 36-second captioned demonstration generated from actual local service runs.
-3. `AegisTwin_TrackA_Code.zip` — the complete runnable source, synthetic datasets, model, tests and documentation.
+1. `Oluso_TrackA_Technical_Writeup.pdf` — the required four-page technical write-up.
+2. `Oluso_TrackA_Demo.mp4` — a 36-second captioned demonstration generated from actual local service runs.
+3. `Oluso_TrackA_Code.zip` — the complete runnable source, synthetic datasets, model, tests and documentation.
 4. `Evidence/` — machine-readable evaluation, latency, load, adaptive-attacker, private fraud-sketch, agent-terminal, outage, governance, coverage, SBOM and restore proof.
 
 ## Final measured prototype evidence

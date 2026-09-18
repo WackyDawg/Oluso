@@ -3,13 +3,13 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aegistwin-ato"
+name = "oluso-ato"
 version = "1.4.0"
 description = "Explainable behavioural account-takeover detection for Nigerian app, USSD, and agent channels"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "AegisTwin contributors" }]
+authors = [{ name = "Oluso contributors" }]
 dependencies = [
   "fastapi>=0.115,<1",
   "uvicorn[standard]>=0.30,<1",

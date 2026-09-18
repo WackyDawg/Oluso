@@ -5,8 +5,8 @@ import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from aegistwin.config import Settings
-from aegistwin.schemas import (
+from oluso.config import Settings
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -19,7 +19,7 @@ from aegistwin.schemas import (
     PolicySimulationRequest,
     TelcoAssurance,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 
 def transfer(account: str, event_id: str, at: datetime, recipient: str, *, attack: bool = False) -> BehaviorEventIn:

@@ -16,10 +16,10 @@ COPY dashboard ./dashboard
 COPY scripts ./scripts
 COPY models ./models
 RUN mkdir -p /app/data \
-    && useradd --create-home --uid 10001 aegis \
-    && chown -R aegis:aegis /app
+    && useradd --create-home --uid 10001 oluso \
+    && chown -R oluso:oluso /app
 
-USER aegis
+USER oluso
 EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \

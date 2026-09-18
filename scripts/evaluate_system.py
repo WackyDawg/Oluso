@@ -18,15 +18,15 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 
-from aegistwin.evaluation import (
+from oluso.evaluation import (
     ablation_table,
     bootstrap_operating_point,
     detection_attribution,
     fusion_breakdowns,
 )
-from aegistwin.features import FEATURE_NAMES, MODEL_FEATURE_NAMES
-from aegistwin.policy import POLICY_THRESHOLDS as LADDER
-from aegistwin.scoring import AnomalyScorer
+from oluso.features import FEATURE_NAMES, MODEL_FEATURE_NAMES
+from oluso.policy import POLICY_THRESHOLDS as LADDER
+from oluso.scoring import AnomalyScorer
 
 POLICY_THRESHOLDS = {
     "Monitor or stronger": LADDER["monitor"],
@@ -344,7 +344,7 @@ def render_markdown(report: dict[str, Any]) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Evaluate the complete AegisTwin runtime policy")
+    parser = argparse.ArgumentParser(description="Evaluate the complete Oluso runtime policy")
     parser.add_argument("--input", type=Path, default=Path("data/training_features.csv"))
     parser.add_argument("--model", type=Path, default=Path("models/ato_model.joblib"))
     parser.add_argument("--json-output", type=Path, default=Path("artifacts/evaluation.json"))

@@ -44,7 +44,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     application = FastAPI(
         lifespan=lifespan,
-        title="AegisTwin Account Takeover API",
+        title="Oluso Account Takeover API",
         version="1.4.0",
         description=(
             "Explainable behavioural account-takeover scoring for app and USSD events, "

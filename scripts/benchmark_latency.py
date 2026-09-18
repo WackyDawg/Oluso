@@ -10,8 +10,8 @@ from time import perf_counter
 import numpy as np
 from fastapi.testclient import TestClient
 
-from aegistwin.api import create_app
-from aegistwin.config import Settings
+from oluso.api import create_app
+from oluso.config import Settings
 
 
 def event_payload(index: int, occurred_at: datetime, prefix: str) -> dict[str, object]:
@@ -39,7 +39,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("artifacts/latency.json"))
     args = parser.parse_args()
 
-    with TemporaryDirectory(prefix="aegistwin-latency-") as temporary_directory:
+    with TemporaryDirectory(prefix="oluso-latency-") as temporary_directory:
         settings = Settings(
             environment="benchmark",
             database_path=Path(temporary_directory) / "benchmark.db",

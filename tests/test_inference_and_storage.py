@@ -10,9 +10,9 @@ import pytest
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.ensemble import RandomForestClassifier
 
-from aegistwin.features import MODEL_FEATURE_NAMES
-from aegistwin.scoring import FastCalibratedForest, ModelBundle
-from aegistwin.storage import Database
+from oluso.features import MODEL_FEATURE_NAMES
+from oluso.scoring import FastCalibratedForest, ModelBundle
+from oluso.storage import Database
 
 
 def _tiny_calibrated_forest(seed: int = 7) -> CalibratedClassifierCV:

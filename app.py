@@ -1,4 +1,4 @@
-from aegistwin.api import create_app
+from oluso.api import create_app
 
 app = create_app()
 

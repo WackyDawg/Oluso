@@ -15,7 +15,7 @@ jobs:
           cache: pip
       - run: pip install -e '.[dev]'
       - run: ruff check .
-      - run: pytest --cov=aegistwin --cov-fail-under=85
+      - run: pytest --cov=oluso --cov-fail-under=85
       - run: python scripts/release_smoke_test.py .
       - run: python scripts/evaluate_robustness.py
       - run: bandit -q -r src

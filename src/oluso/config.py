@@ -41,7 +41,7 @@ class Settings(BaseSettings):
     )
 
     environment: str = "development"
-    database_path: Path = Path("./data/aegistwin.db")
+    database_path: Path = Path("./data/oluso.db")
     model_path: Path = Path("./models/ato_model.joblib")
     api_key: str = Field(default="dev-only-change-me", min_length=12)
     analyst_api_key: str = Field(default="analyst-dev-only-change-me", min_length=12)

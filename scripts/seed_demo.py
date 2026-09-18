@@ -4,9 +4,9 @@ import argparse
 import uuid
 from datetime import UTC, datetime, timedelta
 
-from aegistwin.config import get_settings
-from aegistwin.schemas import AccountCreate, BehaviorEventIn, Channel, EventType, TelcoAssurance
-from aegistwin.service import AtoService, ConflictError
+from oluso.config import get_settings
+from oluso.schemas import AccountCreate, BehaviorEventIn, Channel, EventType, TelcoAssurance
+from oluso.service import AtoService, ConflictError
 
 
 def event_id(prefix: str) -> str:

@@ -154,7 +154,7 @@ def masthead(doc: Document) -> None:
     left = table.cell(0, 0).paragraphs[0]
     left.paragraph_format.space_after = Pt(0)
     add_text(left, "ICSC UNIVERSITIES CATEGORY · TRACK A\n", bold=True, color=TEAL, size=8)
-    add_text(left, "AEGISTWIN", bold=True, color=WHITE, size=19)
+    add_text(left, "OLUSO", bold=True, color=WHITE, size=19)
     right = table.cell(0, 1).paragraphs[0]
     right.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     right.paragraph_format.space_after = Pt(0)
@@ -207,7 +207,7 @@ def configure(doc: Document) -> None:
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
     add_text(
         footer,
-        "AegisTwin · Track A · Synthetic prototype · Technical submission",
+        "Oluso · Track A · Synthetic prototype · Technical submission",
         color=MUTED,
         size=7,
     )
@@ -232,7 +232,7 @@ def build(project: Path, output: Path) -> None:
     doc = Document()
     configure(doc)
     props = doc.core_properties
-    props.title = "AegisTwin Track A Technical Write-up"
+    props.title = "Oluso Track A Technical Write-up"
     props.subject = "ICSC Universities Category — Spotting Account Takeover From Behaviour"
     props.keywords = "ICSC, account takeover, behavioural AI, USSD, Nigeria, privacy, fraud sketch"
     props.author = ""
@@ -255,8 +255,8 @@ def build(project: Path, output: Path) -> None:
     ])
 
     heading(doc, "Executive summary")
-    body(doc, "PINs and OTPs prove knowledge, not presence. AegisTwin maintains a server-side behavioural twin for each account, compares a live transaction with that person's established habits, and fuses the result with a calibrated population model. It then chooses the least disruptive reversible response and explains it in one plain sentence.")
-    banner(doc, f"Core claim: at the challenge threshold, AegisTwin caught {challenge['true_positives']} of {challenge['takeover_events']} held-out takeovers while challenging {challenge['false_positives']} of {challenge['normal_events']:,} normal sessions.")
+    body(doc, "PINs and OTPs prove knowledge, not presence. Oluso maintains a server-side behavioural twin for each account, compares a live transaction with that person's established habits, and fuses the result with a calibrated population model. It then chooses the least disruptive reversible response and explains it in one plain sentence.")
+    banner(doc, f"Core claim: at the challenge threshold, Oluso caught {challenge['true_positives']} of {challenge['takeover_events']} held-out takeovers while challenging {challenge['false_positives']} of {challenge['normal_events']:,} normal sessions.")
 
     heading(doc, "What makes the prototype differentiated")
     bullet(doc, "Two-sided network intelligence: a Mule Graph catches many-sender/rapid-cash-out behaviour; analyst-confirmed recipient reputation propagates across accounts with decay and a two-victim hard-floor rule.")
@@ -266,7 +266,7 @@ def build(project: Path, output: Path) -> None:
     bullet(doc, "Coercion + trajectory defence: consented in-call safety signals can privately pause payment; recovery/auth/SIM precursors create a decaying account risk window.")
     bullet(doc, "Personalised friction and recourse: policy compares fraud exposure with customer cost, respects a Regret Budget, and returns safe, non-gameable clearance routes.")
     bullet(doc, "Adaptive attacker: 2,688 valid raw-event variants expose a NGN 48,000 evasion and test recipient/precursor mitigations without self-training on the answer.")
-    bullet(doc, "AegisMesh + outage assurance: signed rotating cross-bank sketches share patterns, not records; local-action ceilings, revocation, signed cache, no-settlement receipt and hash-chained recovery constrain harm.")
+    bullet(doc, "OlusoMesh + outage assurance: signed rotating cross-bank sketches share patterns, not records; local-action ceilings, revocation, signed cache, no-settlement receipt and hash-chained recovery constrain harm.")
 
     heading(doc, "Challenge fit")
     compact_table(doc, ["Required element", "Delivered"], [
@@ -284,7 +284,7 @@ def build(project: Path, output: Path) -> None:
     compact_table(doc, ["1 · Event", "2 · Sender twin", "3 · Other risk views", "4 · AI + policy", "5 · Evidence"], [[
         "App / USSD / agent",
         "Sender behavioural twin",
-        "Graph + agent + AegisMesh",
+        "Graph + agent + OlusoMesh",
         "Hybrid AI + cost policy",
         "Recourse + audit hash",
     ]], [3.45, 3.45, 3.55, 3.55, 3.55], first_col_bold=False)
@@ -301,9 +301,9 @@ def build(project: Path, output: Path) -> None:
     ], [3.1, 6.9, 7.6])
 
     heading(doc, "Decision mechanics")
-    body(doc, "The population model learns attack combinations; personal, recipient and agent-terminal scorers expose accountable deviations. Ordered channel transitions, calendar rhythm and a decaying precursor window add sequence and time. AegisMesh adds delayed cross-bank evidence after the model, never as a leaked training label. Risk fusion is followed by separate confidence and a friction-cost policy. Shared evidence alone can monitor; locally corroborated evidence can contribute a delay but not a hold.")
+    body(doc, "The population model learns attack combinations; personal, recipient and agent-terminal scorers expose accountable deviations. Ordered channel transitions, calendar rhythm and a decaying precursor window add sequence and time. OlusoMesh adds delayed cross-bank evidence after the model, never as a leaked training label. Risk fusion is followed by separate confidence and a friction-cost policy. Shared evidence alone can monitor; locally corroborated evidence can contribute a delay but not a hold.")
     banner(doc, f"Adaptive result: NGN {adaptive['best_evasion']['config']['amount']:,.0f} evasion scores {adaptive['best_evasion']['outcome']['score']:.3f}; recipient graph raises the same event to {adaptive['recipient_graph_mitigation']['score']:.3f} and a reversible delay.", CYAN)
-    body(doc, f"Live proof: cross-channel sequence {v5_demo['cross_channel_sequence']['risk_score']:.3f}; a three-cycle payment remains {v5_demo['calendar_twin']['risk_score']:.3f}. AegisMesh moves a baseline {sketch['baseline']['risk_score']:.3f} to one-bank monitoring {sketch['one_institution']['other_account_score']:.3f}; two uncorroborated banks cap at {sketch['two_institutions_without_local_corroboration']['risk_score']:.3f}, while local corroboration selects a reversible delay at {sketch['two_institutions_with_local_corroboration']['risk_score']:.3f}.", space_after=2)
+    body(doc, f"Live proof: cross-channel sequence {v5_demo['cross_channel_sequence']['risk_score']:.3f}; a three-cycle payment remains {v5_demo['calendar_twin']['risk_score']:.3f}. OlusoMesh moves a baseline {sketch['baseline']['risk_score']:.3f} to one-bank monitoring {sketch['one_institution']['other_account_score']:.3f}; two uncorroborated banks cap at {sketch['two_institutions_without_local_corroboration']['risk_score']:.3f}, while local corroboration selects a reversible delay at {sketch['two_institutions_with_local_corroboration']['risk_score']:.3f}.", space_after=2)
     body(doc, f"Outage proof: three events were hash-chained; deliberate tampering was detected; all {outage['reconciliation']['processed']} events re-scored after recovery with {outage['reconciliation']['duplicate_actions']} duplicate actions and {outage['reconciliation']['automatic_settlements']} automatic settlements. Detection {outage['objectives']['outage_detection_ms']:.1f} ms; recovery {outage['objectives']['recovery_and_reconciliation_ms']:.1f} ms on the test laptop.", space_after=2)
     body(doc, f"Agent proof: a busy legitimate terminal remains at {agent['busy_legitimate_terminal']['risk_score']:.3f}; a compromised cross-customer terminal reaches {agent['compromised_terminal']['risk_score']:.3f} and a reversible delay. Three independent victims quarantine it; an unattested forged claim contributes {agent['forged_unattested_claim']['agent_evidence_coverage']:.0%} agent evidence.", space_after=2)
 
@@ -373,7 +373,7 @@ def build(project: Path, output: Path) -> None:
     compact_table(doc, ["Command", "Purpose"], [
         ["pip install -e '.[dev,dashboard]'", "Install local prototype"],
         ["python scripts/demo_fraud_sketch_exchange.py", "Prove signed private propagation, ceilings, outage cache, tamper and revocation"],
-        ["pytest --cov=aegistwin && python scripts/release_smoke_test.py .", "Run 64 tests, coverage gate and clean-copy environment/API boot"],
+        ["pytest --cov=oluso && python scripts/release_smoke_test.py .", "Run 64 tests, coverage gate and clean-copy environment/API boot"],
         ["python scripts/generate_synthetic.py --rows 30000", "Regenerate raw sessions and derived features"],
         ["python scripts/train_model.py && python scripts/evaluate_system.py", "Retrain and reproduce held-out policy metrics"],
         ["python scripts/evaluate_robustness.py", "Reject perfect synthetic ranking; reproduce zero-overlap account test"],
@@ -386,7 +386,7 @@ def build(project: Path, output: Path) -> None:
     body(doc, f"Model SHA-256: {model_hash[:24]}…  ·  Training-feature CSV SHA-256: {data_hash[:24]}…  ·  Model version: {evaluation['model_version']}. Full hashes and machine-readable results are included in the package.")
 
     heading(doc, "External idea review and clean-room boundary")
-    body(doc, "The public sliit-msc-research SIM-swap repository suggested lifecycle categories but was not copied or imported: it had no licence or generator, its file naming and row counts conflicted, roughly 73.9% of rows were labelled fraud, and its README derived labels from the same inputs. AegisTwin independently implements bounded attested concepts and rare longitudinal evaluation; the full source audit is included.")
+    body(doc, "The public sliit-msc-research SIM-swap repository suggested lifecycle categories but was not copied or imported: it had no licence or generator, its file naming and row counts conflicted, roughly 73.9% of rows were labelled fraud, and its README derived labels from the same inputs. Oluso independently implements bounded attested concepts and rare longitudinal evaluation; the full source audit is included.")
 
     heading(doc, "Submission assets and final gate")
     body(doc, "Included: four-page PDF/DOCX, captioned real-run demo, source ZIP, synthetic data, model, 64 tests, evaluation/robustness/latency/load/adaptive/platform/outage/agent/sketch JSON, CycloneDX SBOM, restore manifest and checksums. The captain must publish the source and replace CODE_LINK.md. Synthetic results must not be represented as bank-field accuracy.")

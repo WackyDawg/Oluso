@@ -4,24 +4,24 @@ from datetime import UTC, datetime, timedelta
 
 import numpy as np
 
-from aegistwin.evaluation import (
+from oluso.evaluation import (
     ablation_table,
     bootstrap_operating_point,
     detection_attribution,
     leakage_audit,
     wilson_interval,
 )
-from aegistwin.features import FEATURE_NAMES
-from aegistwin.policy import POLICY_THRESHOLDS, risk_level_for_score
-from aegistwin.schemas import AccountCreate, BehaviorEventIn, Channel, EventType, RiskLevel
-from aegistwin.scoring import (
+from oluso.features import FEATURE_NAMES
+from oluso.policy import POLICY_THRESHOLDS, risk_level_for_score
+from oluso.schemas import AccountCreate, BehaviorEventIn, Channel, EventType, RiskLevel
+from oluso.scoring import (
     SECURITY_FLOOR_RULES,
     AnomalyScorer,
     fuse_scores,
     fuse_scores_detailed,
     security_floors,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 
 def feature_defaults(**overrides: float) -> dict[str, float]:

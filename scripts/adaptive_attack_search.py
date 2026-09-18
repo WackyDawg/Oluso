@@ -9,10 +9,10 @@ from typing import Any
 
 import pandas as pd
 
-from aegistwin.features import FeatureEngine
-from aegistwin.policy import PolicyEngine
-from aegistwin.schemas import BehaviorEventIn, Channel, EventType
-from aegistwin.scoring import AnomalyScorer, ModelBundle, fuse_scores
+from oluso.features import FeatureEngine
+from oluso.policy import PolicyEngine
+from oluso.schemas import BehaviorEventIn, Channel, EventType
+from oluso.scoring import AnomalyScorer, ModelBundle, fuse_scores
 
 
 def normal_history(now: datetime) -> list[dict[str, Any]]:

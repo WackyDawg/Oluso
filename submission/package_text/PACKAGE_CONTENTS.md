@@ -2,10 +2,10 @@
 
 | Item | Purpose |
 |---|---|
-| `AegisTwin_TrackA_Technical_Writeup.pdf` | Required four-page A4 technical submission |
-| `AegisTwin_TrackA_Technical_Writeup.docx` | Editable source of the technical write-up |
-| `AegisTwin_TrackA_Demo.mp4` | 36-second captioned working-prototype demo |
-| `AegisTwin_TrackA_Code.zip` | Complete source, tests, model, synthetic data and documentation |
+| `Oluso_TrackA_Technical_Writeup.pdf` | Required four-page A4 technical submission |
+| `Oluso_TrackA_Technical_Writeup.docx` | Editable source of the technical write-up |
+| `Oluso_TrackA_Demo.mp4` | 36-second captioned working-prototype demo |
+| `Oluso_TrackA_Code.zip` | Complete source, tests, model, synthetic data and documentation |
 | `Documentation/` | Architecture, API, private fraud-sketch exchange, agent-terminal, outage, threat, model, data, evaluation and operational documentation |
 | `Evidence/` | Raw evaluation, robustness, latency/load, coverage, SBOM, backup/restore and live proofs, including the fraud-sketch exchange |
 | `CODE_LINK.md` | Captain-owned public repository link placeholder |

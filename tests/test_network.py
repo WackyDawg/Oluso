@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta
 
-from aegistwin.features import FEATURE_NAMES
-from aegistwin.network import RecipientNetworkTracker, summarize_recipient_network
-from aegistwin.scoring import AnomalyScorer, fuse_scores
+from oluso.features import FEATURE_NAMES
+from oluso.network import RecipientNetworkTracker, summarize_recipient_network
+from oluso.scoring import AnomalyScorer, fuse_scores
 
 
 def transfer(event_id: str, sender: str, recipient: str, amount: float, when: datetime) -> dict:

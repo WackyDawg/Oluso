@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from aegistwin.audit import AuditChain
-from aegistwin.storage import Database
+from oluso.audit import AuditChain
+from oluso.storage import Database
 
 
 def test_audit_chain_detects_alteration(tmp_path: Path) -> None:

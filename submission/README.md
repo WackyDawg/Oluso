@@ -20,7 +20,7 @@ submission/
 ```bash
 make writeup      # regenerates report/*.docx from artifacts/; re-export the PDF and check the 4-page limit
 make demo-video   # regenerates demo/ (requires ffmpeg and pillow)
-make package      # assembles dist/AegisTwin_TrackA_Final/ + .zip, runs the release smoke test, writes SHA256SUMS
+make package      # assembles dist/Oluso_TrackA_Final/ + .zip, runs the release smoke test, writes SHA256SUMS
 ```
 
 The package tool copies `docs/*.md` to `Documentation/` and the evidence JSONs from `artifacts/`
@@ -32,4 +32,4 @@ to `Evidence/` — do not maintain copies of those folders here or anywhere else
 2. Confirm the numbers in `package_text/README_FIRST.md` match `artifacts/evaluation.json`,
    `artifacts/latency.json` and `artifacts/concurrent_load.json` (the write-up pulls them automatically; the cover text does not).
 3. Play the MP4 and open the PDF on the submission machine.
-4. `unzip -t dist/AegisTwin_TrackA_Final.zip` and `sha256sum -c SHA256SUMS.txt` inside the extracted package.
+4. `unzip -t dist/Oluso_TrackA_Final.zip` and `sha256sum -c SHA256SUMS.txt` inside the extracted package.

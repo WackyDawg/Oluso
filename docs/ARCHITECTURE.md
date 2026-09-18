@@ -1,6 +1,6 @@
 # Architecture
 
-## v1.3 AegisMesh private fraud-sketch envelope
+## v1.3 OlusoMesh private fraud-sketch envelope
 
 Enrolled institutions sign compact recipient, attested agent-terminal or categorical campaign reports. The exchange validates issuer, freshness, nonce, evidence quality and rate before replacing the source value with a seven-day epoch HMAC token. Shared storage contains rotating indicator/institution tokens, coarse evidence, confidence, expiry and revocation state - never customer records or source identifiers. One issuer is observe-only; two independent issuers still cannot interrupt a customer without local corroboration. Corroborated exchange evidence can contribute a reversible delay but not a hold. Each live aggregate creates a signed short-lived capsule; an outage cache is explicitly discounted and lowers decision confidence. See [Private Fraud-Sketch Exchange](PRIVATE_FRAUD_SKETCH_EXCHANGE.md).
 
@@ -52,7 +52,7 @@ Customer/app -> transaction and behaviour event  --^ (cannot attest its own enve
 
 ## Eleven uncommon defensive layers
 
-### AegisMesh Private Fraud-Sketch Exchange
+### OlusoMesh Private Fraud-Sketch Exchange
 
 Rotating tokens allow independent institutions to match recipients, attested terminals and campaign-stage motifs without returning the underlying identifier. Institution-specific signatures, freshness, replay nonces, allow-listing, rate limits, evidence classes, expiry and revocation constrain poisoning. Shared evidence is a separate risk view with a monitoring-only ceiling until local account evidence corroborates it. The v1.3 prototype is privacy-reduced; production VOPRF/PSI, HSM keys and formal consortium governance remain explicit gates.
 
@@ -166,7 +166,7 @@ The feature engine reads events strictly earlier than the event being scored. It
 
 ### Hybrid risk engine
 
-The population model identifies combinations seen across simulated takeover scenarios. The transparent anomaly scorer supplies per-account deviation and human-readable contributions. Fusion changes its weighting during cold start and applies narrow, individually named security floors (`SECURITY_FLOOR_RULES` in `aegistwin/scoring.py`; each decision records which fired) to high-confidence combinations such as:
+The population model identifies combinations seen across simulated takeover scenarios. The transparent anomaly scorer supplies per-account deviation and human-readable contributions. Fusion changes its weighting during cold start and applies narrow, individually named security floors (`SECURITY_FLOOR_RULES` in `oluso/scoring.py`; each decision records which fired) to high-confidence combinations such as:
 
 - New device + new SIM + balance drain.
 - Recovery event + new recipient.

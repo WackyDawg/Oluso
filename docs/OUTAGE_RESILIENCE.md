@@ -1,6 +1,6 @@
 # Power and Network Outage Resilience
 
-AegisTwin v1.1 treats unavailable fraud intelligence, unavailable scoring runtime, and an unavailable
+Oluso v1.1 treats unavailable fraud intelligence, unavailable scoring runtime, and an unavailable
 payment rail as different failures. Missing evidence is never interpreted as evidence that a payment
 is safe. The implementation follows a four-state operating model:
 

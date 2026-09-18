@@ -12,7 +12,7 @@ def main() -> None:
     document = {
         "bomFormat": "CycloneDX", "specVersion": "1.5", "version": 1,
         "metadata": {"timestamp": datetime.now(UTC).isoformat(),
-                     "component": {"type": "application", "name": "aegistwin-ato", "version": "1.4.0"}},
+                     "component": {"type": "application", "name": "oluso-ato", "version": "1.4.0"}},
         "components": sorted(components, key=lambda item: item["name"].lower()),
     }
     output = Path("artifacts/sbom.cdx.json")

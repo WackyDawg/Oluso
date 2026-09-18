@@ -5,8 +5,8 @@ from datetime import UTC, datetime, timedelta
 import pytest
 from fastapi.testclient import TestClient
 
-from aegistwin.api import create_app
-from aegistwin.schemas import (
+from oluso.api import create_app
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -16,7 +16,7 @@ from aegistwin.schemas import (
     ReconciliationRequest,
     ResilienceMode,
 )
-from aegistwin.service import AtoService, ConflictError
+from oluso.service import AtoService, ConflictError
 
 
 def payment(account: str, event_id: str, at: datetime, recipient: str = "known-merchant") -> BehaviorEventIn:

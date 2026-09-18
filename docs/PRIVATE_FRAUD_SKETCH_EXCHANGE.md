@@ -1,9 +1,9 @@
-# AegisMesh Private Fraud-Sketch Exchange
+# OlusoMesh Private Fraud-Sketch Exchange
 
 ## Purpose
 
-AegisMesh lets participating financial institutions contribute compact, expiring fraud indicators
-without sharing customer records or raw identifiers. It extends AegisTwin's original recipient-only
+OlusoMesh lets participating financial institutions contribute compact, expiring fraud indicators
+without sharing customer records or raw identifiers. It extends Oluso's original recipient-only
 consortium control to three bounded indicator families:
 
 - tokenised recipient or mule destinations;
@@ -23,7 +23,7 @@ customer's own institution.
    timestamps, expiry and revocation state. It does not keep the source identifier.
 5. One institution produces an `observe_only` score. Two independent institutions produce a
    `shared_watch`; three or more can produce `high_confidence` shared evidence.
-6. The local AegisTwin decision combines the exchange result with sender, recipient, trajectory,
+6. The local Oluso decision combines the exchange result with sender, recipient, trajectory,
    channel, agent-terminal and model evidence.
 7. An uncorroborated exchange match is capped at monitoring. A corroborated match can contribute
    up to a reversible delay. A hold still requires stronger local evidence.
@@ -78,7 +78,7 @@ automatic customer block.
 ## Power and network outage behaviour
 
 Each live aggregate produces a signed short-lived Fraud-Sketch Capsule. If the consortium dependency
-is unavailable, AegisTwin may use a still-valid capsule with a 15% risk discount and 25% confidence
+is unavailable, Oluso may use a still-valid capsule with a 15% risk discount and 25% confidence
 discount. The decision response labels the source `signed_cache`. An expired or invalid capsule is
 ignored, and exchange unavailability lowers decision confidence rather than being interpreted as
 proof of safety. Outage events remain subject to the existing no-false-settlement, learning-freeze and

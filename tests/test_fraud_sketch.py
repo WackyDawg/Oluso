@@ -7,9 +7,9 @@ from datetime import UTC, datetime, timedelta
 import pytest
 from fastapi.testclient import TestClient
 
-from aegistwin.api import create_app
-from aegistwin.fraud_sketch import sign_report, sign_revocation
-from aegistwin.schemas import (
+from oluso.api import create_app
+from oluso.fraud_sketch import sign_report, sign_revocation
+from oluso.schemas import (
     AccountCreate,
     AgentTerminalAssurance,
     BehaviorEventIn,
@@ -18,7 +18,7 @@ from aegistwin.schemas import (
     FraudSketchReportRequest,
     FraudSketchRevocationRequest,
 )
-from aegistwin.service import AtoService, ConflictError
+from oluso.service import AtoService, ConflictError
 
 
 def report_request(

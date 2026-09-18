@@ -8,7 +8,7 @@ from typing import Any
 import requests
 import streamlit as st
 
-st.set_page_config(page_title="AegisTwin ATO Lab", page_icon="🛡️", layout="wide")
+st.set_page_config(page_title="Oluso ATO Lab", page_icon="🛡️", layout="wide")
 
 API_URL = st.sidebar.text_input("API URL", os.getenv("ATO_DASHBOARD_API_URL", "http://localhost:8000"))
 API_KEY = st.sidebar.text_input(
@@ -339,7 +339,7 @@ def scenario_payload(name: str) -> dict[str, Any]:
     return base
 
 
-st.title("🛡️ AegisTwin v1.4 Behavioural Resilience Platform")
+st.title("🛡️ Oluso v1.4 Behavioural Resilience Platform")
 st.caption(
     "Auditable scoring for app, USSD and agency activity, including private cross-bank fraud sketches. "
     "All interventions are reversible and constrained by a Regret Budget."
@@ -449,7 +449,7 @@ if decision:
             st.info(terminal_message)
     if fraud_sketch.get("score", 0):
         sketch_message = (
-            f"AegisMesh private exchange: {fraud_sketch['status']} · "
+            f"OlusoMesh private exchange: {fraud_sketch['status']} · "
             f"{fraud_sketch['independent_institutions']} independent institution(s) · "
             f"score {fraud_sketch['score']:.1%} · "
             f"source {fraud_sketch['source_mode']} · ceiling {fraud_sketch['action_ceiling']}"

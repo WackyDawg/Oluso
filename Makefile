@@ -1,4 +1,4 @@
-# AegisTwin developer tasks. Run `make help` for the list.
+# Oluso developer tasks. Run `make help` for the list.
 # Windows without GNU make: run the equivalent commands listed in CONTRIBUTING.md.
 
 PYTHON ?= python
@@ -24,7 +24,7 @@ test: ## Unit and integration tests
 	pytest
 
 coverage: ## Tests with the CI coverage gate
-	pytest --cov=aegistwin --cov-fail-under=85
+	pytest --cov=oluso --cov-fail-under=85
 
 check: lint coverage smoke ## Everything CI runs, locally
 
@@ -54,7 +54,7 @@ bench: ## Warm sequential API latency
 	$(PYTHON) scripts/benchmark_latency.py --requests 100
 
 load: ## Eight-worker concurrent load (keep the scratch DB off synced folders)
-	$(PYTHON) scripts/load_test.py --database $(if $(SCRATCH),$(SCRATCH)/aegistwin_load.db,artifacts/load_test.db)
+	$(PYTHON) scripts/load_test.py --database $(if $(SCRATCH),$(SCRATCH)/oluso_load.db,artifacts/load_test.db)
 
 evidence: evaluate robustness bench load ## Regenerate all machine-readable evidence in artifacts/
 
@@ -63,7 +63,7 @@ demo-video: ## Rebuild the captioned demo MP4 and demo_results.json (needs ffmpe
 	$(PYTHON) tools/build_demo_video.py --output submission/demo
 
 writeup: ## Rebuild the technical write-up DOCX from current evidence (needs python-docx)
-	$(PYTHON) tools/build_technical_writeup.py --output submission/report/AegisTwin_TrackA_Technical_Writeup.docx
+	$(PYTHON) tools/build_technical_writeup.py --output submission/report/Oluso_TrackA_Technical_Writeup.docx
 
 smoke: ## Boot a clean staged copy from .env.example and require /health == 200
 	$(PYTHON) scripts/release_smoke_test.py .

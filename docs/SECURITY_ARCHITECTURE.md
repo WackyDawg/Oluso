@@ -4,7 +4,7 @@
 
 The integration role may create accounts, score events, read profiles, request appeals and queue privacy work. The analyst role handles feedback, cases, lifecycle decisions, signed fraud-sketch reports/revocations, compatibility consortium reports and profile succession. The auditor role verifies the audit chain, replays decisions, runs policy simulations, reads drift/equity/telemetry and anchors the chain. The admin role is a demonstration break-glass identity.
 
-Every account, event and decision is bound to an allowed tenant. Cross-account graph and campaign queries are tenant scoped. AegisMesh is a separate consortium boundary: source values become seven-day HMAC tokens, institutions are separately tokenised, and the API never returns either. Report/revocation signatures use issuer-specific prototype keys. Shared evidence cannot exceed monitoring without local corroboration and cannot independently justify a hold.
+Every account, event and decision is bound to an allowed tenant. Cross-account graph and campaign queries are tenant scoped. OlusoMesh is a separate consortium boundary: source values become seven-day HMAC tokens, institutions are separately tokenised, and the API never returns either. Report/revocation signatures use issuer-specific prototype keys. Shared evidence cannot exceed monitoring without local corroboration and cannot independently justify a hold.
 
 ## Evidence trust
 

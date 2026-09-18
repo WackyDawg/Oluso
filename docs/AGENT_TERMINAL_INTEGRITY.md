@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AegisTwin v1.2 adds a second unit of analysis for agency banking: the gateway-attested agent terminal. A customer-only detector can miss one compromised terminal that causes small, plausible-looking losses across many unrelated customers. The integrity twin asks whether the shared endpoint is exhibiting a cross-customer campaign while the customer twin still asks whether each instruction fits its account.
+Oluso v1.2 adds a second unit of analysis for agency banking: the gateway-attested agent terminal. A customer-only detector can miss one compromised terminal that causes small, plausible-looking losses across many unrelated customers. The integrity twin asks whether the shared endpoint is exhibiting a cross-customer campaign while the customer twin still asks whether each instruction fits its account.
 
 This is a Track A account-takeover control, not a separate project. Its output is fused into the same decision, reversible response, recourse, audit trail and analyst queue.
 
@@ -37,7 +37,7 @@ Quarantine is a bank-side risk state, not an accusation or physical enforcement 
 
 ## Power and network outages
 
-When terminal intelligence is unavailable, AegisTwin lists it as missing evidence and lowers decision confidence. It does not manufacture a zero risk contribution. In isolated mode, a monetary instruction is never represented as settled; it receives a no-settlement reference, enters the tamper-evident journal and is re-scored after trusted services recover. Outage activity cannot teach the trusted behavioural baseline.
+When terminal intelligence is unavailable, Oluso lists it as missing evidence and lowers decision confidence. It does not manufacture a zero risk contribution. In isolated mode, a monetary instruction is never represented as settled; it receives a no-settlement reference, enters the tamper-evident journal and is re-scored after trusted services recover. Outage activity cannot teach the trusted behavioural baseline.
 
 ## Reproducible proof
 

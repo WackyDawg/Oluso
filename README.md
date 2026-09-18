@@ -1,6 +1,6 @@
-# AegisTwin ATO
+# Oluso ATO
 
-An explainable, defence-in-depth account-takeover platform designed for Nigerian mobile-money **app, USSD, and agency-banking** channels. AegisTwin maintains customer, recipient, agent-terminal, risk-window, channel, calendar and campaign intelligence; separates risk from confidence; and converts evidence into reversible responses governed by a **Regret Budget**.
+An explainable, defence-in-depth account-takeover platform designed for Nigerian mobile-money **app, USSD, and agency-banking** channels. Oluso maintains customer, recipient, agent-terminal, risk-window, channel, calendar and campaign intelligence; separates risk from confidence; and converts evidence into reversible responses governed by a **Regret Budget**.
 
 This is a clean-room implementation created for the challenge **“Spotting Account Takeover From Behaviour.”** It does not copy code or model artifacts from the public repositories used during competitive research.
 
@@ -16,7 +16,7 @@ This is a clean-room implementation created for the challenge **“Spotting Acco
 - A separate account-disjoint evaluation uses 450 training and 150 test customers with zero overlap; fused ROC-AUC is 0.9553 and customer-confirmation recall is 83.33%.
 - Transfer-only metrics, Brier score, expected calibration error, score-range diagnostics and explicit low-and-slow failures are included rather than presenting perfect synthetic accuracy.
 
-### v1.3 AegisMesh Private Fraud-Sketch Exchange
+### v1.3 OlusoMesh Private Fraud-Sketch Exchange
 
 - Cross-bank sharing of compact recipient, attested agent-terminal and categorical campaign indicators without sharing customer records or raw identifiers.
 - Seven-day rotating HMAC indicator tokens and separately tokenised institutions; API responses never disclose either token.
@@ -59,7 +59,7 @@ This is a clean-room implementation created for the challenge **“Spotting Acco
 - **Privacy-reduced consortium intelligence:** HMAC recipient tokens require reports from at least two independent institutions before risk is raised.
 - **Analyst governance:** prioritised cases, deterministic random low-risk audits, appeals, and independent second approval for strengthened recipient reputation.
 - **Role and tenant isolation:** distinct integration, analyst, auditor and admin credentials with tenant-bound account, event, graph and decision access.
-- **Policy/model governance:** non-mutating threshold simulation, version-bound provenance, signed registry summary, reference-window score/feature/action drift with a retraining recommendation, named fusion constants and security-floor rules (`aegistwin.scoring.SECURITY_FLOOR_RULES`, `aegistwin.policy.POLICY_THRESHOLDS`) and honest equity scope.
+- **Policy/model governance:** non-mutating threshold simulation, version-bound provenance, signed registry summary, reference-window score/feature/action drift with a retraining recommendation, named fusion constants and security-floor rules (`oluso.scoring.SECURITY_FLOOR_RULES`, `oluso.policy.POLICY_THRESHOLDS`) and honest equity scope.
 - **Privacy operations:** queued export/delete work and conservative two-channel profile succession after a verified device or SIM change.
 - **Operational readiness evidence:** security headers, size/rate limits, Prometheus output, CycloneDX SBOM, hardened containers, CI security jobs, concurrent load evidence and verified backup/restore.
 
@@ -79,7 +79,7 @@ This is a clean-room implementation created for the challenge **“Spotting Acco
 - A separate **Decision Confidence Envelope** that says how well-supported the risk score is; a low-risk/low-confidence cold start is not presented as “known safe.”
 - A **Cross-Channel Transition Twin** that recognises new-device app enrolment followed by an unusual USSD hand-off as one attack sequence.
 - A feedback-driven, tokenised **Recipient Reputation Loop**: one confirmed case raises monitoring across accounts; two independent victims activate a stronger floor; reports decay and expire after 90 days.
-- An **AegisMesh Private Fraud-Sketch Exchange** that shares rotating recipient, attested-terminal and campaign tokens across institutions, with signed issuers, poisoning controls, revocation, outage cache and local-action ceilings.
+- An **OlusoMesh Private Fraud-Sketch Exchange** that shares rotating recipient, attested-terminal and campaign tokens across institutions, with signed issuers, poisoning controls, revocation, outage cache and local-action ceilings.
 - A **Calendar Rhythm Twin** that recognises an established day-of-month, recipient and amount pattern after three prior monthly cycles.
 - A decaying **Account Risk Window** that turns failed authentication, recovery, PIN reset, and attested SIM-change precursors into time-varying hazard state.
 - Consent-gated, device-attested **coercion protection** that can privately pause an in-call or screen-shared payment without accusing the customer.
@@ -338,7 +338,7 @@ Current validation includes **64 tests with a coverage gate above 85%** (91% mea
 
 ```text
 .
-├── src/aegistwin/        Library code
+├── src/oluso/            Library code
 │   ├── api.py            FastAPI app factory, RBAC, rate limiting, lifespan
 │   ├── service.py        Scoring orchestration, governance reports, replay, reconciliation
 │   ├── features.py       FeatureEngine, risk windows, MODEL_EXCLUDED_FEATURES

@@ -1,6 +1,6 @@
 # Privacy and compliance design
 
-AegisTwin uses synthetic data only. It does not require raw IMSI, ICCID, contact lists, message text, call audio or screen contents. Coercion signals are consented, device-attested summaries. AegisMesh recipient, attested-terminal and campaign indicators use epoch-scoped HMAC tokens; institutions are separately tokenised. Shared tables exclude source identifiers and customer/transaction histories.
+Oluso uses synthetic data only. It does not require raw IMSI, ICCID, contact lists, message text, call audio or screen contents. Coercion signals are consented, device-attested summaries. OlusoMesh recipient, attested-terminal and campaign indicators use epoch-scoped HMAC tokens; institutions are separately tokenised. Shared tables exclude source identifiers and customer/transaction histories.
 
 The v1.3 exchange is described as privacy-reduced, not anonymous. A prototype operator holding the token key could test guesses from a small identifier space. Production requires VOPRF/PSI or secure aggregation where appropriate, HSM-held rotation, institution identity, separation of duties, minimised query logs, formal participation agreements, correction/appeal handling and privacy testing. Signed shared capsules expire within 24 hours and are discounted during outages.
 

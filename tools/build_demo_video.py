@@ -9,8 +9,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-from aegistwin.config import Settings
-from aegistwin.schemas import (
+from oluso.config import Settings
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -18,7 +18,7 @@ from aegistwin.schemas import (
     EventType,
     TelcoAssurance,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 WIDTH, HEIGHT = 1280, 720
 NAVY = "#07182B"
@@ -54,7 +54,7 @@ def base(title: str, kicker: str, number: int) -> tuple[Image.Image, ImageDraw.I
     draw.text((60, 44), kicker.upper(), font=font(18, True), fill=TEAL)
     title_size = 34 if len(title) > 52 else 42
     draw.text((60, 78), title, font=font(title_size, True), fill=WHITE)
-    draw.text((60, 675), "AEGISTWIN · ICSC TRACK A · SYNTHETIC DATA ONLY", font=font(15, True), fill=MUTED)
+    draw.text((60, 675), "OLUSO · ICSC TRACK A · SYNTHETIC DATA ONLY", font=font(15, True), fill=MUTED)
     draw.text((1190, 675), f"{number}/9", font=font(15, True), fill=MUTED)
     return image, draw
 
@@ -77,7 +77,7 @@ def build_results(project: Path, output: Path) -> dict:
     service = AtoService(
         Settings(database_path=database, model_path=project / "models/ato_model.joblib")
     )
-    account_id = "aegistwin_demo_customer"
+    account_id = "oluso_demo_customer"
     service.create_account(
         AccountCreate(
             account_id=account_id,
@@ -250,7 +250,7 @@ def make_frames(result: dict, output: Path) -> list[Path]:
     sketch = result["fraud_sketch_evidence"]
     frames: list[Image.Image] = []
 
-    img, draw = base("AegisTwin: prove the human, not only the secret", "Working prototype", 1)
+    img, draw = base("Oluso: prove the human, not only the secret", "Working prototype", 1)
     wrapped(draw, "Behavioural account-takeover defence for Nigerian app, USSD and agency banking.",
             (60, 165), 760, size=30, fill=WHITE, bold=True)
     panel(draw, (60, 300, 405, 575), "Decision speed", f"p99 {latency['p99_ms']:.0f} ms", GREEN,
@@ -375,7 +375,7 @@ def encode_video(frames: list[Path], output: Path) -> Path:
         lines.extend([f"file '{frame.as_posix()}'", "duration 4"])
     lines.append(f"file '{frames[-1].as_posix()}'")
     concat.write_text("\n".join(lines) + "\n")
-    video = output / "AegisTwin_TrackA_Demo.mp4"
+    video = output / "Oluso_TrackA_Demo.mp4"
     subprocess.run(
         [
             "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat),

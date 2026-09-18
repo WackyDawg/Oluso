@@ -32,8 +32,8 @@ class Telemetry:
 
     def prometheus(self) -> str:
         data = self.snapshot()
-        lines = [f'aegistwin_events_total{{type="{key}"}} {value}' for key, value in data["counters"].items()]
-        lines += [f'aegistwin_scoring_latency_ms{{quantile="{key[1:]}"}} {value}' for key, value in data["latency_ms"].items() if key.startswith("p")]
+        lines = [f'oluso_events_total{{type="{key}"}} {value}' for key, value in data["counters"].items()]
+        lines += [f'oluso_scoring_latency_ms{{quantile="{key[1:]}"}} {value}' for key, value in data["latency_ms"].items() if key.startswith("p")]
         return "\n".join(lines) + "\n"
 
 

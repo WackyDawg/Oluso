@@ -5,8 +5,8 @@ import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from aegistwin.config import Settings
-from aegistwin.schemas import (
+from oluso.config import Settings
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -14,7 +14,7 @@ from aegistwin.schemas import (
     FeedbackLabel,
     FeedbackRequest,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 
 def seed(service: AtoService, account_id: str, now: datetime, channel: Channel) -> None:
@@ -41,7 +41,7 @@ def seed(service: AtoService, account_id: str, now: datetime, channel: Channel) 
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the five AegisTwin v0.5 live proof cases")
+    parser = argparse.ArgumentParser(description="Run the five Oluso v0.5 live proof cases")
     parser.add_argument("--database", type=Path, default=Path("artifacts/v5_demo.db"))
     parser.add_argument("--output", type=Path, default=Path("artifacts/v5_feature_demo.json"))
     args = parser.parse_args()

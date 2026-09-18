@@ -73,7 +73,7 @@
 5. Decision service to settlement and case-management systems.
 6. Analyst interface to feedback records.
 7. Bank/agent gateway to attested terminal assurance and terminal registry.
-8. Participating institution to the AegisMesh sketch exchange and signed cache.
+8. Participating institution to the OlusoMesh sketch exchange and signed cache.
 
 ## Threats and implemented controls
 

@@ -4,7 +4,7 @@
   "verified_replacement": {
     "decision_id": "dec_9180fdbb5cb9471c85501dd5a3f64648",
     "event_id": "demo_verified_sim_replacement",
-    "account_id": "aegistwin_demo_customer",
+    "account_id": "oluso_demo_customer",
     "risk_level": "low",
     "score": {
       "model_score": 0.000462,
@@ -249,7 +249,7 @@
   "attested_sim_swap": {
     "decision_id": "dec_e206ceb3ec3a452090301db473b7fb18",
     "event_id": "demo_attested_sim_swap_attack",
-    "account_id": "aegistwin_demo_customer",
+    "account_id": "oluso_demo_customer",
     "risk_level": "critical",
     "score": {
       "model_score": 0.979456,
@@ -545,7 +545,7 @@
   "coercion_assisted_transfer": {
     "decision_id": "dec_e10d23f39bea421fbcd09f927e95f322",
     "event_id": "demo_coercion_assisted_transfer",
-    "account_id": "aegistwin_demo_customer",
+    "account_id": "oluso_demo_customer",
     "risk_level": "high",
     "score": {
       "model_score": 0.173915,

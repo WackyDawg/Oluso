@@ -20,8 +20,8 @@ from sklearn.metrics import (
     roc_curve,
 )
 
-from aegistwin.features import FEATURE_NAMES, MODEL_FEATURE_NAMES
-from aegistwin.scoring import AnomalyScorer, fuse_scores
+from oluso.features import FEATURE_NAMES, MODEL_FEATURE_NAMES
+from oluso.scoring import AnomalyScorer, fuse_scores
 
 
 def choose_threshold(y_true: np.ndarray, probabilities: np.ndarray, max_fpr: float = 0.01) -> float:
@@ -60,7 +60,7 @@ def calculate_metrics(y_true: np.ndarray, probabilities: np.ndarray, threshold: 
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train and evaluate the AegisTwin population model")
+    parser = argparse.ArgumentParser(description="Train and evaluate the Oluso population model")
     parser.add_argument("--input", type=Path, default=Path("data/training_features.csv"))
     parser.add_argument("--output", type=Path, default=Path("models/ato_model.joblib"))
     parser.add_argument("--max-model-fpr", type=float, default=0.005)

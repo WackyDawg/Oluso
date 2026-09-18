@@ -7,7 +7,7 @@ Reviewed source: [sliit-msc-research/sim-swap-fraud-detection-model-dataset](htt
 The repository highlights a compact SIM-lifecycle signal family: SIM activation recency,
 IMSI/ICCID change indicators, SIM-type change, repeat SIM changes in 30 days, previous-SIM
 tenure, the time between SIM change and OTP use, and geographic separation between those
-events. AegisTwin independently implements privacy-reduced versions of these concepts as an
+events. Oluso independently implements privacy-reduced versions of these concepts as an
 optional `telco_assurance` object. It never needs the raw IMSI or ICCID. Values affect scoring
 only when a trusted bank/telco gateway sets `gateway_attested=true`.
 
@@ -27,9 +27,9 @@ signals even when device sensors do not exist.
   Training and evaluating on those labels can reward recovery of the synthetic rule rather than
   generalization to independent fraud behaviour.
 
-## AegisTwin's stronger research design
+## Oluso's stronger research design
 
-AegisTwin generates longitudinal account histories first, injects takeover sequences only after a
+Oluso generates longitudinal account histories first, injects takeover sequences only after a
 profile matures, derives features using the same production feature engine, prevents attack events
 from contaminating the trusted baseline, and reserves the newest time window for testing. Fraud is
 kept rare, hard legitimate cases are explicitly generated, and results report recall, false-positive

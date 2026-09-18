@@ -1,8 +1,8 @@
-# ICSC Submission Guide — AegisTwin Track A
+# ICSC Submission Guide — Oluso Track A
 
 ## Required actions
 
-1. Confirm the team's official name and rename the outer archive if it is not `AegisTwin_TrackA.zip`.
+1. Confirm the team's official name and rename the outer archive if it is not `Oluso_TrackA.zip`.
 2. Submit the Track A selection form by **31 August 2026**:
    <https://forms.cloud.microsoft/r/xsk558qRQE>
 3. Publish the included source to the team's code host and replace the placeholder in `CODE_LINK.md`.
@@ -12,14 +12,14 @@
 
 ## Building the package
 
-Deliverables live under `submission/` (see `submission/README.md`). `make writeup`, `make demo-video` and `make package` regenerate the write-up, demo and the final `submission/dist/AegisTwin_TrackA_Final.zip`; the package tool copies `docs/` to `Documentation/`, `artifacts/` to `Evidence/`, zips the source, runs the release smoke test and writes `SHA256SUMS.txt`.
+Deliverables live under `submission/` (see `submission/README.md`). `make writeup`, `make demo-video` and `make package` regenerate the write-up, demo and the final `submission/dist/Oluso_TrackA_Final.zip`; the package tool copies `docs/` to `Documentation/`, `artifacts/` to `Evidence/`, zips the source, runs the release smoke test and writes `SHA256SUMS.txt`.
 
 ## Package contents
 
 - A four-page technical write-up in PDF and editable DOCX.
 - A captioned MP4 generated from a real local scoring run.
 - A clean source-code ZIP with the model, synthetic data, evaluation evidence, 64 tests, and README.
-- Complete Markdown documentation, including AegisMesh private exchange, all intelligence lenses, outage safety and the adaptive red-team report.
+- Complete Markdown documentation, including OlusoMesh private exchange, all intelligence lenses, outage safety and the adaptive red-team report.
 - Machine-readable evaluation, robustness, latency, adaptive-search, platform, outage-resilience, agent-terminal, fraud-sketch and demo results, checksums, and this checklist.
 
 No real personal data is included. The model is a prototype trained and tested only on synthetic data.

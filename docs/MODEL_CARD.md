@@ -1,4 +1,4 @@
-# Model Card: AegisTwin Population ATO Model
+# Model Card: Oluso Population ATO Model
 
 Version: `rf-calibrated-longitudinal-ng-7.0`. The population model retains the customer,
 recipient, cross-channel, calendar, risk-window, coercion and agent-channel signals, but version 7
@@ -44,7 +44,7 @@ These results validate code and scenario separability only. Synthetic data canno
 
 ## Runtime fusion
 
-The model probability is blended with a personal anomaly score. During cold start the population model receives more weight; when personal history matures, the transparent personal scorer receives more weight. Fifteen named security floors (`aegistwin.scoring.SECURITY_FLOOR_RULES`) cover high-concern combinations and are recorded per decision so rule-driven scores are distinguishable from model-driven ones. A separate confidence envelope reports profile maturity, data coverage and scorer agreement; it is not the risk probability.
+The model probability is blended with a personal anomaly score. During cold start the population model receives more weight; when personal history matures, the transparent personal scorer receives more weight. Fifteen named security floors (`oluso.scoring.SECURITY_FLOOR_RULES`) cover high-concern combinations and are recorded per decision so rule-driven scores are distinguishable from model-driven ones. A separate confidence envelope reports profile maturity, data coverage and scorer agreement; it is not the risk probability.
 
 ## Required validation before production
 

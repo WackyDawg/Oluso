@@ -44,3 +44,7 @@ submission/demo/frames.txt
 
 # ---- Generated submission package (rebuild with tools/package_submission.py)
 submission/dist/
+
+# ---- Local-only demo scripts (not part of the published package) ---------
+docs/DEMO_SCRIPT.md
+docs/DEMO_VIDEO_SCRIPT.md

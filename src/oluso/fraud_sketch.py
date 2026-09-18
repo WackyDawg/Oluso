@@ -52,12 +52,12 @@ def indicator_token(
     epoch: str,
 ) -> str:
     clean = normalise_indicator(indicator_type, value)
-    material = f"aegismesh-v1|{epoch}|{indicator_type.strip().lower()}|{clean}"
+    material = f"olusomesh-v1|{epoch}|{indicator_type.strip().lower()}|{clean}"
     return hmac.new(secret.encode("utf-8"), material.encode("utf-8"), hashlib.sha256).hexdigest()
 
 
 def institution_token(institution_id: str, secret: str) -> str:
-    material = f"aegismesh-institution-v1|{institution_id.strip().lower()}"
+    material = f"olusomesh-institution-v1|{institution_id.strip().lower()}"
     return hmac.new(secret.encode("utf-8"), material.encode("utf-8"), hashlib.sha256).hexdigest()
 
 

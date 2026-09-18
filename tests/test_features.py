@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta
 
-from aegistwin.features import FeatureEngine, compute_risk_window
-from aegistwin.schemas import BehaviorEventIn, Channel, CoercionSignals, EventType, TelcoAssurance
+from oluso.features import FeatureEngine, compute_risk_window
+from oluso.schemas import BehaviorEventIn, Channel, CoercionSignals, EventType, TelcoAssurance
 
 
 def history_event(index: int, now: datetime) -> dict:
@@ -96,9 +96,9 @@ def test_feature_engine_uses_server_history() -> None:
 
 
 def test_shared_device_setting_reduces_rule_contribution() -> None:
-    from aegistwin.scoring import AnomalyScorer
+    from oluso.scoring import AnomalyScorer
 
-    base = {name: 0.0 for name in __import__("aegistwin.features", fromlist=["FEATURE_NAMES"]).FEATURE_NAMES}
+    base = {name: 0.0 for name in __import__("oluso.features", fromlist=["FEATURE_NAMES"]).FEATURE_NAMES}
     base.update(history_confidence=1.0, new_device=1.0, device_rarity=1.0)
     scorer = AnomalyScorer()
     unshared = scorer.score(base).score
@@ -107,11 +107,11 @@ def test_shared_device_setting_reduces_rule_contribution() -> None:
 
 
 def test_verified_sim_change_is_a_mitigation() -> None:
-    from aegistwin.scoring import AnomalyScorer, fuse_scores
+    from oluso.scoring import AnomalyScorer, fuse_scores
 
     base = {
         name: 0.0
-        for name in __import__("aegistwin.features", fromlist=["FEATURE_NAMES"]).FEATURE_NAMES
+        for name in __import__("oluso.features", fromlist=["FEATURE_NAMES"]).FEATURE_NAMES
     }
     base.update(
         history_confidence=1.0,
@@ -170,11 +170,11 @@ def test_only_attested_telco_lifecycle_can_raise_risk() -> None:
 
 
 def test_attested_sim_swap_has_security_floor_but_verified_change_does_not() -> None:
-    from aegistwin.scoring import AnomalyScorer, fuse_scores
+    from oluso.scoring import AnomalyScorer, fuse_scores
 
     features = {
         name: 0.0
-        for name in __import__("aegistwin.features", fromlist=["FEATURE_NAMES"]).FEATURE_NAMES
+        for name in __import__("oluso.features", fromlist=["FEATURE_NAMES"]).FEATURE_NAMES
     }
     features.update(
         history_confidence=0.8,

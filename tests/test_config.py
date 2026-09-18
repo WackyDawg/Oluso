@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from aegistwin.config import Settings
+from oluso.config import Settings
 
 PROJECT = Path(__file__).resolve().parents[1]
 

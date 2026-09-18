@@ -1,14 +1,14 @@
-# AegisTwin v1.4 - Customer, recipient, terminal and private consortium integrity
+# Oluso v1.4 - Customer, recipient, terminal and private consortium integrity
 
 ## Platform differentiators
 
-AegisTwin now demonstrates an attack-and-decision lifecycle, not only a classifier: quarantined learning can be reversed, multi-account campaign mechanics can propagate without sharing raw identities, independent banks can contribute HMAC-tokenised recipient intelligence, decisions can be replayed against the exact causal cutoff, and settlement can be cancelled through an idempotent audited state transition. Judges can also inspect the policy what-if result, drift sample gate, equity limitation, analyst queue, privacy workflow, SBOM, load test and restore proof.
+Oluso now demonstrates an attack-and-decision lifecycle, not only a classifier: quarantined learning can be reversed, multi-account campaign mechanics can propagate without sharing raw identities, independent banks can contribute HMAC-tokenised recipient intelligence, decisions can be replayed against the exact causal cutoff, and settlement can be cancelled through an idempotent audited state transition. Judges can also inspect the policy what-if result, drift sample gate, equity limitation, analyst queue, privacy workflow, SBOM, load test and restore proof.
 
 The v1.1 outage layer adds a signed four-state controller, expiring edge decision capsule, missing-evidence confidence envelope, customer-safe no-settlement receipt, tamper-evident offline journal and exactly-once reconciliation drill. This answers the challenge's Nigerian power/network-cut condition with executable evidence rather than a roadmap claim.
 
 The v1.2 Agent-Terminal Integrity Twin adds a third accountable unit of analysis. It recognises one compromised agency endpoint affecting several customers, requires suspicious corroboration before applying a campaign floor, propagates confirmed terminal harm across distinct victims, and protects ordinary high-throughput market agents with a dedicated hard-negative cohort.
 
-The v1.3 AegisMesh layer adds a privacy-reduced cross-institution unit of analysis. Banks contribute signed, rotating recipient, attested-terminal or campaign sketches without centralising customer histories. One issuer is observe-only; even two issuers remain monitoring-only until local behaviour corroborates the pattern. Signed cache, correction and explicit VOPRF/PSI production gates keep the privacy and availability claims bounded.
+The v1.3 OlusoMesh layer adds a privacy-reduced cross-institution unit of analysis. Banks contribute signed, rotating recipient, attested-terminal or campaign sketches without centralising customer histories. One issuer is observe-only; even two issuers remain monitoring-only until local behaviour corroborates the pattern. Signed cache, correction and explicit VOPRF/PSI production gates keep the privacy and availability claims bounded.
 
 The v1.4 release-assurance layer removes post-label reputation and event-type shortcuts from model
 training, adds groomed-recipient attacks and legitimate precursor lookalikes, rejects perfect ranking,
@@ -24,7 +24,7 @@ Personalised Friction Optimizer.
 
 ## 1. Recipient Mule Graph Twin
 
-Sender-only behavioural systems miss a recipient collecting from many victims. AegisTwin therefore
+Sender-only behavioural systems miss a recipient collecting from many victims. Oluso therefore
 maintains a second unit of analysis: causal recipient aggregates across accounts. The current
 prototype calculates unique senders in 24 hours, first-time-sender ratio, one-hour inflow/outflow,
 and rapid cash-out ratio. The security floor requires diverse first-time senders **and** cash-out;
@@ -48,7 +48,7 @@ patient attacker using a fresh recipient with no precursor history can still eva
 ## 3. Coercion-in-the-loop Protection
 
 Account takeover assumes the criminal replaces the customer. Coercion fraud keeps the genuine
-customer present and directs them. AegisTwin can consume privacy-reduced call overlap, screen share,
+customer present and directs them. Oluso can consume privacy-reduced call overlap, screen share,
 recipient replacement, confirmation backtrack, amount edit, hesitation, paste-during-call, and an
 on-device safety score. These values are zeroed unless collection is consented and device-attested.
 
@@ -58,7 +58,7 @@ accuse the customer and avoids displaying a message that would teach the caller 
 
 ## 4. Decaying Account Risk Window
 
-Rather than judging each payment in isolation, AegisTwin tracks whether an account is entering a
+Rather than judging each payment in isolation, Oluso tracks whether an account is entering a
 risk period. Failed authentication, recovery, PIN reset, and attested unverified SIM identity changes
 contribute time-decaying hazard. Each precursor expires after a bounded window. The API exposes the
 state, score, remaining hours, and precursor categories for analysts and policy, not raw secrets.

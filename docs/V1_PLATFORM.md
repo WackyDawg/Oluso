@@ -1,4 +1,4 @@
-# AegisTwin v1.2 platform controls
+# Oluso v1.2 platform controls
 
 Version 1.0 keeps the ten intelligence layers from v0.5 and adds the controls needed to operate them responsibly.
 

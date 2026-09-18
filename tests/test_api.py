@@ -4,7 +4,7 @@ from datetime import UTC, datetime
 
 from fastapi.testclient import TestClient
 
-from aegistwin.api import create_app
+from oluso.api import create_app
 
 
 def test_api_auth_and_scoring(test_settings) -> None:

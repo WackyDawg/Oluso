@@ -3,7 +3,7 @@ services:
     build: .
     environment:
       ATO_ENVIRONMENT: docker
-      ATO_DATABASE_PATH: /app/data/aegistwin.db
+      ATO_DATABASE_PATH: /app/data/oluso.db
       ATO_MODEL_PATH: /app/models/ato_model.joblib
       ATO_API_KEY: ${ATO_API_KEY:-dev-only-change-me}
       ATO_ANALYST_API_KEY: ${ATO_ANALYST_API_KEY:-analyst-dev-only-change-me}

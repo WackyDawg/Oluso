@@ -26,7 +26,7 @@ def stage_source(source: Path, destination: Path) -> Path:
             archive.extractall(destination)
         return extracted_root(destination)
 
-    root = destination / "AegisTwin_TrackA_Code"
+    root = destination / "Oluso_TrackA_Code"
     root.mkdir()
     for name in (".env.example", "app.py", "src", "models"):
         item = source / name
@@ -46,7 +46,7 @@ def main() -> None:
     args = parser.parse_args()
 
     source = args.source.resolve()
-    with tempfile.TemporaryDirectory(prefix="aegistwin-release-smoke-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="oluso-release-smoke-") as temporary:
         root = stage_source(source, Path(temporary))
         shutil.copy2(root / ".env.example", root / ".env")
         (root / "data").mkdir(exist_ok=True)
@@ -57,7 +57,7 @@ def main() -> None:
         command = """
 import json
 from fastapi.testclient import TestClient
-from aegistwin.config import Settings
+from oluso.config import Settings
 from app import app
 
 settings = Settings()

@@ -1,4 +1,4 @@
-# AegisTwin v0.5 Intelligence Layers
+# Oluso v0.5 Intelligence Layers
 
 This document defines the five v0.5 additions, their trust boundaries, decision behaviour, failure modes, and live proof. Risk is the estimated likelihood of fraud. Decision confidence is the support behind that estimate. They are deliberately different outputs.
 
@@ -7,7 +7,7 @@ This document defines the five v0.5 additions, their trust boundaries, decision 
 `decision_confidence.score` combines profile maturity (40%), channel evidence coverage (35%), and agreement between the calibrated population model and transparent anomaly scorer (25%). Recipient intelligence coverage is included when a recipient is present. The response also exposes a level, the three components, and plain reasons.
 
 - Low risk + high confidence means the event is both ordinary and well observed.
-- Low risk + low confidence means “no strong danger observed, but the baseline is thin”; AegisTwin allows with monitoring and says what evidence is missing.
+- Low risk + low confidence means “no strong danger observed, but the baseline is thin”; Oluso allows with monitoring and says what evidence is missing.
 - High risk + low confidence cannot cause an automatic hold unless independent critical evidence exists. The policy downgrades it to a reversible delay.
 - Model failure does not become false certainty: scorer agreement defaults to an explicitly uncertain value and the reason says the model was unavailable.
 

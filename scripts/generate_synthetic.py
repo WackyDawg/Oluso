@@ -10,10 +10,10 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from aegistwin.agent import AgentTerminalTracker
-from aegistwin.features import FeatureEngine
-from aegistwin.network import RecipientNetworkTracker
-from aegistwin.schemas import (
+from oluso.agent import AgentTerminalTracker
+from oluso.features import FeatureEngine
+from oluso.network import RecipientNetworkTracker
+from oluso.schemas import (
     AgentTerminalAssurance,
     BehaviorEventIn,
     Channel,

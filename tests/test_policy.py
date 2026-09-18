@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from aegistwin.features import FEATURE_NAMES
-from aegistwin.policy import PolicyEngine
-from aegistwin.schemas import ResponseAction
+from oluso.features import FEATURE_NAMES
+from oluso.policy import PolicyEngine
+from oluso.schemas import ResponseAction
 
 
 def feature_defaults() -> dict[str, float]:

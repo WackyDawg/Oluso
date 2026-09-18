@@ -6,8 +6,8 @@ import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from aegistwin.config import Settings
-from aegistwin.schemas import (
+from oluso.config import Settings
+from oluso.schemas import (
     AccountCreate,
     AgentTerminalAssurance,
     BehaviorEventIn,
@@ -16,7 +16,7 @@ from aegistwin.schemas import (
     FeedbackLabel,
     FeedbackRequest,
 )
-from aegistwin.service import AtoService
+from oluso.service import AtoService
 
 
 def assurance(terminal: str, *, attested: bool = True) -> AgentTerminalAssurance:
@@ -236,7 +236,7 @@ def run(output: Path, database: Path) -> dict[str, object]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the AegisTwin agent-terminal live proof")
+    parser = argparse.ArgumentParser(description="Run the Oluso agent-terminal live proof")
     parser.add_argument("--output", type=Path, default=Path("artifacts/agent_terminal_demo.json"))
     parser.add_argument("--database", type=Path, default=Path("artifacts/agent_terminal_demo.db"))
     args = parser.parse_args()

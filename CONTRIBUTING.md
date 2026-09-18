@@ -1,4 +1,4 @@
-# Contributing to AegisTwin
+# Contributing to Oluso
 
 Thanks for helping. This document covers local setup, the checks every change must pass, and
 how the evidence and submission artefacts are regenerated so nobody has to reverse-engineer it.
@@ -7,7 +7,7 @@ how the evidence and submission artefacts are regenerated so nobody has to rever
 
 ```text
 .
-├── src/aegistwin/       Library: API, features, scoring, policy, storage, resilience, fraud-sketch
+├── src/oluso/           Library: API, features, scoring, policy, storage, resilience, fraud-sketch
 ├── tests/               pytest suite (CI gate: 85% line coverage)
 ├── scripts/             Data generation, training, evaluation, benchmarks, demos, release smoke test
 ├── tools/               Submission builders: write-up (DOCX), demo video (MP4), final package
@@ -44,7 +44,7 @@ commands with `uv run`.
 |---|---|---|
 | Lint | `make lint` | `ruff check .` |
 | Tests | `make test` | `pytest` |
-| Tests + coverage gate | `make coverage` | `pytest --cov=aegistwin --cov-fail-under=85` |
+| Tests + coverage gate | `make coverage` | `pytest --cov=oluso --cov-fail-under=85` |
 | Release smoke test | `make smoke` | `python scripts/release_smoke_test.py .` |
 | Everything CI runs | `make check` | the three above + `python scripts/evaluate_robustness.py` |
 | API | `make serve` | `uvicorn app:app --reload` |
@@ -71,9 +71,9 @@ and `submission/package_text/README_FIRST.md`. Quote intervals, not points — t
 
 Constants that govern behaviour live in exactly one place each:
 
-- `aegistwin.policy.POLICY_THRESHOLDS` — response ladder
-- `aegistwin.scoring.SECURITY_FLOOR_RULES` and the `MODEL_WEIGHT_*` constants — fusion
-- `aegistwin.features.MODEL_EXCLUDED_FEATURES` — what the population model may *not* see
+- `oluso.policy.POLICY_THRESHOLDS` — response ladder
+- `oluso.scoring.SECURITY_FLOOR_RULES` and the `MODEL_WEIGHT_*` constants — fusion
+- `oluso.features.MODEL_EXCLUDED_FEATURES` — what the population model may *not* see
 
 Add a floor by appending a `SecurityFloorRule`; it is automatically attributed in evaluation
 output and in per-decision `SECURITY_FLOOR_APPLIED` reasons.
@@ -100,7 +100,7 @@ output and in per-decision `SECURITY_FLOOR_APPLIED` reasons.
 ```bash
 make writeup      # DOCX from current artifacts; export the PDF manually and review the 4-page limit
 make demo-video   # MP4 + demo_results.json (requires ffmpeg on PATH)
-make package      # submission/dist/AegisTwin_TrackA_Final.zip with checksums; runs the smoke test
+make package      # submission/dist/Oluso_TrackA_Final.zip with checksums; runs the smoke test
 ```
 
 `submission/package_text/CODE_LINK.md` must point at the public repository before upload.

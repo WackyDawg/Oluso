@@ -5,7 +5,7 @@
 
 The artifact is a dictionary containing the model, the ordered feature schema, version string,
 `training_data_sha256`, `feature_schema_sha256`, the validation-selected diagnostic threshold and
-training metrics. `aegistwin.scoring.ModelBundle` refuses to load an artifact whose feature schema
+training metrics. `oluso.scoring.ModelBundle` refuses to load an artifact whose feature schema
 does not match the runtime `MODEL_FEATURE_NAMES`, and falls back to the transparent rules-only
 scorer rather than crash.
 

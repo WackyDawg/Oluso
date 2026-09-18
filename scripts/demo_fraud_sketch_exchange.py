@@ -7,9 +7,9 @@ import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from aegistwin.config import Settings
-from aegistwin.fraud_sketch import sign_report, sign_revocation
-from aegistwin.schemas import (
+from oluso.config import Settings
+from oluso.fraud_sketch import sign_report, sign_revocation
+from oluso.schemas import (
     AccountCreate,
     BehaviorEventIn,
     Channel,
@@ -17,7 +17,7 @@ from aegistwin.schemas import (
     FraudSketchReportRequest,
     FraudSketchRevocationRequest,
 )
-from aegistwin.service import AtoService, ConflictError
+from oluso.service import AtoService, ConflictError
 
 
 def signed_report(

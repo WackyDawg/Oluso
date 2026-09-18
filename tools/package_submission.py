@@ -21,8 +21,8 @@ PACKAGE_TEXT = SUBMISSION / "package_text"   # hand-maintained cover documents
 REPORT = SUBMISSION / "report"               # write-up from tools/build_technical_writeup.py
 DEMO = SUBMISSION / "demo"                   # MP4 + demo_results.json from tools/build_demo_video.py
 DIST = SUBMISSION / "dist"                   # generated, git-ignored
-FINAL_ROOT = DIST / "AegisTwin_TrackA_Final"
-OUTER_ZIP = DIST / "AegisTwin_TrackA_Final.zip"
+FINAL_ROOT = DIST / "Oluso_TrackA_Final"
+OUTER_ZIP = DIST / "Oluso_TrackA_Final.zip"
 
 
 def digest(path: Path) -> str:
@@ -91,7 +91,7 @@ def build_source_zip(destination: Path) -> None:
     with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path in source_files():
             relative = path.relative_to(PROJECT)
-            archive.write(path, Path("AegisTwin_TrackA_Code") / relative)
+            archive.write(path, Path("Oluso_TrackA_Code") / relative)
 
 
 def build() -> None:
@@ -101,9 +101,9 @@ def build() -> None:
 
     report = REPORT
     demo = DEMO
-    copy_file(report / "AegisTwin_TrackA_Technical_Writeup.pdf", FINAL_ROOT / "AegisTwin_TrackA_Technical_Writeup.pdf")
-    copy_file(report / "AegisTwin_TrackA_Technical_Writeup.docx", FINAL_ROOT / "AegisTwin_TrackA_Technical_Writeup.docx")
-    copy_file(demo / "AegisTwin_TrackA_Demo.mp4", FINAL_ROOT / "AegisTwin_TrackA_Demo.mp4")
+    copy_file(report / "Oluso_TrackA_Technical_Writeup.pdf", FINAL_ROOT / "Oluso_TrackA_Technical_Writeup.pdf")
+    copy_file(report / "Oluso_TrackA_Technical_Writeup.docx", FINAL_ROOT / "Oluso_TrackA_Technical_Writeup.docx")
+    copy_file(demo / "Oluso_TrackA_Demo.mp4", FINAL_ROOT / "Oluso_TrackA_Demo.mp4")
 
     for name in ("README_FIRST.md", "PACKAGE_CONTENTS.md", "SUBMISSION_CHECKLIST.md", "CODE_LINK.md"):
         copy_file(PACKAGE_TEXT / name, FINAL_ROOT / name)
@@ -133,12 +133,12 @@ def build() -> None:
         copy_file(PROJECT / "artifacts" / name, FINAL_ROOT / "Evidence" / name)
     copy_file(demo / "demo_results.json", FINAL_ROOT / "Evidence" / "demo_results.json")
 
-    build_source_zip(FINAL_ROOT / "AegisTwin_TrackA_Code.zip")
+    build_source_zip(FINAL_ROOT / "Oluso_TrackA_Code.zip")
     subprocess.run(
         [
             sys.executable,
             str(PROJECT / "scripts/release_smoke_test.py"),
-            str(FINAL_ROOT / "AegisTwin_TrackA_Code.zip"),
+            str(FINAL_ROOT / "Oluso_TrackA_Code.zip"),
         ],
         check=True,
         cwd=PROJECT,
