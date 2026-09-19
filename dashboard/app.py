@@ -3,11 +3,16 @@ from __future__ import annotations
 import os
 import uuid
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from typing import Any
 
 import requests
 import streamlit as st
 import theme
+from dotenv import load_dotenv
+
+# Share the API's keys from the repo-root .env; real environment variables still win.
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 st.set_page_config(page_title="Oluso ATO Lab", page_icon="🛡️", layout="wide")
 theme.inject()
