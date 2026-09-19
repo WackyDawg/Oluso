@@ -7,8 +7,10 @@ from typing import Any
 
 import requests
 import streamlit as st
+import theme
 
 st.set_page_config(page_title="Oluso ATO Lab", page_icon="🛡️", layout="wide")
+theme.inject()
 
 API_URL = st.sidebar.text_input("API URL", os.getenv("ATO_DASHBOARD_API_URL", "http://localhost:8000"))
 API_KEY = st.sidebar.text_input(
@@ -339,12 +341,34 @@ def scenario_payload(name: str) -> dict[str, Any]:
     return base
 
 
-st.title("🛡️ Oluso v1.4 Behavioural Resilience Platform")
+def status_chips() -> list[tuple[str, str]]:
+    """Live service state for the brand bar. A dead API must look dead, not absent."""
+
+    chips: list[tuple[str, str]] = [("Synthetic data only", "warn")]
+    try:
+        health = requests.get(f"{API_URL.rstrip('/')}/health", timeout=5).json()
+    except (requests.RequestException, ValueError):
+        return [("API <strong>unreachable</strong>", "warn"), *chips]
+    mode = str(health.get("resilience_mode", "unknown"))
+    chips = [
+        (f"Mode <strong>{mode.upper()}</strong>", "live" if mode == "online" else "warn"),
+        (f"Model <strong>{'loaded' if health.get('model_available') else 'missing'}</strong>", ""),
+        (
+            f"Audit chain <strong>{'valid' if health.get('audit_chain_valid') else 'broken'}</strong>",
+            "" if health.get("audit_chain_valid") else "warn",
+        ),
+        *chips,
+    ]
+    return chips
+
+
+theme.topbar(status_chips())
 st.caption(
     "Auditable scoring for app, USSD and agency activity, including private cross-bank fraud sketches. "
     "All interventions are reversible and constrained by a Regret Budget."
 )
 
+theme.section("Set up the demonstration")
 setup_one, setup_two, setup_three = st.columns(3)
 with setup_one:
     if st.button("1 · Create demo account", use_container_width=True):
@@ -366,8 +390,10 @@ with setup_three:
         except (requests.RequestException, RuntimeError) as exc:
             st.error(str(exc))
 
-st.divider()
-scenario = st.selectbox(
+theme.section("Score a scenario")
+scenario_panel = st.container(border=True)
+scenario_field, scenario_action = scenario_panel.columns([3, 1], vertical_alignment="bottom")
+scenario = scenario_field.selectbox(
     "Scenario",
     [
         "Normal purchase",
@@ -384,7 +410,7 @@ scenario = st.selectbox(
     ],
 )
 
-if st.button("Score scenario", type="primary", use_container_width=True):
+if scenario_action.button("Score scenario", type="primary", use_container_width=True):
     try:
         decision = api("POST", "/v1/events/score", scenario_payload(scenario))
         st.session_state["last_decision"] = decision
@@ -397,12 +423,18 @@ if decision:
     policy = decision["policy"]
     confidence = decision["decision_confidence"]
     resilience = decision.get("resilience", {})
-    metric_one, metric_two, metric_three, metric_four, metric_five = st.columns(5)
-    metric_one.metric("Risk", decision["risk_level"].upper())
-    metric_two.metric("Fused score", f"{score['fused_score']:.1%}")
+    theme.hero(
+        decision["risk_level"],
+        score["fused_score"],
+        policy["action"].replace("_", " ").title(),
+        decision["customer_explanation"],
+        confidence["score"],
+    )
+    metric_one, metric_two, metric_three, metric_four = st.columns(4)
+    metric_one.metric("Model score", f"{score['model_score']:.1%}" if score.get("model_score") is not None else "n/a")
+    metric_two.metric("Anomaly score", f"{score['anomaly_score']:.1%}")
     metric_three.metric("Profile confidence", f"{score['profile_confidence']:.1%}")
-    metric_four.metric("Response", policy["action"].replace("_", " ").title())
-    metric_five.metric("Decision confidence", f"{confidence['score']:.1%}")
+    metric_four.metric("Hold", f"{policy['hold_seconds'] // 60} min" if policy["hold_seconds"] else "None")
 
     if resilience.get("mode", "online") != "online":
         st.warning(
@@ -461,7 +493,6 @@ if decision:
 
     if decision.get("uncertainty_note"):
         st.info(decision["uncertainty_note"])
-    st.success(decision["customer_explanation"])
     st.caption(
         f"Evidence mode: {decision['evidence']['mode']} · "
         f"coverage {decision['evidence']['coverage']:.0%}"
@@ -472,16 +503,17 @@ if decision:
             f"Account risk window: {risk_window['state']} · "
             f"{risk_window['hours_remaining']:.1f} hours remaining"
         )
-    st.subheader("Why the event was scored this way")
-    for reason in decision["reasons"]:
-        st.write(f"• **{reason['code']}** — {reason['message']}")
+    theme.section("Why the event was scored this way")
+    for item in decision["reasons"]:
+        theme.reason(item["code"], item["message"])
 
     if decision.get("recourse_options"):
-        st.subheader("Safe ways to clear this")
+        theme.section("Safe ways to clear this")
         for option in decision["recourse_options"]:
-            st.write(
-                f"• **{option['description']}** — {option['estimated_clearance']} "
-                f"via {option['safe_channel']}"
+            theme.reason(
+                option["action"].replace("_", " ").upper(),
+                f"{option['description']} — {option['estimated_clearance']} "
+                f"via {option['safe_channel']}",
             )
 
     with st.expander("Policy and technical detail"):
@@ -527,8 +559,7 @@ if decision:
         except (requests.RequestException, RuntimeError) as exc:
             st.error(str(exc))
 
-st.divider()
-st.subheader("Governance and operations")
+theme.section("Governance and operations")
 ops_one, ops_two, ops_three, ops_four = st.columns(4)
 with ops_one:
     if st.button("Review queue", use_container_width=True):
@@ -556,7 +587,7 @@ with ops_four:
         except (requests.RequestException, RuntimeError) as exc:
             st.error(str(exc))
 
-st.subheader("Agent-terminal investigation")
+theme.section("Agent-terminal investigation")
 terminal_lookup = st.text_input("Gateway terminal token", "terminal_dashboard_compromised")
 if st.button("Check terminal reputation", use_container_width=True):
     try:
@@ -564,8 +595,7 @@ if st.button("Check terminal reputation", use_container_width=True):
     except (requests.RequestException, RuntimeError) as exc:
         st.error(str(exc))
 
-st.divider()
-st.subheader("Power and network outage resilience")
+theme.section("Power and network outage resilience")
 try:
     outage_status = api("GET", "/v1/resilience/status")
     status_one, status_two, status_three, status_four = st.columns(4)
@@ -614,10 +644,9 @@ with outage_four:
         except (requests.RequestException, RuntimeError) as exc:
             st.error(str(exc))
 
-st.divider()
 profile_column, history_column = st.columns(2)
 with profile_column:
-    st.subheader("Behavioural twin")
+    theme.section("Behavioural twin")
     if st.button("Refresh profile"):
         try:
             st.session_state["profile"] = api("GET", f"/v1/accounts/{ACCOUNT_ID}/profile")
@@ -627,7 +656,7 @@ with profile_column:
         st.json(st.session_state["profile"])
 
 with history_column:
-    st.subheader("Recent decisions")
+    theme.section("Recent decisions")
     if st.button("Refresh decisions"):
         try:
             st.session_state["decisions"] = api(
@@ -636,7 +665,8 @@ with history_column:
         except (requests.RequestException, RuntimeError) as exc:
             st.error(str(exc))
     for item in st.session_state.get("decisions", []):
-        st.write(
-            f"**{item['risk_level'].upper()}** · {item['score']['fused_score']:.1%} · "
-            f"{item['policy']['action'].replace('_', ' ')}"
+        theme.decision_row(
+            item["risk_level"],
+            item["score"]["fused_score"],
+            item["policy"]["action"].replace("_", " "),
         )

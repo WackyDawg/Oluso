@@ -1,0 +1,13 @@
+# Base theme for the demonstration dashboard. dashboard/theme.py layers the console
+# styling on top; these values cover the widget internals CSS cannot reach, such as
+# dropdown menus and focus rings.
+[theme]
+base = "dark"
+primaryColor = "#D2F34C"
+backgroundColor = "#0B0C0E"
+secondaryBackgroundColor = "#15171A"
+textColor = "#F3F5F6"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
