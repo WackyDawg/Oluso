@@ -127,6 +127,8 @@ Authenticated FastAPI ingestion
        Risk decision API               SHA-256 audit chain
 ```
 
+<img src="https://res.cloudinary.com/dfcmtuhjv/image/upload/v1790023302/diagram_1_b47nqa.png" alt="gitdiagram" loading="eager" width="full" height="full"/>
+
 See [Private Fraud-Sketch Exchange](docs/PRIVATE_FRAUD_SKETCH_EXCHANGE.md), [Outage Resilience](docs/OUTAGE_RESILIENCE.md), [v1 Platform Controls](docs/V1_PLATFORM.md), [Security Architecture](docs/SECURITY_ARCHITECTURE.md), [Model Governance](docs/MODEL_GOVERNANCE.md), [Privacy and Compliance](docs/PRIVACY_AND_COMPLIANCE.md), [Operations Runbook](docs/OPERATIONS_RUNBOOK.md), [Control Traceability](docs/CONTROL_TRACEABILITY.md), [Test Strategy](docs/TEST_STRATEGY.md), [API Reference](docs/API_REFERENCE.md), [Architecture](docs/ARCHITECTURE.md), [Synthetic Data Methodology](docs/SYNTHETIC_DATA.md), [End-to-End Evaluation](docs/EVALUATION.md), and [Threat Model](docs/THREAT_MODEL.md).
 
 ## Quick start
