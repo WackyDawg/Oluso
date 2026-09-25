@@ -1,6 +1,6 @@
-# Oluso ATO
+# Olùṣọ́ ATO
 
-An explainable, defence-in-depth account-takeover platform designed for Nigerian mobile-money **app, USSD, and agency-banking** channels. Oluso maintains customer, recipient, agent-terminal, risk-window, channel, calendar and campaign intelligence; separates risk from confidence; and converts evidence into reversible responses governed by a **Regret Budget**.
+An explainable, defence-in-depth account-takeover platform designed for Nigerian mobile-money **app, USSD, and agency-banking** channels. Olùṣọ́ maintains customer, recipient, agent-terminal, risk-window, channel, calendar and campaign intelligence; separates risk from confidence; and converts evidence into reversible responses governed by a **Regret Budget**.
 
 This is a clean-room implementation created for the challenge **“Spotting Account Takeover From Behaviour.”** It does not copy code or model artifacts from the public repositories used during competitive research.
 
